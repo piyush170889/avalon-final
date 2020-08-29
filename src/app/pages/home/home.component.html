@@ -1,0 +1,391 @@
+<app-navbar></app-navbar>
+
+<!-- Home Carousal  -->
+<div class="container-fluid mt-5 pt-4 m-0 p-0">
+  <div id="demo" class="carousel slide" data-ride="carousel">
+    <ul class="carousel-indicators d-none">
+      <li data-target="#demo" data-slide-to="0" class="active"></li>
+      <li data-target="#demo" data-slide-to="1"></li>
+    </ul>
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+        <img src="assets/img/slider/01 Victoria.jpg" alt="Los Angeles" width="100%" height="650">
+        <div class="carousel-caption text-dark">
+          <h1 class="pt-4 card-title">Victoria Majestic Bungalows</h1>
+          <p class="pl-5 pr-5 card-desc">Let the luxury do the magic. Explicitly majestic, nyati victoria is your
+            gateway to a refined living in one of the most desired neighbourhoods of pune, nyati county.Inspired from
+            european architecture. </p>
+          <button class="btn-more text-uppercase text-dark border border-dark mb-4">know more</button>
+        </div>
+      </div>
+      <div class="carousel-item">
+        <img src="assets/img/slider/02 Estaben.jpg" alt="Los Angeles" width="100%" height="650">
+        <div class="carousel-caption text-dark">
+          <h1 class="pt-4 card-title">Luxurious Living</h1>
+          <p class="pl-5 pr-5 card-desc">A signature offering by the nyati group, nyati esteban I is the epitome of a
+            luxurious living. An ultra-luxurious project of 2, 3 & 3.5 rhk homes in undri, it is an emblem of how a
+            modern kingdom should be. Beauty and elegance are the two sides of royal living.</p>
+          <button class="btn-more text-uppercase text-dark border border-dark mb-4">know more</button>
+        </div>
+      </div>
+
+    </div>
+    <a class="carousel-control-prev" href="#demo" data-slide="prev">
+      <i class="fa fa-arrow-left text-dark"></i>
+    </a>
+    <a class="carousel-control-next" href="#demo" data-slide="next">
+      <i class="fa fa-arrow-right text-dark"></i>
+    </a>
+  </div>
+</div>
+<!-- end of Home Carousal -->
+
+<!-- 4 elements -->
+<div class="container info" style="padding: 30px 74px 0 70px">
+  <div class="row ">
+    <div class="col-md-3 text-center">
+      <img src="assets/img/icon 01.png" height="50px" class="mb-2">
+      <p>Area Developed (millions <br> sq. ft.)</p>
+      <h3>23</h3>
+    </div>
+    <div class="col-md-3 text-center">
+      <img src="assets/img/icon 02.png" height="50px" class="mb-2">
+      <p>Under Development (million <br> sq. ft.)</p>
+      <h3>20</h3>
+    </div>
+    <div class="col-md-3 text-center">
+      <img src="assets/img/icon 03.png" height="50px" class="mb-2">
+      <p>Luxury Homes Delivered</p> <br>
+      <h3>960</h3>
+    </div>
+    <div class="col-md-3 text-center">
+      <img src="assets/img/icon 04.png" height="50px" class="mb-2">
+      <p>Luxury Homes Under <br> Construction</p>
+      <h3>1286</h3>
+    </div>
+  </div>
+</div>
+<!-- end of 4 elements -->
+<br>
+<br>
+
+
+<!-- Featured Products -->
+<div class="container-fluid mt-5 pt-3" id="fea">
+  <div class="col-12 text-center mb-3">
+    <h1 class="featured-prj">Featured Projects</h1>
+  </div>
+
+  <div id="demo1" class="carousel slide " data-ride="carousel">
+    <ul class="carousel-indicators">
+      <li data-target="#demo1" data-slide-to="0" class="active"></li>
+      <li data-target="#demo1" data-slide-to="1"></li>
+    </ul>
+    <div class="carousel-inner pt-3">
+
+      <div *ngFor="let featuredProject of featuredProjectsList;let i=index"
+        [ngClass]="{'carousel-item': true, 'active': i==0}">
+        <div class="row">
+          <div class="col-2  text-right">
+            <div class="bg">
+              <i class="fa fa-share-alt text-white" id="share1"></i>
+            </div>
+          </div>
+          <div class="col-md-5 col-sm-12">
+            <img [src]="getImageUrl(featuredProject.featured_image)" alt="Los Angeles" width="100%" height="350">
+          </div>
+          <div class="col-md-5 col-sm-12 mt-3">
+            <span style="color: gray;"><i class="fas fa-bars fa-1x"></i>{{featuredProject.type}}</span>
+
+            <h5 class="pt-4">{{featuredProject.property_name}}</h5>
+            <div class="bg-white" id="mainPara">
+              <small>{{featuredProject.description}}</small>
+            </div>
+            <button class="btn btn-default"><a style="text-decoration: none;"
+                href="html/home_property.html?id={{featuredProject.prop_id}}" target="_blank">VIEW
+                PROPERTY</a></button>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <a class="carousel-control-prev" id="leri" href="#demo1" data-slide="prev">
+      <i class="fa fa-angle-left text-dark fa-3x"></i>
+    </a>
+    <a class="carousel-control-next" id="leri" href="#demo1" data-slide="next">
+      <i class="fa fa-angle-right text-dark fa-3x"></i>
+    </a>
+  </div>
+</div>
+<!-- end of Featured Products -->
+
+<!-- Projects -->
+<div id="bus">
+  <div class="contaner-fluid mt-5 pt-3 p-5 our">
+    <div class="col-12 text-center mb-3">
+      <h2 class="featured-prj">PROPERTIES</h2>
+    </div>
+
+    <div class="row ">
+
+
+      <div class="col-md-4 p-5" *ngFor="let propertyDetails of allProjectsListToDisplay">
+        <div class="card">
+          <ul class="list-group list-group-flush">
+            <li class="list-group-item">
+              <div class="property_type">
+                <div class="dot"></div>
+                <div class="property_type" style="float: left;">
+                  Platinum </div>
+              </div>
+              <div class="property_phase" style="text-align: right;">
+                <small style="float: right;">{{propertyDetails.possesion}}</small>
+
+              </div>
+            </li>
+          </ul>
+          <div class="card-body p-0">
+            <img class="card-img-top" [src]="getImageUrl(propertyDetails.featured_image)" alt="Card image"
+              style="width:100%;height:50vh">
+            <div class="card-img-overlay text-center">
+              <a href="html/home_property.html?id={{propertyDetails.prop_id}}" target="_blank" class="btn  btn-lg mt-5"
+                style="font-size: 15px;">VIEW PROJECT</a>
+            </div>
+          </div>
+
+
+          <ul class="list-group list-group-flush">
+            <li class="list-group-item">
+              <div class="property_name" style="float: left;">
+                <h5>{{propertyDetails.property_name}}</h5>
+                <p>
+                  <span style="color: #F58634;"><i class="fas fa-map-marker-alt" aria-hidden="true"></i></span>
+                  {{propertyDetails.city}}
+                </p>
+              </div><a href="" style="float: right;"><i class="fas fa-share-alt"></i></a>
+            </li>
+            <li class="list-group-item" style="height: 60px;">
+              <div class="property_amenties">
+                <small class="property_area" style="float: left;">Bungalows</small>
+
+
+                <small style="float: right; ">RERA NO. A00000000000</small>
+
+              </div>
+
+            </li>
+            <li class="list-group-item" style="height: 60px;">
+              <div class="property_costing">
+                <small class="property_price" style="float: left;">
+                  <b>INR {{propertyDetails.price}}*</b>
+                  <p> Taxes as applicable
+                  </p>
+                </small>
+
+
+                <small style="float: right;"><b>{{propertyDetails.square_feet}} (Sq. m.)</b>
+
+                  <p> Carpet Area
+                  </p>
+                </small>
+              </div>
+
+            </li>
+          </ul>
+
+        </div>
+      </div>
+
+
+    </div>
+    <div *ngIf="allProjectsList.length > 6" class="loadbut" style="text-align: center;" [routerLink]="['/properties']">
+      <button class="btn btn-default">LOAD MORE PROPERTIES</button></div>
+  </div>
+
+</div>
+<!-- end of Projects -->
+
+<!-- Blogs -->
+<div id="blo">
+  <div class="container-fluid blog p-2">
+    <div class="col-12 text-center mb-3">
+      <h2 class="featured-prj">BLOGS</h2>
+    </div>
+
+    <div class="row pl-5 pr-5 mt-5">
+
+      <div class="col-md-6 pr-0">
+
+        <div *ngIf="blogsList.length >= 1" class="col-md-12 mb-4">
+
+          <div class="card img-fluid">
+            <div class="card-body p-0">
+              <!-- <img class="" [src]="getImageUrl(blogsList[0].featured_image)" alt="Card image" -->
+              <img class="" src="assets/img/blog/05.png" alt="Card image"
+                style="width:100%;height:40vh;border-radius: 20px;">
+              <div class="card-img-overlay text-white">
+                <small class="img-title pl-4">{{blogsList[0].category}}</small>
+                <h5 class="pl-4">{{blogsList[0].title}}</h5>
+                <h5 class="date didot-font pl-4">{{blogsList[0].created_at | date: 'dd MMM'}}</h5>
+                <a class="btn btn-primary btn-sm ml-4" [routerLink]="['/blogdetail',blogsList[0].id]">MORE</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div *ngIf="blogsList.length>=4 || blogsList.length>=5" class="row ml-0 mr-0">
+
+          <div class="col-md-6">
+            <div class="card img-fluid" id="blimg">
+              <div class="card-body p-0">
+                <!-- <img class="card-img-top" [src]="getImageUrl(blogsList[3].featured_image)" alt="Card image"> -->
+                <img class="card-img-top" src="assets/img/blog/05.png" alt="Card image">
+                <div class="card-img-overlay text-white">
+                  <small class="img-title pl-4">{{blogsList[3].category }}</small>
+                  <h5 class="pl-4">{{blogsList[3].title }}</h5>
+                  <h5 class="date didot-font pl-4">{{blogsList[3].created_at | date: 'dd MMM' }}</h5>
+                  <a class="btn btn-primary btn-sm ml-4" [routerLink]="['/blogdetail',blogsList[3].id]">MORE</a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-6" *ngIf="blogsList.length>=5">
+            <div class="card img-fluid" id="blimg">
+              <div class="card-body p-0">
+                <!-- <img class="card-img-top" [src]="getImageUrl(blogsList[4].featured_image)" alt="Card image"> -->
+                <img class="card-img-top" src="assets/img/blog/05.png" alt="Card image">
+                <div class="card-img-overlay text-white">
+                  <small class="img-title pl-4">{{blogsList[4].category }}</small>
+                  <h5 class="pl-4">{{blogsList[4].title }}</h5>
+                  <h5 class="date didot-font pl-4">{{blogsList[4].created_at | date: 'dd MMM' }}</h5>
+                  <a class="btn btn-primary btn-sm ml-4" [routerLink]="['/blogdetail',blogsList[4].id]">MORE</a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+
+      <div class="col-md-6">
+
+        <div *ngIf="blogsList.length>=2 || blogsList.length>=3" class="row ml-0 mr-0 mb-4">
+
+          <div class="col-md-6" id="blimg">
+            <div class="card img-fluid" id="blimg">
+              <div class="card-body p-0">
+                <!-- <img class="card-img-top" [src]="getImageUrl(blogsList[1].featured_image)" alt="Card image"> -->
+                <img class="card-img-top" src="assets/img/blog/05.png" alt="Card image">
+                <div class="card-img-overlay text-white">
+                  <small class="img-title pl-4">{{blogsList[1].category }}</small>
+                  <h5 class="pl-4">{{blogsList[1].title }}</h5>
+                  <h5 class="date didot-font pl-4">{{blogsList[1].created_at | date: 'dd MMM' }}</h5>
+                  <a class="btn btn-primary btn-sm ml-4" [routerLink]="['/blogdetail',blogsList[1].id]">MORE</a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div *ngIf="blogsList.length>=3" class="col-md-6">
+            <div class="card img-fluid" id="blimg">
+              <div class="card-body p-0">
+                <!-- <img class="card-img-top" [src]="getImageUrl(blogsList[2].featured_image)" alt="Card image"> -->
+                <img class="card-img-top" src="assets/img/blog/06.png" alt="Card image">
+                <div class="card-img-overlay text-white">
+                  <small class="img-title pl-4">{{blogsList[2].category }}</small>
+                  <h5 class="pl-4">{{blogsList[2].title }}</h5>
+                  <h5 class="date didot-font pl-4">{{blogsList[2].created_at | date: 'dd MMM' }}</h5>
+                  <a class="btn btn-primary btn-sm ml-4" [routerLink]="['/blogdetail',blogsList[2].id]">MORE</a>
+
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <div *ngIf="blogsList.length>=6" class="col-md-12 ">
+          <div class="card img-fluid">
+            <div class="card-body p-0">
+              <!-- <img class="card-img-top" [src]="getImageUrl(blogsList[5].featured_image)" alt="Card image" style="width:100%;height:40vh;"> -->
+              <img class="card-img-top" src="assets/img/blog/02.png" alt="Card image" style="width:100%;height:40vh;">
+              <div class="card-img-overlay text-white">
+                <small class="img-title pl-4">{{blogsList[5].category }}</small>
+                <h5 class="pl-4">{{blogsList[5].title }}</h5>
+                <h5 class="date didot-font pl-4">{{blogsList[5].created_at | date: 'dd MMM' }}</h5>
+                <a class="btn btn-primary btn-sm ml-4" [routerLink]="['/blogdetail',blogsList[5].id]">MORE</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+    <div *ngIf="blogsList.length>6" class="loadbut" style="text-align: center;">
+      <button class="btn btn-default" [routerLink]="['/blogs']">LOAD MORE BLOGS</button>
+    </div>
+  </div>
+</div>
+
+
+<!-- <div class="container-fluid group m-0 p-0">
+    <div class="card-group">
+        <div class="card img-fluid image">
+            <div class="card-body p-0">
+                <img class="card-img-top" src="assets/img/BlackMountainWaterParkHuaHin.jpg" alt="Card image" style="width:100%;height:60vh">
+            <div class="card-img-overlay text-center text-white" style="background: rgba(0,0,0,0.5);">
+              <h5 class="img-title title1 text-uppercase">Welcome To The </h5><br>
+              <h4> Diamond <br> WATER PARK</h4><br><br>  
+
+              <a href="#" class="btn btn-info">Book Now</a>
+
+            </div>
+            </div>    
+        </div>
+
+        <div class="card img-fluid image">
+            <div class="card-body p-0">
+                <img class="card-img-top" src="assets/img/Capture.PNG" alt="Card image" style="width:100%;height:60vh">
+                <div class="card-img-overlay text-center text-white" style="background: rgba(0,0,0,0.5);">
+
+                    <h5 class="img-title title1 text-uppercase">Making Life Simpler with</h5><br>
+                    <h4> AVALON <br> BEAUTY</h4><br><br>  
+
+                    <a href="#" class="btn btn-info">ENQUIRY WITH US</a> -->
+<!-- <h4 class="img-title title1 text-uppercase">Makng Life Simpler with</h4><br>
+                    <h4> AVALON <br> BEAUTY</h4><br><br>  
+      
+                    <a href="#" class="btn btn-info">ENQUIRY WITH US</a> -->
+
+<!--  </div>
+            </div>    
+        </div> -->
+
+<!-- <div class="card img-fluid image">
+            <div class="card-body p-0">
+                <img class="card-img-top" src="assets/img/medical-products-pharmacy02d87a0f65abb890.jpg" alt="Card image" style="width:100%;height:60vh">
+                <div class="card-img-overlay text-center text-white" style="background: rgba(0,0,0,0.5);"> -->
+
+<!-- <h4 class="img-title title1 text-uppercase">AVALON <br> DRUGGIST</h4><br><br><br><br><br>
+                 
+                    <a href="#" class="btn btn-info">ORDER NOW</a> -->
+
+<!-- <h5 class="img-title title1 text-uppercase"></h5><br>
+                    <h4> AVALON <br> DRUGGIST</h4><br><br>  
+
+                    <a href="#" class="btn btn-info mt-4">ORDER NOW</a>
+                  </div>
+            </div>    
+        </div>
+
+      </div>
+</div> -->
+
+<br>
+
+
+<app-footer></app-footer>

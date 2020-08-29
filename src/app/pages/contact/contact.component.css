@@ -1,0 +1,157 @@
+.bg{
+    background-image: url("/assets/img/contact/BlackMountainWaterParkHuaHin.png");
+    background-position: center;
+    height: 50vh;
+    background-repeat: no-repeat;
+    background-size:cover;
+}
+.btn-default{
+    border : 1px solid #000;
+    margin-top: 30px;
+    color: #000;
+}
+.btn-default:hover{
+    background: #000;
+    color: #fff;
+}
+
+@media (min-width: 992px){
+#buttons .col-md-6 {
+    width: 50%;
+}
+    }
+#buttons .col-xs-6{
+    float: left;
+    width: 50%;
+} 
+
+#buttons{
+    margin-right: -15px;
+    margin-left: -15px;
+
+} 
+#buttons .text-right {
+    text-align: right;
+}
+
+#buttons .col-xs-6,#buttons .col-md-6{
+    position: relative;
+    min-height: 1px;
+    padding-right: 15px;
+    padding-left: 15px;
+
+}
+
+#buttons .row {
+    margin-right: -15px;
+    margin-left: -15px;
+}
+
+#buttons div {
+    display: block;
+}
+
+#buttons .btn {
+    display: inline-block;
+        margin-bottom: 0;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1.42857143;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    }
+
+#buttons button {
+    overflow: visible;
+    margin: 0;
+    text-indent: 0px;
+    text-shadow: none;
+    align-items: flex-start;
+}      
+
+.contact-form .btn-clear {
+    border: 1px solid #000;
+    border-radius: 0;
+    background-color: #fff;
+    padding: 12px 25px;
+}
+#contact1{
+
+    padding-bottom: 60px;
+    padding-top: 60px;
+    box-shadow: 0 4px 5px 0 rgba(0, 0, 0, 0.14), 0 1px 10px 0 rgba(0, 0, 0, 0.12), 0 2px 4px -1px rgba(0, 0, 0, 0.3);
+}
+
+
+#add1 .row {
+    margin-right: -15px;
+    margin-left: -15px;
+}
+
+#add1 .text-center {
+    text-align: center!important;
+}
+
+/*@media (min-width: 992px){
+#add1 .col-md-6 {
+    width: 33.33333333%;
+    float: left;
+}
+ #office1{
+  
+  padding-left: 10 !important;
+  float: left;
+      }
+#office2{
+  padding-right: 10 !important;
+    }
+}*/
+
+#add1{
+    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-size: 14px;
+    line-height: 1.42857143;
+}
+
+@media (min-width: 992px){
+#add1 .col-md-6 {
+    width: 33.33333333%;
+    float: left;
+}
+}
+
+
+#add1 .col-md-6{
+    position: relative;
+    min-height: 1px;
+    padding-right: 15px;
+    padding-left: 15px;
+    
+}
+
+#add1 .contact-box {
+    background-color: #f8f8f8;
+    padding: 30px;
+    min-height: 235px;
+    margin-bottom: 20px;
+}
+#add1 img{
+    vertical-align: middle;
+}
+
+#add1 .contact-box h2 {
+    font-size: 24px;
+    font-family: 'didot';
+    color: #333333;
+    margin-top: 20px;
+    margin-bottom: 10px;
+    font-weight: 500;
+    line-height: 1.1;
+}
+.contact-grey-text {
+    color: #666666;
+    font-family: verdana;
+    
+    letter-spacing: 0.5px;
+}

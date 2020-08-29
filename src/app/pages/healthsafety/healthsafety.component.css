@@ -1,0 +1,92 @@
+.bg{
+    background-image: url("/assets/img/blogs.png");
+    background-position: center;
+    height: 50vh;
+    background-repeat: no-repeat;
+    background-size:cover;
+}
+
+#bannerup{
+	height: 100%;
+}
+#heading{
+	text-align: center;
+	vertical-align: middle;
+	line-height: 30vh;
+	 font: Bold 35px/186px Didot LT Std;
+}
+@media (max-width: 1200px){
+#heading{
+
+ line-height: 15vh;
+  margin-top: 1px;
+
+}
+.col-md-4{
+    padding-top: 20px;
+}
+
+
+}
+
+
+.foreward-section {
+    padding: 50px 0;
+    box-shadow: 0 4px 5px 0 rgba(0, 0, 0, 0.14), 0 1px 10px 0 rgba(0, 0, 0, 0.12), 0 2px 4px -1px rgba(0, 0, 0, 0.3);
+}
+
+.container {
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.row {
+    margin-right: -15px;
+    margin-left: -15px;
+}
+
+.foreward-container .foreward-text {
+    padding-left: 40px;
+    text-align: justify !important;
+}
+
+@media (min-width: 992px){
+.col-md-12 {
+    width: 100%;
+    float: left;
+}
+}
+
+.col-md-12{
+        position: relative;
+    min-height: 1px;
+    padding-right: 15px;
+}
+
+.foreward-text p {
+    font-size: 14px!important;
+
+    padding: 0px;
+    margin: 0 0 10px;
+    display: block;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+}
+
+.inbusiness ul {
+    list-style: disc !important;
+    margin-left: 18px;
+    padding: 0px;
+
+        margin-top: 0;
+    margin-bottom: 10px;
+}
+
+li {
+    display: list-item;
+    text-align: -webkit-match-parent;
+}

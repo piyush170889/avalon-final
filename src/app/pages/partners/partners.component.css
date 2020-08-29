@@ -1,0 +1,178 @@
+.bg{
+    background-image: url("/assets/img/contact/BlackMountainWaterParkHuaHin.png");
+    background-position: center;
+    height: 50vh;
+    background-repeat: no-repeat;
+    background-size:cover;
+}
+
+/*.inner-5x.innerTB {
+    padding-top: 50px;
+    padding-bottom: 50px;
+    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-size: 14px;
+    line-height: 1.42857143;
+    color: #333;
+}
+
+#partner1{
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+@media (min-width: 1200px){
+#partner1 .container {
+    width: 1170px;
+}
+}
+
+#partner1 .container {
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+
+.inner-5x.innerB {
+    padding-bottom: 50px;
+}
+#partner1 .row {
+    margin-right: -15px;
+    margin-left: -15px;
+}
+
+.innerAll-more {
+    padding: 50px;
+}
+
+.logo-content {
+    display: table-cell;
+    vertical-align: middle;
+    background-color: #eeeeee;
+}
+img {
+    vertical-align: middle;
+    border:0;
+}
+.desc-content {
+    text-align: left;
+
+}
+
+.innerAll-40 {
+    width: 100%;
+}  
+.innerAll-40 {  
+    padding: 40px;
+
+}
+.desc-content {
+    background-color: #f8f8f8;
+    display: table-cell;
+    vertical-align: middle;
+}
+.desc-content .title {
+    font-family: "verdana";
+    font-size: 23px;
+    color: #333333;
+    text-align: left;
+    letter-spacing: 1px;
+}
+
+#partner1 p{
+	font-size: 14px!important;
+	margin: 0 0 10px;
+	padding: 0px;
+	display: block;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+}
+.desc-content a {
+    padding: 10px 20px;
+    border: 1px solid #444444;
+    color: #444444;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-size: 11px;
+    transition: width 2s;
+}
+
+.desc-content a {
+    text-decoration: none;
+    background-color: transparent;
+}
+
+.desc-content a:hover {
+    color: #ffffff;
+    text-decoration: none;
+    border: 1px solid #f58634;
+    background-color: #f58634;
+}
+*/
+
+.container p{
+    color: #707070;
+    font-size: 13.5px;
+
+}
+
+.container img{
+    
+    height: 70px;
+    width: 55px;
+}
+
+@media(max-width:768px){
+    .card{
+        display: block;
+    }
+    .card-header img{
+        
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+    }
+
+    }
+
+a {
+
+    padding: 10px 20px;
+    border: 1px solid #444444;
+    color: #444444;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-size: 11px;
+    transition: width 2s;
+}
+
+a {
+    text-decoration: none;
+    background-color: transparent;
+}
+
+a:hover {
+    color: #ffffff;
+    text-decoration: none;
+    border: 1px solid #f58634;
+    background-color: #f58634;
+}
+
+@media (max-width: 600px){
+	.card-block{
+		padding-bottom: 20px;
+
+	}
+}
+
+#part {
+    padding-top: 50px;
+	padding-bottom: 50px;
+	display: block;
+    box-shadow: 0 4px 5px 0 rgba(0, 0, 0, 0.14), 0 1px 10px 0 rgba(0, 0, 0, 0.12), 0 2px 4px -1px rgba(0, 0, 0, 0.3);
+}

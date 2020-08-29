@@ -1,0 +1,233 @@
+.bg{
+    background-image: url("/assets/img/life.png");
+    background-position: center;
+    height: 50vh;
+    background-repeat: no-repeat;
+    background-size:cover;
+}
+
+#bannerup{
+	height: 100%;
+}
+#heading{
+	text-align: center;
+	vertical-align: middle;
+	line-height: 30vh;
+	 font: Bold 35px/186px Didot LT Std;
+}
+@media (max-width: 1200px){
+#heading{
+
+ line-height: 15vh;
+  margin-top: 1px;
+
+}
+}
+
+
+
+.life_at_pan {
+    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-size: 14px;
+    line-height: 1.42857143;
+    color: #333;
+
+        padding: 50px 0;
+        box-shadow: 0 4px 5px 0 rgba(0, 0, 0, 0.14), 0 1px 10px 0 rgba(0, 0, 0, 0.12), 0 2px 4px -1px rgba(0, 0, 0, 0.3);
+}
+section{
+    display: block;
+}
+
+@media (min-width: 1200px){
+.container {
+    width: 1170px;
+}  
+}
+
+.container {
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.row {
+    margin-right: -15px;
+    margin-left: -15px;
+}
+
+@media (min-width: 992px){
+.col-md-12 {
+    width: 100%;
+    float: left;
+}  
+}
+
+
+.col-md-12{
+    
+    position: relative;
+    min-height: 1px;
+    padding-right: 15px;
+    padding-left: 15px;
+}
+
+.life_at_pan p {
+    font-family: verdana;
+   color: #444444;
+}
+
+p {
+    display: block;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+}
+
+p{
+    padding: 0px;
+    margin: 0 0 10px;
+}
+
+.font-weight-bold {
+    font-weight: bold;
+    font-size: 15px !important;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin:1.5rem 0;
+}
+
+ .text-justify
+{
+    text-align: justify;
+}   
+ 
+.empowerment_heading {
+        text-align: center;
+        padding-left:3rem;
+        font-weight: bold;
+        font-size: 15px !important;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        
+        }
+
+/*#life1 div{
+    display: block;
+} */ 
+      
+
+.empowerment_text {
+    text-align: center;
+    padding-left:3rem;
+
+
+}
+   
+.overlapping_img {
+       
+    width: 255px;
+    
+}
+
+img 
+{
+    border: 0;
+    vertical-align: middle;   
+}
+
+.overlapping_row 
+{
+        margin-bottom: 5rem;
+        padding: 2rem 15rem 2rem 4rem;
+}
+
+.col-md-3, .col-sm-6 
+{
+    position: relative;
+    min-height: 1px;
+    padding-right: 15px;
+    padding-left: 15px;
+} 
+
+ @media (min-width: 992px){
+.col-md-3 {
+    width: 25%;
+    float: left;
+}
+} 
+
+@media (max-width: 991px){
+.overlapping_row {
+    padding: 2rem 0;
+}
+}
+
+@media (max-width: 1024px){
+.overlapping_row {
+    margin-bottom: 5rem;
+}
+}
+
+@media (max-width: 1024px){
+.overlapping_img {
+    width: 193px;
+    margin: auto;
+    display: block;
+}
+}
+
+@media (max-width: 1024px){
+.empowerment_heading {
+    text-align: center;
+    padding-left: 0rem;
+}
+}
+
+@media (max-width: 1024px){
+.empowerment_text {
+    text-align: center;
+    padding-left: 0rem;
+}
+}
+
+
+    .we_expect {
+        text-align: center;
+    }
+    .we_expect img {
+        margin: 3rem auto;
+        width: 135px;
+    }
+
+    .work_life {
+        margin-top:5rem;
+    }
+
+    .work_life ol {
+        list-style: decimal;
+    }
+
+    .opportunities {
+        padding: 2rem 7rem;
+    }
+
+    .work_life ol li {
+    font-weight: bold;
+    font-size: 15px !important;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-family: verdana;
+    margin-bottom:1.5rem;
+    }
+
+
+
+
+
+
+
+
+ 

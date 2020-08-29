@@ -1,0 +1,49 @@
+.bg{
+    background-image: url("/assets/img/contact/BlackMountainWaterParkHuaHin.png");
+    background-position: center;
+    height: 50vh;
+    background-repeat: no-repeat;
+    background-size:cover;
+}
+
+
+h4{
+    clear: both;
+    margin-top: 20px;
+}
+
+.container{
+    padding-top: 60px;
+    padding-bottom: 60px;
+}
+
+.container p{
+    color: #707070;
+    font-size: 13.5px;
+
+}
+
+.container img{
+    
+    height: 70px;
+    width: 55px;
+}
+
+@media(max-width:768px){
+    .card{
+        display: block;
+    }
+    .card-header img{
+        /*display: block;*/
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+    }
+
+    }
+
+#brand1{
+    /*padding-bottom: 50px;*/
+    box-shadow: 0 4px 5px 0 rgba(0, 0, 0, 0.14), 0 1px 10px 0 rgba(0, 0, 0, 0.12), 0 2px 4px -1px rgba(0, 0, 0, 0.3);
+
+}

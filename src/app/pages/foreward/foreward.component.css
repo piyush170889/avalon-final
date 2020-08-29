@@ -1,0 +1,111 @@
+.bg{
+    background-image: url("/assets/img/Esteban_banner - Ongoing.jpg");
+    background-position: center;
+    height: 50vh;
+    background-repeat: no-repeat;
+    background-size:cover;
+}
+#main1{
+	display: block;
+	font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-size: 14px;
+    line-height: 1.42857143;
+    color: #333;
+}
+
+
+
+.business-container {
+    padding-top: 60px;
+    padding-bottom: 60px;
+}
+
+@media (min-width: 1200px){
+.container {
+    width: 1170px;
+}
+}
+
+#main1 .container {
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+#main1 .row {
+    margin-right: -15px;
+    margin-left: -15px;
+}
+
+/*.business-container div {
+    display: block;
+}*/
+
+@media (min-width: 992px){
+#main1 .col-md-3 {
+    width: 25%;
+    float: left;
+}
+#main1 .col-md-9{
+	float: left;
+}
+}
+
+#main1 .col-md-3,#main1 .col-md-9{
+	position: relative;
+    min-height: 1px;
+    padding-right: 15px;
+    padding-left: 15px;
+}
+
+#main1 .img-responsive {
+    display: block;
+    max-width: 100%;
+    height: auto;
+    
+}
+
+img {
+    vertical-align: middle;
+    border: 0;
+
+}
+
+@media (min-width: 992px){
+#main1 .col-md-9 {
+    width: 75%;
+}
+}
+
+.business-container p {
+    padding: 0px;
+        margin: 0 0 10px;
+        display: block;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+}
+
+.didot-font {
+    font-family: 'didot', serif;
+}
+
+.business-container h2 {
+    font-size: 30px;
+    margin-top: 20px;
+    margin-bottom: 10px;
+    font-weight: 500;
+    line-height: 1.1;
+    color: inherit;
+    margin-block-start: 0.83em;
+    margin-block-end: 0.83em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    display: block;
+}
+
+.business-section {
+    box-shadow: 0 4px 5px 0 rgba(0, 0, 0, 0.14), 0 1px 10px 0 rgba(0, 0, 0, 0.12), 0 2px 4px -1px rgba(0, 0, 0, 0.3);
+}

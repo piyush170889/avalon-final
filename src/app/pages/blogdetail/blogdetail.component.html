@@ -1,0 +1,270 @@
+<app-navbar></app-navbar>
+
+<div class="container-fluid mt-5 pt-4 m-0 p-0 bg" style="width: 100%;">
+  <p class="text-white pt-3 pb-3 pl-5" style="background: rgba(0,0,0,0.5); opacity: 0.7;">Home / Blog / Article</p>
+</div>
+
+<section id="detail1">
+
+  <div class="row" *ngIf="blogDetails.featured_image" id="row1"
+    [style.background]="'url(' + getImageUrl(blogDetails.featured_image) + ')'">
+  </div>
+
+  <div class="col-md-12 mt-5 pl-5 pr-5" id="para1">
+    <h4>{{blogDetails.title}}</h4><br>
+    <p class="text-justify">
+      {{blogDetails.content}}
+    </p>
+  </div>
+
+  <div class="row mt-5 pl-5 pr-5" id="pics">
+    <div class="col-md-4  " id="imr">
+      <div class="card border-0">
+        <img class="card-img-top" src="assets/img/erica.jpg" alt="Card image">
+
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="card border-0">
+        <img class="card-img-top" src="assets/img/evara.jpg" alt="Card image">
+
+      </div>
+    </div>
+    <div class="col-md-4" id="iml">
+      <div class="card border-0">
+        <img class="card-img-top" src="assets/img/esteban.jpg" alt="Card image">
+
+      </div>
+    </div>
+  </div>
+
+
+  <div class="col-md-12 mt-5 pl-5 pr-5" id="para1">
+
+    <p class="text-justify">Experts around the world have opined that real estate is an investment that will never go
+      sour, and for good reason. With an excellent rate of returns and unparalleled wealth-building opportunities, real
+      estate truly is a good investment. If you are wondering whether you should finally take the leap and invest in
+      real estate projects in Pune then this article is for you. Let’s examine some of the biggest advantages to
+      investing in real estate, and how, when done right, investment in real estate can be highly beneficial in the long
+      run.
+      <br><br>
+      Whether you own a commercial office space or a luxury apartment, the inherent value of real estate is that it is
+      always counted as a tangible asset. These assets are flexible and can be converted to suit the need of the hour,
+      generating rental revenue for you all year round. The property will always have value, giving you returns even if
+      you decide to sell it. Definitely oOpt for home insurance and be sure to do your research, and pick the best
+      policy for your needs, in order to keep your assets well protected.
+      <br><br>
+      A large majority of people invest in real estate properties for the steady cash inflow that it generates through
+      rental income. This passive income source serves as a strong incentive for people to invest in real estate
+      property. Metropolitan cities or urban towns with good social infrastructure and connectivity to schools, colleges
+      and IT hubs tend to reap a higher income for the owners as the demand is always high in such areas. Location is a
+      key component to keep in mind when investing in real estate.</p>
+  </div>
+  <!-- </div> -->
+
+
+  <!-- <div class="container nri-related-news mt-5" id="take_width">
+    <h3 class="nri didot-bold-font text-center">Related Articles</h3>
+    <br/>
+    <div class="nri-news-slider" >
+ 
+                  <div class="nri-slide">
+        <a href="">
+        <img src="assets/img/r1.png" alt="Updates image">
+        </a>
+        <div class="">
+          <div class="col-sm-4 col-xs-4 NewsUpdate">
+            <div>
+              <p class="date didot-font nri-text-black">16</p>
+              <p class="month nri-text-white">July</p>
+            </div>
+          </div>
+          <div class="col-sm-8 col-xs-8 updates-content nri-news-content">
+            <p>Why Real Estate Properties Will Always Be A Good Investment</p>
+          </div>
+        </div>
+      </div>
+          
+                              
+                  <div class="nri-slide">
+        <a href="">
+        <img src="assets/img/r2.png" alt="Updates image">
+        </a>
+        <div class="">
+          <div class="col-sm-4 col-xs-4 NewsUpdate">
+            <div>
+              <p class="date didot-font nri-text-white">16</p>
+              <p class="month nri-text-white">July</p>
+            </div>
+          </div>
+          <div class="col-sm-8 col-xs-8 updates-content nri-news-content">
+            <p>Things to Keep in Mind When Investing in a Luxury Apartment</p>
+          </div>
+        </div>
+      </div>
+          
+                              
+                  <div class="nri-slide">
+        <a href="">
+        <img src="assets/img/r3.png" alt="Updates image">
+        </a>
+        <div class="">
+          <div class="col-sm-4 col-xs-4 NewsUpdate">
+            <div>
+              <p class="date didot-font nri-text-white">16</p>
+              <p class="month nri-text-white">July</p>
+            </div>
+          </div>
+          <div class="col-sm-8 col-xs-8 updates-content nri-news-content">
+            <p>How the Internet of Things is poised to Elevate and Transform Any Home into a Luxury Apartment</p>
+          </div>
+        </div>
+      </div>
+          
+                  
+    
+   
+    </div>
+  </div> -->
+
+
+  <br>
+  <!-- <div class="container nri-related-news mt-5" id="take_width">
+    <h3 class="nri-text-white didot-bold-font text-center">Related Articles</h3>
+    <br>
+     <div class="bx-wrapper mt-3"> 
+    	<div class="bx-viewport" > -->
+  <!-- <div class="nri-news-slider" style=" position: relative; transition-duration: 0s; transform: translate3d(0px, 0px, 0px);">  -->
+
+
+  <!-- <div class="nri-slide" >
+        <a href="">
+        <img src="assets/img/r1.png" alt="Updates image">
+        </a>
+        <div class="" id="info1">
+          <div class="col-sm-4 col-xs-4 NewsUpdate">
+            <div id="data1">
+              <p class="date didot-font nri-text-white">30</p>
+              <p class="month nri-text-white">June</p>
+            </div>
+          </div>
+          <div class="col-sm-8 col-xs-8 updates-content nri-news-content">
+            <p>Rise of Branded Luxury Residences in India</p>
+          </div>
+        </div>
+      </div>
+          
+                              
+       <div class="nri-slide" >
+        <a href="">
+        <img src="assets/img/r2.png" alt="Updates image">
+        </a>
+        <div class="" id="info1">
+          <div class="col-sm-4 col-xs-4 NewsUpdate">
+            <div>
+              <p class="date didot-font nri-text-white">30</p>
+              <p class="month nri-text-white">June</p>
+            </div>
+          </div>
+          <div class="col-sm-8 col-xs-8 updates-content nri-news-content">
+            <p>Rise of Branded Luxury Residences in India</p>
+          </div>
+        </div>
+      </div>
+          
+                              
+       <div class="nri-slide">
+        <a href="">
+        <img src="assets/img/r3.png" alt="Updates image">
+        </a>
+        <div class="" id="info1">
+          <div class="col-sm-4 col-xs-12 NewsUpdate">
+            <div>
+              <p class="date didot-font nri-text-white">30</p>
+              <p class="month nri-text-white">June</p>
+            </div>
+          </div>
+          <div class="col-sm-8 col-xs-8 updates-content nri-news-content">
+            <p>Rise of Branded Luxury Residences in India</p>
+          </div>
+        </div>
+      </div>
+           -->
+
+  <!--  </div> -->
+  <!-- </div>
+   
+</div>
+  </div> -->
+
+  <!-- </div> -->
+
+  <div class="col-md-12 mt-5 pl-5 pr-5" id="rel">
+    <h3>Related Articles</h3>
+    <!-- <div class="card-deck mt-5">
+   <div class="col-md-4">	
+  <div class="card">
+    <img class="card-img-top" src="assets/img/r1.png" alt="Card image cap">
+    <div class="card-body" >
+      <div class="card-text">
+      <span style="float: left;"  id="date">30<p>June</p></span>
+      <span style="float: right;" id="line1">Rise of Branded Luxury Residences <p> in India</p></span>
+      </div>
+   </div>
+   </div>
+</div>
+
+<div class="col-md-4">
+  <div class="card">
+    <img class="card-img-top" src="assets/img/r2.png" alt="Card image cap">
+    <div class="card-body">
+      <span style="float: left;" class="card-text" id="date">30<p>June</p></span>
+      <span style="float: right;" id="line1">Rise of Branded Luxury Residences <p> in India</p></span>
+    </div>
+  </div>
+</div>
+
+<div class="col-md-4">
+  <div class="card">
+    <img class="card-img-top" src="assets/img/r3.png" alt="Card image cap">
+    <div class="card-body">
+      <span style="float: left;" class="card-text" id="date">30<p>June</p></span>
+      <span style="float: right;" id="line1">Rise of Branded Luxury Residences <p> in India</p></span>
+    </div>
+  </div>
+</div>
+</div> -->
+
+    <div class="row mt-5 pl-5 pr-5" id="rel">
+      <div class="col-md-4  " id="imr">
+        <div class="card border-0">
+          <img class="card-img-top" src="assets/img/r1.png" alt="Card image">
+          <div class="card-body">
+            <span class="card-text" id="date">30<p>June</p></span>
+            <span id="line1">Rise of Branded Luxury Residences<p> in India</p></span>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card border-0">
+          <img class="card-img-top" src="assets/img/r2.png" alt="Card image">
+          <div class="card-body">
+            <span class="card-text" id="date">30<p>June</p></span>
+            <span id="line1">Rise of Branded Luxury Residences <p> in India</p></span>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4  " id="iml">
+        <div class="card border-0">
+          <img class="card-img-top" src="assets/img/r3.png" alt="Card image">
+          <div class="card-body">
+            <span class="card-text" id="date">30<p>June</p></span>
+            <span id="line1">Rise of Branded Luxury Residences <p> in India</p></span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<app-footer></app-footer>

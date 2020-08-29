@@ -1,0 +1,87 @@
+<nav class="navbar navbar-expand-sm bg-light fixed-top navbar-dark ">
+
+  <button class="navbar-toggler navbar-dark bg-dark" type="button" data-toggle="collapse"
+    data-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false"
+    aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
+    <ul class="navbar-nav mx-auto mr-auto mt-2 mt-lg-0">
+      <li class="nav-item active">
+        <a class="nav-link dropdown-toggle primary" routerLink="/" id="navbardrop">
+          Home
+        </a>
+      </li>
+
+      <li class="nav-item dropdown" id="about">
+        <a class="nav-link dropdown-toggle secondary" href="#" id="navbardrop" data-toggle="dropdown">
+          About Us
+        </a>
+        <div class="dropdown-menu dropdown-menu-left" id="dd1">
+
+          <ul class="ho1" id="ul1">
+            <a class="dropdown-item" (click)="openbrandPage()">CORPORATE PROFILE</a>
+            <li><a class="secondary" routerLink="/foreward">Foreward</a></li>
+            <li><a class="secondary" routerLink="/roadmap">Our Roadmap</a></li>
+            <li><a class="secondary" routerLink="/profile">Company Profile</a></li>
+            <li><a class="secondary" routerLink="/philosophy">Group Philosphy</a></li>
+          </ul>
+
+          <ul class="ho1" id="ul2">
+            <a class="dropdown-item" routerLink="/leadershp">LEADERSHIP</a>
+            <li routerLink="/leadershp"><a class="secondary">Anil Indulkar</a></li>
+            <li routerLink="/leadershp"><a class="secondary">Gouri Indulkar</a></li>
+            <li routerLink="/leadershp"><a class="secondary">Arjun Indulkar</a></li>
+            <li routerLink="/leadershp"><a class="secondary">Raveena Indulkar</a></li>
+            <li routerLink="/leadershp"><a class="secondary">Hitesh Patwa</a></li>
+          </ul>
+
+        </div>
+      </li>
+
+      <li class="nav-item dropdown">
+
+        <a class="nav-link dropdown-toggle secondary" href="#" id="navbardrop" data-toggle="dropdown">
+          Alliances
+        </a>
+
+        <div class="dropdown-menu dropdown-menu-left" id="dd2">
+          <ul class="ho2">
+            <li class="d1"> <a class="dropdown-item" routerLink="/brand-assocate">BRAND ASSOCIATES</a></li>
+            <li class="d2"> <a class="dropdown-item" routerLink="/partners">PARTNERS</a></li>
+          </ul>
+        </div>
+
+      </li>
+
+      <li class="nav-item">
+        <a class="navbar-brand" href="#"><img src="assets/img/logo1.jpg"></a></li>
+
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle secondary" href="#" id="navbardrop" data-toggle="dropdown">
+          Career
+        </a>
+        <div class="dropdown-menu dropdown-menu-left" id="dd3">
+          <ul class="ho2">
+            <li class="o1"> <a class="dropdown-item" routerLink="/life">LIFE @ INDULKAR</a></li>
+            <li class="o2"> <a class="dropdown-item" routerLink="/job-opportunity">JOB OPPORTUNITY</a></li>
+          </ul>
+        </div>
+      </li>
+
+      <li class="nav-item">
+        <a class="nav-link secondary" routerLink="/media">Media</a>
+      </li>
+
+      <li class="nav-item">
+        <a class="nav-link cursor secondary" id="navbardrop" routerLink="/contact">Contact Us</a>
+      </li>
+
+      <!-- <li class="nav-item">
+        <button class="btn mt text-uppercase ">Buy Online</button>
+      </li> -->
+
+    </ul>
+  </div>
+</nav>

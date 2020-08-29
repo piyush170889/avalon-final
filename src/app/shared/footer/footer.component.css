@@ -1,0 +1,415 @@
+.group h4 {
+  font-family: Regular 30px/52px Verdana !important;
+}
+.border-top {
+  border-top: 1px solid #a2a1a1 !important;
+}
+.border-right {
+  border-right: 1px solid #a2a1a1 !important;
+}
+.footer-header {
+  font-size: 12px;
+  color: #000;
+}
+
+.footer {
+  background-color: #343a40;
+  position: relative;
+  /*margin-right: auto;
+    margin-left: auto;
+    width: 1170px;*/
+  padding: 10px 0;
+}
+
+#footer1 .col-lg-1,
+#footer1 .col-lg-10,
+#footer1 .col-lg-11,
+#footer1 .col-lg-12,
+#footer1 .col-lg-2,
+.col-lg-3,
+.col-lg-4,
+.col-lg-5,
+.col-lg-6,
+.col-lg-7,
+.col-lg-8,
+.col-lg-9,
+.col-md-1,
+.col-md-10,
+.col-md-11,
+.col-md-12,
+.col-md-2,
+.col-md-3,
+.col-md-4,
+.col-md-5,
+.col-md-6,
+.col-md-7,
+.col-md-8,
+.col-md-9,
+.col-sm-1,
+.col-sm-10,
+.col-sm-11,
+.col-sm-12,
+.col-sm-2,
+.col-sm-3,
+.col-sm-4,
+.col-sm-5,
+.col-sm-6,
+.col-sm-7,
+.col-sm-8,
+.col-sm-9,
+.col-xs-1,
+.col-xs-10,
+.col-xs-11,
+.col-xs-12,
+.col-xs-2,
+.col-xs-3,
+.col-xs-4,
+.col-xs-5,
+.col-xs-6,
+.col-xs-7,
+.col-xs-8,
+.col-xs-9 {
+  position: relative;
+  min-height: 1px;
+  /* padding-right: 55px; */
+  /* padding-left: 55px; */
+  padding: 0 10px;
+}
+
+.pull-right {
+  /*float: right;*/
+}
+
+.office-address {
+  color: #999999;
+  font-size: 11.5px;
+  font-family: verdana;
+  line-height: 19px;
+  text-align: left;
+}
+.location-content span {
+  color: #828080;
+  font-size: 13.5px;
+  text-align: left;
+}
+.location-content select {
+  background: transparent;
+  border: none;
+  font-size: 13.5px;
+}
+
+.extra {
+  display: none;
+}
+.showextra:hover .extra {
+  display: block;
+}
+.showextra:hover .btn {
+  display: none;
+}
+/*  */
+.extra {
+  background: rgba(0, 0, 0, 0.5);
+  width: 350px;
+  margin: 2% auto;
+  position: relative;
+  /* font-size: 13px; */
+  /* background-image:
+    linear-gradient(90deg, #fff 50%, transparent 50%),
+    linear-gradient(-90deg, #fff 50%, transparent 50%);
+    
+  background-size: 100% 3px;
+  
+  background-position:
+    top left,
+    bottom left;
+  
+  background-repeat: no-repeat; */
+}
+
+.card-group .card {
+  border: none;
+}
+.extra:before {
+  border-width: 2px 0 0 2px;
+  top: 0;
+  left: 0;
+}
+.extra:before {
+  content: " ";
+  position: absolute;
+  border: solid 2px #fff;
+  width: 30%;
+  height: 6em;
+  border-right: transparent;
+  border-bottom: transparent;
+}
+.extra:after {
+  border-width: 2px 0 0 2px;
+  bottom: 0;
+  right: 0;
+}
+.extra:after {
+  content: " ";
+  position: absolute;
+  border: solid 2px #fff;
+  width: 30%;
+  height: 6em;
+  border-left: transparent;
+  border-top: transparent;
+}
+
+.font {
+  font-size: 10.5px;
+  /* line-height: 2; */
+  /*text-transform: uppercase;*/
+  font-family: verdana;
+}
+
+.font span {
+  color: #999999;
+  line-height: 2.8;
+}
+.last .card-img-overlay {
+  background-color: rgba(0, 0, 0, 0.2);
+}
+
+.last .card-img-overlay::after {
+  content: "";
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  bottom: 0px;
+  left: 0px;
+  /* background-color: rgba(0,0,0,0.2); */
+}
+
+.last .card-img-overlay::before {
+  content: "";
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  bottom: 0px;
+  left: 0px;
+  /* background-color: rgba(0,0,0,0.2); */
+}
+
+#menu li {
+  display: inline;
+  padding: 4px;
+  font-size: 24px;
+}
+
+.cursor {
+  cursor: pointer;
+  display: block;
+}
+
+.btns {
+  color: grey;
+  text-decoration: none;
+  /* line-height: 2.9; */
+}
+
+#ic{
+  color: black;
+}
+
+.btn:hover {
+  color: #f58634;
+}
+.btn-color {
+  color: #000;
+  font-size: 13px;
+  text-decoration: none;
+  line-height: 5.1;
+}
+
+#lastf {
+  border-right: none;
+  margin-left: -2px;
+  margin-bottom: 10px;
+}
+
+#lastf img{
+  width: 35px;
+  border-radius: 7px;
+    background-color: transparent;
+    display: inline-block;
+    margin-right: 15px;
+}
+#lastf p{
+  text-align: left;
+}
+
+#ff {
+  border-right: solid 1px;
+  border-color: grey;
+}
+
+@media (max-width: 768px) {
+  .pl-16 {
+    padding-left: 16px;
+  }
+  #foo .col-md-4 {
+    border-top: solid;
+    border-right: hidden;
+  }
+  .footer {
+    text-align: center;
+    margin-left: 40px;
+  }
+  #portfolio1{
+    padding-left: 10px !important;
+  }
+}
+
+.icon-bar {
+  text-align: center;
+  padding-top: 5px;
+  padding-bottom: 3px;
+}
+
+.icon-bar a {
+  display: inline;
+  text-align: center;
+  padding: 12px;
+  /*transition: all 0.3s ease;*/
+  color: white;
+  font-size: 15px;
+
+}
+
+.icon-bar img{
+   height: 30px;
+}
+
+.icon-bar a:hover {
+  background-color: #000;
+}
+
+.facebook {
+  background: black;
+  color: white;
+}
+
+.twitter {
+  background: black;
+  color: white;
+}
+
+.google {
+  background: black;
+  color: white;
+}
+
+.linkedin {
+  background: black;
+  color: white;
+}
+
+.youtube {
+  background: black;
+  color: white;
+}
+
+.copy-right {
+    background: #000;
+    color: #828080;
+    padding: 10px 0;
+
+}
+
+@media (min-width: 1200px){
+#copy .container {
+    width: 1030px;
+}
+}
+
+#copy .container {
+    padding-right: 15px;
+    padding-left: 15px;
+    /* margin-right: auto; */
+    /*margin-left: 80px;*/
+}
+
+#copy .row {
+    margin-right: -15px;
+    margin-left: -15px;
+}
+
+@media (min-width: 992px){
+#copy .col-md-2 {
+    width: 16.66666667%;
+}
+#copy .col-md-3 {
+    width: 25%;
+}
+}
+@media (min-width: 992px){
+  #copy .col-md-2{
+    float: left;
+  }
+}
+
+#copy .col-md-2, #copy .col-sm-3, #copy .col-xs-4, #copy .col-xs-5{
+      position: relative;
+    min-height: 1px;
+    padding-right: 15px;
+    padding-left: 15px;
+}
+
+#copy a {
+    color: #337ab7;
+    text-decoration: none;
+        background-color: transparent;
+}
+.copy-right p {
+    margin: 0;
+    color: #777777!important;
+    font-size: 13px;
+    padding: 0px;
+    display: block;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+}
+
+.pull-right {
+    float: right!important;
+}
+
+@media only screen and (max-device-width: 768px) and (min-device-width: 120px) and (orientation: portrait){
+.copy-right div a p {
+    text-align: center;
+    width: 100%;
+}
+}
+
+@media only screen and (max-device-width: 768px) and (min-device-width: 120px) and (orientation: portrait){
+.copy-right div p {
+    padding: 5px 0;
+}
+}
+
+@media only screen and (max-device-width: 768px) and (min-device-width: 120px) and (orientation: portrait){
+.copy-right div p {
+    
+    width: 100%;
+    text-align: center;
+}
+}
+/*.footer-links {
+  padding: 0 70px 0 105px;
+}
+*/
+
+.footer-links{
+  text-align: left;
+
+}
+
+#portfolio1{
+  padding-left: 90px;
+}

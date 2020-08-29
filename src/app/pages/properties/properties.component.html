@@ -1,0 +1,188 @@
+<app-navbar></app-navbar>
+
+
+<div style="height:80px;"></div>
+
+<div class="banner-luxury" style="height: 320px; width: 100%;" id="start">
+
+  <div class="container-fluid nopadding" style="background: rgba(0,0,0,0.2);">
+    <ol class="breadcrumb">
+      <li><a href="">Home / </a> </li>
+      <li><a href=""> Properties</a> </li>
+    </ol>
+  </div>
+
+
+  <h1 class="mg-top">Properties</h1>
+
+  <div class="container" id="property1">
+    <div class="row">
+      <form class="residence-property-finder">
+        <div class="col-md-4 col-md-offset-4 col-xs-8 col-xs-offset-2 col-sm-6 col-sm-offset-3"
+          style="margin: 0px auto;">
+
+          <input type="hidden" name="catid" id="catid" value="1">
+          <select class="form-control" id="locations">
+            <option value="" selected="">Location All</option>
+            <option value="Boat Club Road, Pune">
+              Boat Club Road, Pune </option>
+            <option value="Chandkhed, Pune">
+              Chandkhed, Pune </option>
+            <option value="Hadapsar, Pune">
+              Hadapsar, Pune </option>
+            <option value="Kalyani Nagar, Pune">
+              Kalyani Nagar, Pune </option>
+            <option value="Kharadi, Pune">
+              Kharadi, Pune </option>
+            <option value="Mundhwa, Pune">
+              Mundhwa, Pune </option>
+            <option value="South Delhi">
+              South Delhi </option>
+            <option value="Wagholi, Pune">
+              Wagholi, Pune </option>
+          </select>
+        </div>
+      </form>
+      <div class="clearfix"></div>
+
+
+
+      <div class="col-md-12 text-center topmargin2"> <a href="#" class="btn btn-default btn-apply-filter"
+          onclick="Filteresult(sort_type.value, sort_status.value, locations.value, filterprice.value, filterbhk.value, filtercarpet.value, catid.value, &#39;N&#39;)">APPLY
+          FILTER</a>
+        <br>
+        <a href="javascript:void(0)" class="btn-reset-selection" onclick="Resetfilter()"><i class="fas fa-redo-alt"
+            style="color: #F58634;"></i> RESET SELECTION</a>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+
+<section id="detail">
+  <div class="container residency-container">
+    <div class="row">
+
+      <div class="col-md-3" id="col1">
+        <p><span class="header-residency-count didot-font" id="property_found">{{allProjectsList.length}}</span> <span
+            class="header-residency-title">PROPERTIES FOUND</span></p>
+      </div>
+
+      <div class="col-md-3 input_type_box" style="padding:20px 10px;" id="type1"> <span
+          class="header-residency-title">PROPERTY TYPE</span>
+        <select class="residency-property-type" id="sort_type"
+          style="float: initial;margin-left: 10%;width: 20%;margin-right: 0%;"
+          onchange="sort_items(this.value,sort_status.value,&#39;N&#39;)">
+          <option value="" selected="">ALL</option>
+          <option value="Platinum">Residential</option>
+          <option value="Gold">Commercial</option>
+        </select>
+      </div>
+      <div class="col-md-4 input_type_box" style="padding:20px 10px;"> <span class="header-residency-title">PROPERTY
+          STATUS</span>
+        <select class="residency-property-type" id="sort_status"
+          style="float: initial;margin-left: 10%;width:20%;margin-right: 0%;"
+          onchange="sort_items(sort_type.value,this.value,&#39;N&#39;)">
+          <option selected="" value="">ALL</option>
+          <option value="Under Construction">Under Construction</option>
+          <option value="Ready To Move In A, B, D &amp; E Towers">Ready To Move In &amp; </option>
+          <option value="Phase: I Completed">Phase: I Completed</option>
+          <option value="Ready to Move In">Completed</option>
+          <option value="Completed">Coming Soon</option>
+        </select>
+      </div>
+      <!-- <div class="col-md-2 input_type_box" style="padding:20px 10px;"> <span class="header-residency-title">VIEW TYPE</span> <span class="view-type-icon">
+        <a href="https://www.panchshil.com/luxury-residences/#" onclick="showblock()"><i class="fa fa-th" aria-hidden="true"></i></a>
+        <a href="https://www.panchshil.com/luxury-residences/#" onclick="showlist()" id="listview"><i class="fa fa-th-list" aria-hidden="true"></i></a>
+        </span> </div> -->
+    </div>
+  </div>
+</section>
+
+<!-- Projects -->
+<div id="bus">
+  <div class="contaner-fluid mt-1 pt-3 p-5 our">
+
+
+    <div class="row ">
+
+      <div class="col-md-4 p-5" *ngFor="let propertyDetails of allProjectsList">
+        <div class="card">
+          <ul class="list-group list-group-flush">
+            <li class="list-group-item">
+              <div class="property_type">
+                <div class="dot"></div>
+                <div class="property_type" style="float: left;">
+                  Platinum </div>
+              </div>
+              <div class="property_phase" style="text-align: right;">
+                <small style="float: right;">{{propertyDetails.possesion}}</small>
+              </div>
+            </li>
+          </ul>
+          <div class="card-body p-0">
+            <img class="card-img-top" src="assets/img/Victoria-PPB - Completed.jpg" alt="Card image"
+              style="width:100%;height:50vh">
+            <div class="card-img-overlay text-center">
+              <a href="#" class="btn  btn-lg mt-5" style="font-size: 15px;" href="/html/home_property.html?id={{propertyDetails.prop_id}}" target="_blank">VIEW PROJECT</a>
+            </div>
+
+          </div>
+
+
+          <ul class="list-group list-group-flush">
+            <li class="list-group-item">
+              <div class="property_name" style="float: left;">
+                <h5>{{propertyDetails.property_name}}</h5>
+                <p><span style="color: #F58634;"><i class="fas fa-map-marker-alt" aria-hidden="true"></i></span>
+                  {{propertyDetails.city}}
+                </p>
+              </div><a href="" style="float: right;"><i class="fas fa-share-alt"></i></a>
+            </li>
+            <li class="list-group-item" style="height: 60px;">
+              <div class="property_amenties">
+                <small class="property_area" style="float: left;">Bungalows</small>
+
+
+                <small style="float: right; ">RERA NO. A00000000000</small>
+
+              </div>
+
+            </li>
+            <li class="list-group-item" style="height: 60px;">
+              <div class="property_costing">
+                <small class="property_price" style="float: left;">
+                  <b>INR {{propertyDetails.price}}*</b>
+                  <p> Taxes as applicable
+                  </p>
+                </small>
+
+                <small style="float: right;"><b>{{propertyDetails.square_feet}} (Sq. m.)</b>
+                  <p>
+                    Carpet Area
+                  </p>
+                </small>
+              </div>
+
+            </li>
+          </ul>
+
+        </div>
+      </div>
+
+
+
+
+    </div>
+
+    <!-- <div *ngIf="allProjectsList.length" class="loadbut" style="text-align: center;">
+      <button class="btn btn-default">LOAD MORE PROPERTIES</button>
+    </div> -->
+  </div>
+
+</div>
+<!-- end of Projects -->
+
+
+<app-footer></app-footer>

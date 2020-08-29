@@ -1,0 +1,256 @@
+.bg{
+    background-image: url("/assets/img/blogs.png");
+    background-position: center;
+    height: 50vh;
+    background-repeat: no-repeat;
+    background-size:cover;
+}
+
+#bannerup{
+	height: 100%;
+}
+#heading{
+	text-align: center;
+	vertical-align: middle;
+	line-height: 30vh;
+	 font: Bold 35px/186px Didot LT Std;
+}
+@media (max-width: 1200px){
+#heading{
+
+ line-height: 15vh;
+  margin-top: 1px;
+
+}
+}
+
+.inner-5x.innerTB {
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
+
+#blogc {
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+
+    box-shadow: 0 4px 5px 0 rgba(0, 0, 0, 0.14), 0 1px 10px 0 rgba(0, 0, 0, 0.12), 0 2px 4px -1px rgba(0, 0, 0, 0.3);
+
+}
+
+
+
+@media (min-width: 1200px){
+#blogc .container {
+    width: 1170px;
+}
+}
+
+#blogc .container {
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.inner-5x.innerB {
+    padding-bottom: 50px;
+    display: inline-block;
+}
+
+
+
+
+.row {
+    margin-right: -15px;
+    margin-left: -15px;
+}
+.innerAll-more {
+    padding: 50px;
+}
+.logo-content {
+    display: table-cell;
+    vertical-align: middle;
+    background-color: #eeeeee;
+}
+.desc-content {
+	display: table-cell;
+    text-align: left;
+    background-color: #f8f8f8;
+    vertical-align: middle;
+
+}
+
+.innerAll-40 {
+    width: 100%;
+        padding: 40px;
+}
+
+.desc-content .title {
+    font-family: "verdana";
+    font-size: 23px;
+    color: #333333;
+    text-align: left;
+    letter-spacing: 1px;
+}
+
+.desc-content p {
+    padding: 0px;
+    margin: 0 0 10px;
+    display: block;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    font-size: 14px!important;
+
+}
+
+.desc-content a {
+   padding: 10px 20px;
+    border: 1px solid #444444;
+    color: #444444;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-size: 11px;
+    transition: width 2s;
+    text-decoration: none;
+    background-color: transparent;
+}
+
+.desc-content a:hover {
+    color: #ffffff;
+    text-decoration: none;
+    border: 1px solid #f58634;
+    background-color: #f58634;
+} 
+.hvr-bounce-to-right {
+    display: inline-block;
+    vertical-align: middle;
+    transform: perspective(1px) translateZ(0);
+    box-shadow: 0 0 1px transparent;
+    position: relative;
+}
+
+@media screen and (max-width: 468px){
+.logo-content {
+    display: block;
+}
+}
+
+
+/*.container{
+	padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.container p{
+    color: #707070;
+    font-size: 13.5px;
+
+}
+
+.card-header img{
+    
+    display: block;
+    height: 100px;
+    width: 150px;
+   vertical-align: middle;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center center;
+    
+
+}
+
+.card{
+	margin-right: -15px;
+    margin-left: -15px;
+
+}
+
+.card-header{
+	display: table-cell;
+    vertical-align: middle;
+    background-color: #eeeeee;
+    width: 350px;
+}
+
+.card-block{
+	text-align: left;
+    background-color: #f8f8f8;
+    display: table-cell;
+    vertical-align: middle;
+}
+
+.card-block h4{
+	font-family: "verdana";
+    font-size: 23px;
+    color: #333333;
+    text-align: left;
+    letter-spacing: 1px;
+}
+
+.card-block p{
+	padding: 0px;
+    margin: 0 0 10px;
+    display: block;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    font-size: 14px!important;
+}
+
+@media(max-width:768px){
+    .card{
+        display: block;
+    }
+    .card-header img{
+        
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+    }
+
+    }
+
+a {
+
+    padding: 10px 20px;
+    border: 1px solid #444444;
+    color: #444444;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-size: 11px;
+    transition: width 2s;
+}
+
+a {
+    text-decoration: none;
+    background-color: transparent;
+}
+
+a:hover {
+    color: #ffffff;
+    text-decoration: none;
+    border: 1px solid #f58634;
+    background-color: #f58634;
+}
+
+@media (max-width: 600px){
+	.card-block{
+		padding-bottom: 20px;
+
+	}
+}
+
+#blogc {
+    padding-top: 50px;
+	padding-bottom: 50px;
+	display: block;
+    box-shadow: 0 4px 5px 0 rgba(0, 0, 0, 0.14), 0 1px 10px 0 rgba(0, 0, 0, 0.12), 0 2px 4px -1px rgba(0, 0, 0, 0.3);
+}*/
