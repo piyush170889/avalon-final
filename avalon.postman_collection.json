@@ -1,0 +1,134 @@
+{
+	"variables": [],
+	"info": {
+		"name": "avalon",
+		"_postman_id": "d9b54d10-6427-3c70-6446-3500361f78ae",
+		"description": "",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "All Properties",
+			"request": {
+				"url": "http://ptcaredev.in/avalon_realty_dev_env/allProp",
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Single Property Details",
+			"request": {
+				"url": {
+					"raw": "http://ptcaredev.in/avalon_realty_dev_env/singleProp?id=1",
+					"protocol": "http",
+					"host": [
+						"ptcaredev",
+						"in"
+					],
+					"path": [
+						"avalon_realty_dev_env",
+						"singleProp"
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "1",
+							"equals": true,
+							"description": ""
+						}
+					],
+					"variable": []
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Featured Properties",
+			"request": {
+				"url": "http://ptcaredev.in/avalon_realty_dev_env/featuredProp",
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "All Blogs",
+			"request": {
+				"url": "http://ptcaredev.in/avalon_realty_dev_env/allBlogs",
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Single Blog",
+			"request": {
+				"url": {
+					"raw": "http://ptcaredev.in/avalon_realty_dev_env/singleBlog?id=4",
+					"protocol": "http",
+					"host": [
+						"ptcaredev",
+						"in"
+					],
+					"path": [
+						"avalon_realty_dev_env",
+						"singleBlog"
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "4",
+							"equals": true,
+							"description": ""
+						}
+					],
+					"variable": []
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"description": ""
+			},
+			"response": []
+		}
+	]
+}
