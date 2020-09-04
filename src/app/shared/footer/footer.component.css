@@ -410,6 +410,16 @@
 
 }
 
+.footer-links a:hover{
+  color: #ED9C21;
+
+}
+
+
 #portfolio1{
   padding-left: 90px;
+}
+
+#footerlinks .text-uppercase:hover{
+    color: #000;
 }

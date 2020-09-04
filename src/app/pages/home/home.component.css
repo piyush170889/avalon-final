@@ -6,7 +6,7 @@
     text-align: center;
 }
 
-#demp h1{
+#demo h1{
     font-family: 'didot-bold', serif;
 }
 #demo .carousel-caption{
@@ -417,6 +417,11 @@ h1,h2{
   overflow:hidden; 
 }
 
+#bus .card-img-top{
+    overflow: hidden;
+    position: relative;
+}
+
 #bus .card-img-top:hover  {
   transform: scale(1.1);
   opacity: 0.6;
@@ -436,7 +441,7 @@ h1,h2{
   transition: 0.3s;
   text-align: center;
   padding-bottom: 30px;*/
-  
+  cursor: pointer;
   transition: .5s ease;
   opacity: 0;
   position: absolute;
@@ -446,15 +451,15 @@ h1,h2{
   -ms-transform: translate(-50%, -50%);
   text-align: center;
  
+ opacity: 0;
+  position: absolute;
 }
 
 #bus .card :hover .card-img-overlay {
   opacity: 1;
- 
   padding-bottom: 0;
+
 }
-
-
 
 /*#bus .propery_status{
                         display: flex;
@@ -498,3 +503,10 @@ h1,h2{
 
 }
 
+#fea a{
+    color: black;
+}
+#fea a:hover{
+    color: white;
+
+}

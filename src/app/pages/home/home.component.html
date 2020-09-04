@@ -128,8 +128,6 @@
     </div>
 
     <div class="row ">
-
-
       <div class="col-md-4 p-5" *ngFor="let propertyDetails of allProjectsListToDisplay">
         <div class="card">
           <ul class="list-group list-group-flush">
@@ -141,7 +139,6 @@
               </div>
               <div class="property_phase" style="text-align: right;">
                 <small style="float: right;">{{propertyDetails.possesion}}</small>
-
               </div>
             </li>
           </ul>
@@ -149,12 +146,10 @@
             <img class="card-img-top" [src]="getImageUrl(propertyDetails.featured_image)" alt="Card image"
               style="width:100%;height:50vh">
             <div class="card-img-overlay text-center">
-              <a href="html/home_property.html?id={{propertyDetails.prop_id}}" target="_blank" class="btn  btn-lg mt-5"
+              <a href="html/home_property.html?id={{propertyDetails.prop_id}}" target="_blank" class="btn  btn-lg mt-4"
                 style="font-size: 15px;">VIEW PROJECT</a>
             </div>
           </div>
-
-
           <ul class="list-group list-group-flush">
             <li class="list-group-item">
               <div class="property_name" style="float: left;">
@@ -182,18 +177,14 @@
                   <p> Taxes as applicable
                   </p>
                 </small>
-
-
                 <small style="float: right;"><b>{{propertyDetails.square_feet}} (Sq. m.)</b>
 
                   <p> Carpet Area
                   </p>
                 </small>
               </div>
-
             </li>
           </ul>
-
         </div>
       </div>
 
