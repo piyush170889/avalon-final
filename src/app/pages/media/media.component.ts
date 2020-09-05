@@ -11,5 +11,10 @@ export class MediaComponent implements OnInit {
 
   ngOnInit(): void {
   }
-
+  // isShow = false;
+ 
+  // toggleDisplay() {
+  //   this.isShow = !this.isShow;
+  // }
+  show: boolean = true;
 }

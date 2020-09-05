@@ -75,6 +75,33 @@
         
    </div>
 
+   <div class="loadbut" style="text-align: center;" >
+    <button class="btn btn-default" (click)="show = !show">LOAD MORE IMAGES</button>
+  </div>
+
+  <div  *ngIf="!show" class="row mt-5" id="row1" >
+    <div class="col-md-4">
+        <div class="card border-0" >
+            <img class="card-img-top" src="assets/img/gallery2.jpg"  width="100%" alt="Card image">
+            
+        </div>
+    </div>
+    <div class="col-md-4">
+        <div class="card border-0" >
+            <img class="card-img-top" src="assets/img/gallery4.jpg"  width="100%" alt="Card image">
+            
+        </div>
+    </div>
+    <div class="col-md-4">
+        <div class="card border-0" >
+            <img class="card-img-top" src="assets/img/gallery2.jpg"  width="100%" alt="Card image">
+           
+        </div>
+    </div>
+    
+</div>
+
+
 
    <div class="row mt-5">
 	<div class="col-md-12 text-center">

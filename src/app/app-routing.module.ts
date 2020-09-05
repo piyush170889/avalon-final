@@ -24,12 +24,19 @@ import { PropertiesResolver } from './core/resolver/properties.resolver';
 import { BlogsResolver } from './core/resolver/blogs.resolver';
 import { HomePropertyComponent } from './pages/home-property/home-property.component';
 
+// RouterModule.forRoot(routes, {
+//   scrollPositionRestoration: 'enabled'
+// }),
+
 const routes: Routes = [];
 
 @NgModule({
   imports: [RouterModule.forRoot(
     [
+      
       {
+        
+
         path: '',
         component: HomeComponent,
         resolve: {
@@ -123,9 +130,16 @@ const routes: Routes = [];
       //   path: 'avalon-beauty',
       //   component: AvalonBeautyComponent
       // }
-    ], { useHash: true }
+    ], 
+    { 
+      useHash: true ,
+      scrollPositionRestoration: 'enabled'
+    },
+    
   )],
   exports: [RouterModule],
   providers: [FeaturedPropertiesResolver, PropertiesResolver, BlogsResolver]
 })
-export class AppRoutingModule { }
+export class AppRoutingModule { 
+  
+}

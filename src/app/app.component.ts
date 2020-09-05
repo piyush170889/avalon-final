@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
-import { Router } from '@angular/router';
+import { Router, RouterModule } from '@angular/router';
+import { NgxSpinnerService } from "ngx-spinner";
 
 @Component({
   selector: 'app-root',
@@ -12,12 +13,25 @@ export class AppComponent {
   // navBarVisible: boolean = true;
 
   constructor(
-    public router: Router
+    public router: Router,
+    private spinner: NgxSpinnerService
   ) {
     // console.log(`this.router.url = ${this.router.url}`);
 
     // this.navBarVisible = this.router.url.indexOf('property-home') == -1 ? true : false;
     // console.log(`this.navBarVisible = ${this.navBarVisible}`);
 
+  }
+
+  ngOnInit() {
+    /** spinner starts on init */
+    this.spinner.show();
+ 
+    setTimeout(() => {
+      /** spinner ends after 2 seconds */
+      this.spinner.hide();
+    }, 2000);
+
+    
   }
 }

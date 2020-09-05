@@ -1,6 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { NgxSpinnerModule } from "ngx-spinner";
 // import { MatToolbarModule, MatSidenavModule, MatListModule, MatButtonModule, MatIconModule } from "@angular/material";
 // import { FlexLayoutModule } from "@angular/flex-layout";
 
@@ -8,7 +9,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './pages/home/home.component';
 import { SharedModule } from './shared/shared.module';
-import { RouterModule } from '@angular/router';
+import { RouterModule, Router, Scroll } from '@angular/router';
 import { RoutingComponentComponent } from './pages/routing-component/routing-component.component';
 import { AvalonBeautyComponent } from './pages/avalon-beauty/avalon-beauty.component';
 import { LeadershpComponent } from './pages/leadershp/leadershp.component';
@@ -30,6 +31,8 @@ import { HealthandsafetyComponent } from './pages/healthandsafety/healthandsafet
 import { DataService } from './core/services/dataservices/data.service';
 import { HttpClientModule } from '@angular/common/http';
 import { HomePropertyComponent } from './pages/home-property/home-property.component';
+// import { ViewportScroller } from '@angular/common';
+// import { filter } from 'rxjs/operators';
 
 @NgModule({
   declarations: [
@@ -61,7 +64,8 @@ import { HomePropertyComponent } from './pages/home-property/home-property.compo
     AppRoutingModule,
     SharedModule,
     RouterModule,
-    HttpClientModule
+    HttpClientModule,
+    NgxSpinnerModule
     // MatToolbarModule,
     // MatSidenavModule,
     // MatListModule,
@@ -73,4 +77,8 @@ import { HomePropertyComponent } from './pages/home-property/home-property.compo
   providers: [DataService],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+ export class AppModule {
+  
+
+
+}

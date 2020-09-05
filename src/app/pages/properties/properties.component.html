@@ -17,6 +17,7 @@
 
   <div class="container" id="property1">
     <div class="row">
+
       <form class="residence-property-finder">
         <div class="col-md-4 col-md-offset-4 col-xs-8 col-xs-offset-2 col-sm-6 col-sm-offset-3"
           style="margin: 0px auto;">
@@ -106,8 +107,8 @@
 
 
     <div class="row ">
-
-      <div class="col-md-4 p-5" *ngFor="let propertyDetails of allProjectsList">
+     
+      <div class="col-md-4 p-5" *ngFor="let propertyDetails of allProjectsList" >
         <div class="card">
           <ul class="list-group list-group-flush">
             <li class="list-group-item">
@@ -121,13 +122,14 @@
               </div>
             </li>
           </ul>
-          <div class="card-body p-0">
+          <div class="card-body p-0" id="hovereffect">
             <img class="card-img-top" src="assets/img/Victoria-PPB - Completed.jpg" alt="Card image"
               style="width:100%;height:50vh">
+              <div class="overlay">
             <div class="card-img-overlay text-center">
-              <a href="#" class="btn  btn-lg mt-5" style="font-size: 15px;" href="/html/home_property.html?id={{propertyDetails.prop_id}}" target="_blank">VIEW PROJECT</a>
+              <a class="info"  style="font-size: 15px;" href="/html/home_property.html?id={{propertyDetails.prop_id}}" target="_blank">VIEW PROJECT</a>
             </div>
-
+          </div>
           </div>
 
 
