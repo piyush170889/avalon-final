@@ -6,10 +6,7 @@
     background-size:cover;
 }*/
 
-
-
 #detail1 {
-
     display: block;
     padding-top: 60px;
     padding-bottom: 80px;
@@ -17,97 +14,92 @@
 }
 
 #row1 {
-   /* background-image: url("/assets/img/evara.jpg"); */
+    /* background-image: url("/assets/img/evara.jpg"); */
     background-position: center;
     height: 80vh;
     background-repeat: no-repeat;
-    background-size:auto;
+    background-size: auto;
     /*width: 100%;*/
 }
 
-#para1 h4, #para1 p{
+#para1 h4,
+#para1 p {
     padding-left: 30px;
     padding-right: 30px;
 }
-#para1 p{
+#para1 p {
     text-align: left;
 
-font: Regular 20px/24px Verdana;
-letter-spacing: 0px;
-color: #707070;
-opacity: 1;
+    font: Regular 20px/24px Verdana;
+    letter-spacing: 0px;
+    color: #707070;
+    opacity: 1;
 }
 
-#para1 h4{
-text-align: left;
-font: Bold Verdana;
-letter-spacing: 0px;
-color: #000000;
-font-weight: bold;
-text-transform: uppercase;
-opacity: 1;
+#para1 h4 {
+    text-align: left;
+    font: Bold Verdana;
+    letter-spacing: 0px;
+    color: #000000;
+    font-weight: bold;
+    text-transform: uppercase;
+    opacity: 1;
 }
 
-#pics .col-md-4{
+#pics .col-md-4 {
     padding-left: 32px;
     padding-right: 32px;
-     width: 300px;
+    width: 300px;
 }
 
-@media (max-width: 768px){
-#pics .card{
-    display: block;
-    padding-top: 20px;
-}
-#rel .col-md-4 img{
-    
-    height: 200px;
+@media (max-width: 768px) {
+    #pics .card {
+        display: block;
+        padding-top: 20px;
+    }
+    #rel .col-md-4 img {
+        height: 200px;
+    }
+
+    #pics .col-md-4 img {
+        height: 250px;
+    }
+    #para1 p,
+    #para1 h4 {
+        padding-left: 15px;
+    }
+
+    #rel .col-md-4 {
+        padding-top: 20px;
+    }
+    #line1 {
+        border-top: solid 1px;
+        border-left: none !important;
+    }
+    #date {
+        text-align: left !important;
+    }
 }
 
-#pics .col-md-4 img{
-    height: 250px;
-}
-#para1 p, #para1 h4{
-    padding-left: 15px;
-}
-
-#rel .col-md-4{
-    padding-top: 20px;
-   }
- #line1{
- border-top: solid 1px;   
-    border-left: none !important;
-
-}
-#date{
-    text-align: left !important;
-}
-
-}
-
-.card-deck{
+.card-deck {
     padding-left: 60px;
     padding-right: 60px;
 }
 
-#pics .col-md-4 img{
-    
+#pics .col-md-4 img {
     height: 450px;
 }
 
-
-
-#rel h3{
+#rel h3 {
     text-align: center;
 }
 
-#rel .card-body{
+#rel .card-body {
     /*height: 80px;*/
-    padding: 0.50rem;
-    
+    padding: 0.5rem;
 }
 
-#date{
+#date {
     float: left;
     padding-left: 5px;
     text-transform: uppercase;
@@ -115,7 +107,7 @@ opacity: 1;
     font-size: 20px;
     color: #555555;
     font: Bold Didot LT Std;
-/*font: Bold 20px/48px Didot LT Std;
+    /*font: Bold 20px/48px Didot LT Std;
 letter-spacing: 0px;
 color: #555555;
 opacity: 1;*/
@@ -131,7 +123,7 @@ text-transform: uppercase;
 opacity: 1;
 }*/
 
-#line1{
+#line1 {
     float: right;
     /*border-collapse: separate !important;
     border-spacing: 15px !important;*/
@@ -139,14 +131,14 @@ opacity: 1;
     padding-left: 15px;
     padding-right: 15px;
     text-align: left;
-font: Medium 25px/36px Roboto;
-letter-spacing: 0.92px;
-color: #828080;
-opacity: 1;
+    font: Medium 25px/36px Roboto;
+    letter-spacing: 0.92px;
+    color: #828080;
+    opacity: 1;
 }
 
-.card-body{
-    background-color: #F5F5F5;
+.card-body {
+    background-color: #f5f5f5;
 }
 
 /*
@@ -336,3 +328,9 @@ a {
     position: relative;
     min-height: 1px;
 }*/
+
+.back-img {
+    background-position: center !important;
+    background-size: cover !important;
+    background-repeat: no-repeat !important;
+}

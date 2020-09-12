@@ -228,7 +228,7 @@
     overflow: hidden;
 } */
     </style>
-	
+
     <!-- Required JS -->
     <script src="assets/js/jquery.min.js"></script>
 
@@ -239,23 +239,38 @@
 <body>
 
     <script type="text/javascript">
-            $(document).ready(function () {
+        $(document).ready(function () {
 
-                let urlParams = getUrlVars();
-				
-				let singlePropertyApiEndpointCalc = singlePropertyApiEndpoint + urlParams["id"];
-				console.log(`singlePropertyApiEndpointCalc = ${singlePropertyApiEndpointCalc}`);
-                
-				$.get(singlePropertyApiEndpointCalc, function (data, status) {
-                    console.log("Data: ", data);
-                    let res = data.data;
-                    if (res.length > 0)
-                        $('#propInfo').html(res[0].description);
-                    else
-                        $('#propInfo').html('');
-                });
+            let urlParams = getUrlVars();
+
+            let singlePropertyApiEndpointCalc = singlePropertyApiEndpoint + urlParams["id"];
+            console.log(`singlePropertyApiEndpointCalc = ${singlePropertyApiEndpointCalc}`);
+
+            $.get(singlePropertyApiEndpointCalc, function (data, status) {
+                console.log("Data: ", data);
+                let res = data.data;
+                if (res.length > 0)
+                    $('#propInfo').html(res[0].description);
+                else
+                    $('#propInfo').html('');
+
+                let imgPath = `http://ptdevenv.co.in/avalon_realty_dev_env/public${res[0].master_folder}/${res[0].master_image}`;
+                console.log(`imgPath = ${imgPath}`);
+
+                let urlImg = "url('" + imgPath + "')";
+                console.log(`urlImg = ${urlImg}`);
+
+                $('#sec1').css("background-image", urlImg);
+                $('#sec2').css("background-image", urlImg);
+                $('#sec3').css("background-image", urlImg);
+                $('#sec4').css("background-image", urlImg);
+                $('#sec5').css("background-image", urlImg);
+                $('#sec6').css("background-image", urlImg);
+                $('#sec7').css("background-image", urlImg);
             });
-        </script>
+
+        });
+    </script>
 
     <!-- <nav id="navigatonBar" style="display: none;">
                 <ul class="navBar">
@@ -340,8 +355,7 @@
     <main class="main">
 
         <section class="page2 about container-fluid">
-            <div class="section_bg"
-                style="background:#fff url('assets/images/Esteban_banner - Ongoing.jpg')no-repeat center/cover;"></div>
+            <div class="section_bg back-img" id="sec1"></div>
             <div class="about__inner container">
                 <div class="about__inner__text row">
                     <!-- <div class="about__inner__text__top">
@@ -361,8 +375,7 @@
         </section>
 
         <section class="page3 interior">
-            <div class="section_bg"
-                style="background: url('assets/images/Esteban_banner - Ongoing.jpg')no-repeat center/cover;"></div>
+            <div class="section_bg back-img" id="sec2"></div>
             <div class="container interior__inner">
                 <div class="interior__inner__title" data-aos="fade-up" data-aos-easing="linear"
                     data-aos-duration="1000">
@@ -375,8 +388,7 @@
         </section>
 
         <section class="page4 technology">
-            <div class="section_bg"
-                style="background: url('assets/images/Esteban_banner - Ongoing.jpg')no-repeat center/cover;  background-position: 69% 50%;">
+            <div class="section_bg back-img" id="sec3">
             </div>
             <div class="container technology__inner">
                 <div class="technology__inner__title" data-aos="fade-up" data-aos-easing="linear"
@@ -390,8 +402,7 @@
         </section>
 
         <section class="page5 amenities">
-            <div class="section_bg"
-                style="background: url('assets/images/Esteban_banner - Ongoing.jpg')no-repeat center/cover;"></div>
+            <div class="section_bg back-img" id="sec4"></div>
             <div class="container amenities__inner">
                 <div class="amenities__inner__title" data-aos="fade-up" data-aos-easing="linear"
                     data-aos-duration="1000">
@@ -404,8 +415,7 @@
         </section>
 
         <section class="page4 technology">
-            <div class="section_bg"
-                style="background: url('assets/images/Esteban_banner - Ongoing.jpg')no-repeat center/cover;"></div>
+            <div class="section_bg back-img" id="sec5"></div>
             <div class="container technology__inner">
                 <div class="technology__inner__title" data-aos="fade-up" data-aos-easing="linear"
                     data-aos-duration="1000">
@@ -418,8 +428,7 @@
         </section>
 
         <section class="page7 technology">
-            <div class="section_bg"
-                style="background: url('assets/images/Esteban_banner - Ongoing.jpg')no-repeat center/cover;"></div>
+            <div class="section_bg back-img" id="sec6"></div>
             <div class="container technology__inner">
                 <div class="technology__inner__title" data-aos="fade-up" data-aos-easing="linear"
                     data-aos-duration="1000">
@@ -433,8 +442,7 @@
 
 
         <section class="page9 technology">
-            <div class="section_bg"
-                style="background: url('assets/images/Esteban_banner - Ongoing.jpg')no-repeat center/cover;"></div>
+            <div class="section_bg back-img" id="sec7"></div>
             <div class="container technology__inner">
                 <div class="technology__inner__title" data-aos="fade-up" data-aos-easing="linear"
                     data-aos-duration="1000">
@@ -1988,132 +1996,132 @@
         </style>
     </main>
 
-        <script src="assets/js/swiper.min.js" defer></script>
-        <script src="assets/js/bootstrap.min.js" defer></script>
-        <script src="assets/js/owl.carousel.min.js" defer></script>
-        <script src="assets/js/jquery.lazy.min.js" defer></script>
-        <script src="assets/js/jquery.lazy.plugins.min.js" defer></script>
-        <script src="assets/js/lightbox.min.js" defer></script>
-        <script src="assets/js/common.js" defer></script>
-        <script src="assets/js/custom.js" defer></script>
-        <!-- New  Js-->
-        <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-        <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-        <!-- <script src="https://vjs.zencdn.net/5.16.0/video.min.js"></script> -->
-        <!-- <script src="https://rawgit.com/matthojo/videojs-Background/master/dist/videojs-background.min.js"></script>-->
-        
-        <!-- <link href="https://vjs.zencdn.net/7.7.6/video-js.css" rel="stylesheet" /> -->
-        <!-- <script src="assets/js/videojs-background.min.js"></script> -->
-        <script src="assets/js/jquery.onepage-scroll.js"></script>
+    <script src="assets/js/swiper.min.js" defer></script>
+    <script src="assets/js/bootstrap.min.js" defer></script>
+    <script src="assets/js/owl.carousel.min.js" defer></script>
+    <script src="assets/js/jquery.lazy.min.js" defer></script>
+    <script src="assets/js/jquery.lazy.plugins.min.js" defer></script>
+    <script src="assets/js/lightbox.min.js" defer></script>
+    <script src="assets/js/common.js" defer></script>
+    <script src="assets/js/custom.js" defer></script>
+    <!-- New  Js-->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <!-- <script src="https://vjs.zencdn.net/5.16.0/video.min.js"></script> -->
+    <!-- <script src="https://rawgit.com/matthojo/videojs-Background/master/dist/videojs-background.min.js"></script>-->
 
-        <script src="assets/js/main.js"></script>
+    <!-- <link href="https://vjs.zencdn.net/7.7.6/video-js.css" rel="stylesheet" /> -->
+    <!-- <script src="assets/js/videojs-background.min.js"></script> -->
+    <script src="assets/js/jquery.onepage-scroll.js"></script>
 
-        <!--             
+    <script src="assets/js/main.js"></script>
+
+    <!--             
          -->
 
-        <script type="text/javascript">
-            $('body').on('scroll touchmove mousewheel', function (e) {
-                e.preventDefault();
-                e.stopPropagation();
-                return false;
-            });
-            // document.querySelector(".header").style.zIndex = 0;
-            var readyStateCheckInterval = setInterval(function () {
-                if (document.readyState === "complete") {
-                    clearInterval(readyStateCheckInterval);
-                    $('body').on('scroll touchmove mousewheel', function (e) {
-                        $(this).unbind();
-                        return true;
-                    });
-                    // document.querySelector(".page-loading").style.display ="none";
-                    // document.querySelector(".header").style.zIndex = 999999;
-                    // document.getElementById('bg-video').play();
-                }
-            }, 10);
-
-            $(document).ready(function () {
-
-                $(".banner__play__button").click(function () {
-                    videoUnMute();
-                    $(this).hide();
-                })
-
-
-                var ua = navigator.userAgent.toLowerCase();
-                var isAndroid = ua.indexOf("android") > -1; //&& ua.indexOf("mobile");
-                if (isAndroid) {
-                    $(".banner__play__button").hide();
-                }
-
-                $(".main").onepage_scroll({
-                    sectionContainer: "section",
-                    easing: "linear",
-                    updateURL: false,
-                    animationTime: 600,
-                    responsiveFallback: false,
-                    loop: false,
-                    beforeMove: function (index) {
-                        $('.section [data-aos]').each(function () {
-                            $(this).removeClass("aos-animate");
-                            $(".section .section_bg").removeClass("animate");
-                        });
-
-                    },
-                    afterMove: function (index) {
-                        $('.section [data-aos]').each(function () {
-                            $(this).removeClass("aos-animate");
-                            $(".section .section_bg").removeClass("animate");
-                        });
-
-                        $('.section.active [data-aos]').each(function () {
-                            $(this).addClass("aos-animate");
-                            $(".section.active .section_bg").addClass("animate");
-                        });
-                    }
+    <script type="text/javascript">
+        $('body').on('scroll touchmove mousewheel', function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+            return false;
+        });
+        // document.querySelector(".header").style.zIndex = 0;
+        var readyStateCheckInterval = setInterval(function () {
+            if (document.readyState === "complete") {
+                clearInterval(readyStateCheckInterval);
+                $('body').on('scroll touchmove mousewheel', function (e) {
+                    $(this).unbind();
+                    return true;
                 });
+                // document.querySelector(".page-loading").style.display ="none";
+                // document.querySelector(".header").style.zIndex = 999999;
+                // document.getElementById('bg-video').play();
+            }
+        }, 10);
 
+        $(document).ready(function () {
+
+            $(".banner__play__button").click(function () {
+                videoUnMute();
+                $(this).hide();
+            })
+
+
+            var ua = navigator.userAgent.toLowerCase();
+            var isAndroid = ua.indexOf("android") > -1; //&& ua.indexOf("mobile");
+            if (isAndroid) {
+                $(".banner__play__button").hide();
+            }
+
+            $(".main").onepage_scroll({
+                sectionContainer: "section",
+                easing: "linear",
+                updateURL: false,
+                animationTime: 600,
+                responsiveFallback: false,
+                loop: false,
+                beforeMove: function (index) {
+                    $('.section [data-aos]').each(function () {
+                        $(this).removeClass("aos-animate");
+                        $(".section .section_bg").removeClass("animate");
+                    });
+
+                },
+                afterMove: function (index) {
+                    $('.section [data-aos]').each(function () {
+                        $(this).removeClass("aos-animate");
+                        $(".section .section_bg").removeClass("animate");
+                    });
+
+                    $('.section.active [data-aos]').each(function () {
+                        $(this).addClass("aos-animate");
+                        $(".section.active .section_bg").addClass("animate");
+                    });
+                }
+            });
+
+            videojs('bg-video').Background({
+                volume: ".5",
+                mediaType: 'html5'
+            });
+
+
+            const videoMute = () => {
                 videojs('bg-video').Background({
-                    volume: ".5",
-                    mediaType: 'html5'
+                    volume: ".3",
+                    mediaType: 'html5',
+                    autoPlay: 'true'
                 });
+            }
 
-
-                const videoMute = () => {
-                    videojs('bg-video').Background({
-                        volume: ".3",
-                        mediaType: 'html5',
-                        autoPlay: 'true'
-                    });
-                }
-
-                const videoUnMute = () => {
-                    videojs('bg-video').Background({
-                        volume: "0",
-                        mediaType: 'html5',
-                        autoPlay: 'true'
-                    });
-                }
-                $(".volumeMute").click(function () {
-                    $(this).hide();
-                    $(".volumeUnMute").show();
-                    videoMute();
+            const videoUnMute = () => {
+                videojs('bg-video').Background({
+                    volume: "0",
+                    mediaType: 'html5',
+                    autoPlay: 'true'
                 });
-
-                $(".volumeUnMute").click(function () {
-                    $(this).hide();
-                    $(".volumeMute").show();
-                    videoUnMute();
-                });
-
-
-                AOS.init();
-
-
-
+            }
+            $(".volumeMute").click(function () {
+                $(this).hide();
+                $(".volumeUnMute").show();
+                videoMute();
             });
-        </script>
+
+            $(".volumeUnMute").click(function () {
+                $(this).hide();
+                $(".volumeMute").show();
+                videoUnMute();
+            });
 
 
-    </body>
+            AOS.init();
+
+
+
+        });
+    </script>
+
+
+</body>
 
 </html>

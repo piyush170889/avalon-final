@@ -7,5 +7,5 @@ export class ServerUrl {
   public static API_ENDPOINT_FEATURED_PROPS = 'featuredProp';
   public static API_ENDPOINT_ALL_BLOGS = 'allBlogs';
   public static API_ENDPOINT_BLOG_DETAILS = 'singleBlog?id=';
-  static IMAGE_BASE_PATH: string = ServerUrl.MAIN + 'public/';
+  static IMAGE_BASE_PATH: string = ServerUrl.MAIN + 'public';
 }

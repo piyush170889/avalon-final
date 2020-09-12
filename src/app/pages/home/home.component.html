@@ -87,13 +87,14 @@
       <div *ngFor="let featuredProject of featuredProjectsList;let i=index"
         [ngClass]="{'carousel-item': true, 'active': i==0}">
         <div class="row">
-          <div class="col-2  text-right">
+          <div class="col-1  text-right">
             <!-- <div class="bg">
               <i class="fa fa-share-alt text-white" id="share1"></i>
             </div> -->
           </div>
           <div class="col-md-5 col-sm-12">
-            <img [src]="getImageUrl(featuredProject.featured_image)" alt="Los Angeles" width="100%" height="350">
+            <img [src]="getImageUrl(featuredProject.featured_image, featuredProject.feature_folder)" alt="Los Angeles"
+              width="100%" height="350">
           </div>
           <div class="col-md-5 col-sm-12 mt-3">
             <span style="color: gray;"><i class="fas fa-bars fa-1x"></i>{{featuredProject.type_name}}</span>
@@ -136,7 +137,7 @@
               <div class="property_type">
                 <div class="dot"></div>
                 <div class="property_type" style="float: left;">
-                  Platinum </div>
+                  {{propertyDetails.type_name}}</div>
               </div>
               <div class="property_phase" style="text-align: right;">
                 <small style="float: right;">{{propertyDetails.possesion}}</small>
@@ -144,7 +145,8 @@
             </li>
           </ul>
           <div class="card-body p-0" id="hovereffect">
-            <img class="card-img-top" [src]="getImageUrl(propertyDetails.featured_image)" alt="Card image"
+            <img class="card-img-top"
+              [src]="getImageUrl(propertyDetails.featured_image, propertyDetails.feature_folder)" alt="Card image"
               style="width:100%;height:50vh">
             <div class="overlay">
               <div class="card-img-overlay text-center">
@@ -168,7 +170,7 @@
             </li>
             <li class="list-group-item" style="height: 60px;">
               <div class="property_amenties">
-                <small class="property_area" style="float: left;">{{propertyDetails.type_name}}</small>
+                <small class="property_area" style="float: left;">{{propertyDetails.prop_type}}</small>
 
 
                 <small style="float: right; ">RERA NO. {{propertyDetails.rera_number}}</small>
@@ -218,8 +220,8 @@
 
           <div class="card img-fluid">
             <div class="card-body p-0">
-              <!-- <img class="" [src]="getImageUrl(blogsList[0].featured_image)" alt="Card image" -->
-              <img class="" src="assets/img/blog/05.png" alt="Card image"
+              <!-- <img class="" src="assets/img/blog/05.png" alt="Card image" -->
+              <img class="" [src]="getImageUrl(blogsList[0].featured_image, blogsList[0].folder)" alt="Card image"
                 style="width:100%;height:40vh;border-radius: 20px;">
               <div class="card-img-overlay text-white" style="margin-top: 0% !important;">
                 <small class="img-title pl-4">{{blogsList[0].name}}</small>
@@ -236,9 +238,10 @@
           <div class="col-md-6">
             <div class="card img-fluid" id="blimg">
               <div class="card-body p-0">
-                <!-- <img class="card-img-top" [src]="getImageUrl(blogsList[3].featured_image)" alt="Card image"> -->
-                <img class="card-img-top" src="assets/img/blog/05.png" alt="Card image">
-                <div class="card-img-overlay text-white">
+                <!-- <img class="card-img-top" src="assets/img/blog/05.png" alt="Card image"> -->
+                <img class="card-img-top" [src]="getImageUrl(blogsList[3].featured_image, blogsList[3].folder)"
+                  alt="Card image">
+                <div class="card-img-overlay text-white" style="margin-top: 0% !important;">
                   <small class="img-title pl-4">{{blogsList[3].name }}</small>
                   <h5 class="pl-4">{{blogsList[3].title }}</h5>
                   <h5 class="date didot-font pl-4">{{blogsList[3].created_at | date: 'dd MMM' }}</h5>
@@ -251,9 +254,10 @@
           <div class="col-md-6" *ngIf="blogsList.length>=5">
             <div class="card img-fluid" id="blimg">
               <div class="card-body p-0">
-                <!-- <img class="card-img-top" [src]="getImageUrl(blogsList[4].featured_image)" alt="Card image"> -->
-                <img class="card-img-top" src="assets/img/blog/05.png" alt="Card image">
-                <div class="card-img-overlay text-white">
+                <!-- <img class="card-img-top" src="assets/img/blog/05.png" alt="Card image"> -->
+                <img class="card-img-top" [src]="getImageUrl(blogsList[4].featured_image, blogsList[4].folder)"
+                  alt="Card image">
+                <div class="card-img-overlay text-white" style="margin-top: 0% !important;">
                   <small class="img-title pl-4">{{blogsList[4].name }}</small>
                   <h5 class="pl-4">{{blogsList[4].title }}</h5>
                   <h5 class="date didot-font pl-4">{{blogsList[4].created_at | date: 'dd MMM' }}</h5>
@@ -274,9 +278,10 @@
           <div class="col-md-6" id="blimg">
             <div class="card img-fluid" id="blimg">
               <div class="card-body p-0">
-                <!-- <img class="card-img-top" [src]="getImageUrl(blogsList[1].featured_image)" alt="Card image"> -->
-                <img class="card-img-top" src="assets/img/blog/05.png" alt="Card image">
-                <div class="card-img-overlay text-white">
+                <!-- <img class="card-img-top" src="assets/img/blog/05.png" alt="Card image"> -->
+                <img class="card-img-top" [src]="getImageUrl(blogsList[1].featured_image, blogsList[1].folder)"
+                  alt="Card image">
+                <div class="card-img-overlay text-white" style="margin-top: 0% !important;">
                   <small class="img-title pl-4">{{blogsList[1].name }}</small>
                   <h5 class="pl-4">{{blogsList[1].title }}</h5>
                   <h5 class="date didot-font pl-4">{{blogsList[1].created_at | date: 'dd MMM' }}</h5>
@@ -289,9 +294,10 @@
           <div *ngIf="blogsList.length>=3" class="col-md-6">
             <div class="card img-fluid" id="blimg">
               <div class="card-body p-0">
-                <!-- <img class="card-img-top" [src]="getImageUrl(blogsList[2].featured_image)" alt="Card image"> -->
-                <img class="card-img-top" src="assets/img/blog/06.png" alt="Card image">
-                <div class="card-img-overlay text-white">
+                <!-- <img class="card-img-top" src="assets/img/blog/06.png" alt="Card image"> -->
+                <img class="card-img-top" [src]="getImageUrl(blogsList[2].featured_image, blogsList[2].folder)"
+                  alt="Card image">
+                <div class="card-img-overlay text-white" style="margin-top: 0% !important;">
                   <small class="img-title pl-4">{{blogsList[2].name }}</small>
                   <h5 class="pl-4">{{blogsList[2].title }}</h5>
                   <h5 class="date didot-font pl-4">{{blogsList[2].created_at | date: 'dd MMM' }}</h5>
@@ -307,8 +313,9 @@
         <div *ngIf="blogsList.length>=6" class="col-md-12 ">
           <div class="card img-fluid">
             <div class="card-body p-0">
-              <!-- <img class="card-img-top" [src]="getImageUrl(blogsList[5].featured_image)" alt="Card image" style="width:100%;height:40vh;"> -->
-              <img class="card-img-top" src="assets/img/blog/02.png" alt="Card image" style="width:100%;height:40vh;">
+              <!-- <img class="card-img-top" src="assets/img/blog/02.png" alt="Card image" style="width:100%;height:40vh;"> -->
+              <img class="card-img-top" [src]="getImageUrl(blogsList[5].featured_image, blogsList[5].folder)"
+                alt="Card image" style="width:100%;height:40vh;">
               <div class="card-img-overlay text-white" style="margin-top: 0% !important;">
                 <small class="img-title pl-4">{{blogsList[5].name }}</small>
                 <h5 class="pl-4">{{blogsList[5].title }}</h5>

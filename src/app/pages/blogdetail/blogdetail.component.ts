@@ -1,9 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
-import { pluck } from 'rxjs/operators';
-import { DataService } from 'src/app/core/services/dataservices/data.service';
-import { ServerUrl } from 'src/app/core/constants/serverUrl.constants';
-import { BaseComponent } from 'src/app/core/base/base.component';
+import { ActivatedRoute, Params } from '@angular/router';
+import { BaseComponent } from '../../core/base/base.component';
+import { DataService } from '../../core/services/dataservices/data.service';
+import { ServerUrl } from '../../core/constants/serverUrl.constants';
 
 @Component({
   selector: 'app-blogdetail',
@@ -13,6 +12,9 @@ import { BaseComponent } from 'src/app/core/base/base.component';
 export class BlogdetailComponent extends BaseComponent implements OnInit {
 
   blogDetails: any = {};
+  allBlogs: any[] = [];
+
+  blogSubscription: any;
 
   constructor(
     private route: ActivatedRoute,
@@ -23,16 +25,28 @@ export class BlogdetailComponent extends BaseComponent implements OnInit {
 
   ngOnInit(): void {
 
-    let blogId = this.route.snapshot.params['id'];
+    // let blogId = this.route.snapshot.params['id'];
 
-    this.dataService.get(ServerUrl.API_ENDPOINT_BLOG_DETAILS + blogId)
+
+    this.blogSubscription = this.route.params.subscribe(
+      (params: Params) => {
+        this.dataService.get(ServerUrl.API_ENDPOINT_BLOG_DETAILS + params['id'])
+          .subscribe(
+            (res: any) => {
+              console.log('res = ', res);
+              this.blogDetails = res.data.length > 0 ? res.data[0] : undefined;
+              console.log('this.blogDetails = ', this.blogDetails);
+            }
+          );
+      });
+
+    this.dataService.get(ServerUrl.API_ENDPOINT_ALL_BLOGS)
       .subscribe(
         (res: any) => {
-          console.log('res = ', res);
-          this.blogDetails = res.data.length > 0 ? res.data[0] : undefined;
-          console.log('this.blogDetails = ', this.blogDetails);
+          this.allBlogs = res.data;
         }
       )
   }
+
 
 }

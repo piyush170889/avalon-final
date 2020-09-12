@@ -107,15 +107,15 @@
 
 
     <div class="row ">
-     
-      <div class="col-md-4 p-5" *ngFor="let propertyDetails of allProjectsList" >
+
+      <div class="col-md-4 p-5" *ngFor="let propertyDetails of allProjectsList">
         <div class="card">
           <ul class="list-group list-group-flush">
             <li class="list-group-item">
               <div class="property_type">
                 <div class="dot"></div>
                 <div class="property_type" style="float: left;">
-                  Platinum </div>
+                  {{propertyDetails.type_name}} </div>
               </div>
               <div class="property_phase" style="text-align: right;">
                 <small style="float: right;">{{propertyDetails.possesion}}</small>
@@ -123,13 +123,15 @@
             </li>
           </ul>
           <div class="card-body p-0" id="hovereffect">
-            <img class="card-img-top" src="assets/img/Victoria-PPB - Completed.jpg" alt="Card image"
+            <img class="card-img-top"
+              [src]="getImageUrl(propertyDetails.featured_image, propertyDetails.feature_folder)" alt="Card image"
               style="width:100%;height:50vh">
-              <div class="overlay">
-            <div class="card-img-overlay text-center">
-              <a class="info"  style="font-size: 15px;" href="/html/home_property.html?id={{propertyDetails.prop_id}}" target="_blank">VIEW PROJECT</a>
+            <div class="overlay">
+              <div class="card-img-overlay text-center">
+                <a class="info" style="font-size: 15px;" href="/html/home_property.html?id={{propertyDetails.prop_id}}"
+                  target="_blank">VIEW PROJECT</a>
+              </div>
             </div>
-          </div>
           </div>
 
 
@@ -138,16 +140,18 @@
               <div class="property_name" style="float: left;">
                 <h5>{{propertyDetails.property_name}}</h5>
                 <p><span style="color: #F58634;"><i class="fas fa-map-marker-alt" aria-hidden="true"></i></span>
-                  {{propertyDetails.city}}
+                  {{propertyDetails.location_name }} {{propertyDetails.city}}
                 </p>
-              </div><a href="" style="float: right;"><i class="fas fa-share-alt"></i></a>
+              </div><a href="" style="float: right;">
+                <!-- <i class="fas fa-share-alt"></i> -->
+              </a>
             </li>
             <li class="list-group-item" style="height: 60px;">
               <div class="property_amenties">
-                <small class="property_area" style="float: left;">Bungalows</small>
+                <small class="property_area" style="float: left;">{{propertyDetails.prop_type}}</small>
 
 
-                <small style="float: right; ">RERA NO. A00000000000</small>
+                <small style="float: right; ">RERA NO. {{propertyDetails.rera_number}}</small>
 
               </div>
 

@@ -1,27 +1,25 @@
-.bg{
+.bg {
     background-image: url("/assets/img/blogs.png");
     background-position: center;
     height: 50vh;
     background-repeat: no-repeat;
-    background-size:cover;
+    background-size: cover;
 }
 
-#bannerup{
-	height: 100%;
+#bannerup {
+    height: 100%;
 }
-#heading{
-	text-align: center;
-	vertical-align: middle;
-	line-height: 30vh;
-	 font: Bold 35px/186px Didot LT Std;
+#heading {
+    text-align: center;
+    vertical-align: middle;
+    line-height: 30vh;
+    font: Bold 35px/186px Didot LT Std;
 }
-@media (max-width: 1200px){
-#heading{
-
- line-height: 15vh;
-  margin-top: 1px;
-
-}
+@media (max-width: 1200px) {
+    #heading {
+        line-height: 15vh;
+        margin-top: 1px;
+    }
 }
 
 .inner-5x.innerTB {
@@ -36,15 +34,12 @@
     margin-left: auto;
 
     box-shadow: 0 4px 5px 0 rgba(0, 0, 0, 0.14), 0 1px 10px 0 rgba(0, 0, 0, 0.12), 0 2px 4px -1px rgba(0, 0, 0, 0.3);
-
 }
 
-
-
-@media (min-width: 1200px){
-#blogc .container {
-    width: 1170px;
-}
+@media (min-width: 1200px) {
+    #blogc .container {
+        width: 1170px;
+    }
 }
 
 #blogc .container {
@@ -59,9 +54,6 @@
     display: inline-block;
 }
 
-
-
-
 .row {
     margin-right: -15px;
     margin-left: -15px;
@@ -75,16 +67,15 @@
     background-color: #eeeeee;
 }
 .desc-content {
-	display: table-cell;
+    display: table-cell;
     text-align: left;
     background-color: #f8f8f8;
     vertical-align: middle;
-
 }
 
 .innerAll-40 {
     width: 100%;
-        padding: 40px;
+    padding: 40px;
 }
 
 .desc-content .title {
@@ -103,12 +94,11 @@
     margin-block-end: 1em;
     margin-inline-start: 0px;
     margin-inline-end: 0px;
-    font-size: 14px!important;
-
+    font-size: 14px !important;
 }
 
 .desc-content a {
-   padding: 10px 20px;
+    padding: 10px 20px;
     border: 1px solid #444444;
     color: #444444;
     text-transform: uppercase;
@@ -124,7 +114,7 @@
     text-decoration: none;
     border: 1px solid #f58634;
     background-color: #f58634;
-} 
+}
 .hvr-bounce-to-right {
     display: inline-block;
     vertical-align: middle;
@@ -133,12 +123,11 @@
     position: relative;
 }
 
-@media screen and (max-width: 468px){
-.logo-content {
-    display: block;
+@media screen and (max-width: 468px) {
+    .logo-content {
+        display: block;
+    }
 }
-}
-
 
 /*.container{
 	padding-right: 15px;
@@ -254,3 +243,9 @@ a:hover {
 	display: block;
     box-shadow: 0 4px 5px 0 rgba(0, 0, 0, 0.14), 0 1px 10px 0 rgba(0, 0, 0, 0.12), 0 2px 4px -1px rgba(0, 0, 0, 0.3);
 }*/
+
+.back-img {
+    background-position: center !important;
+    background-size: cover !important;
+    background-repeat: no-repeat !important;
+}

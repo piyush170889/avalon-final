@@ -6,8 +6,8 @@
 
 <section id="detail1">
 
-  <div class="row" *ngIf="blogDetails.featured_image" id="row1"
-    [style.background]="'url(' + getImageUrl(blogDetails.featured_image) + ')'">
+  <div class="row back-img" *ngIf="blogDetails.featured_image" id="row1"
+    [style.background]="'url(' + getImageUrl(blogDetails.featured_image, blogDetails.folder) + ')'">
   </div>
 
   <div class="col-md-12 mt-5 pl-5 pr-5" id="para1">
@@ -201,69 +201,23 @@
 
   <div class="col-md-12 mt-5 pl-5 pr-5" id="rel">
     <h3>Related Articles</h3>
-    <!-- <div class="card-deck mt-5">
-   <div class="col-md-4">	
-  <div class="card">
-    <img class="card-img-top" src="assets/img/r1.png" alt="Card image cap">
-    <div class="card-body" >
-      <div class="card-text">
-      <span style="float: left;"  id="date">30<p>June</p></span>
-      <span style="float: right;" id="line1">Rise of Branded Luxury Residences <p> in India</p></span>
-      </div>
-   </div>
-   </div>
-</div>
-
-<div class="col-md-4">
-  <div class="card">
-    <img class="card-img-top" src="assets/img/r2.png" alt="Card image cap">
-    <div class="card-body">
-      <span style="float: left;" class="card-text" id="date">30<p>June</p></span>
-      <span style="float: right;" id="line1">Rise of Branded Luxury Residences <p> in India</p></span>
-    </div>
-  </div>
-</div>
-
-<div class="col-md-4">
-  <div class="card">
-    <img class="card-img-top" src="assets/img/r3.png" alt="Card image cap">
-    <div class="card-body">
-      <span style="float: left;" class="card-text" id="date">30<p>June</p></span>
-      <span style="float: right;" id="line1">Rise of Branded Luxury Residences <p> in India</p></span>
-    </div>
-  </div>
-</div>
-</div> -->
 
     <div class="row mt-5 pl-5 pr-5" id="rel">
-      <div class="col-md-4  " id="imr">
+
+      <div class="col-md-4" id="imr" *ngFor="let blogDetails of allBlogs | slice:0:3">
         <div class="card border-0">
-          <img class="card-img-top" src="assets/img/r1.png" alt="Card image">
-          <div class="card-body">
-            <span class="card-text" id="date">30<p>June</p></span>
-            <span id="line1">Rise of Branded Luxury Residences<p> in India</p></span>
+          <img class="card-img-top" src="{{getImageUrl(blogDetails.featured_image, blogDetails.folder)}}"
+            alt="Card image">
+          <div class="card-body" [routerLink]="['/blogdetail',blogDetails.id]">
+            <span class="card-text" id="date">{{blogDetails.created_at | date: 'dd'}} <p>
+                {{blogDetails.created_at | date: 'MMM'}}</p></span>
+            <span id="line1">{{blogDetails.title}}<p></p></span>
           </div>
         </div>
       </div>
-      <div class="col-md-4">
-        <div class="card border-0">
-          <img class="card-img-top" src="assets/img/r2.png" alt="Card image">
-          <div class="card-body">
-            <span class="card-text" id="date">30<p>June</p></span>
-            <span id="line1">Rise of Branded Luxury Residences <p> in India</p></span>
-          </div>
-        </div>
-      </div>
-      <div class="col-md-4  " id="iml">
-        <div class="card border-0">
-          <img class="card-img-top" src="assets/img/r3.png" alt="Card image">
-          <div class="card-body">
-            <span class="card-text" id="date">30<p>June</p></span>
-            <span id="line1">Rise of Branded Luxury Residences <p> in India</p></span>
-          </div>
-        </div>
-      </div>
+
     </div>
+
   </div>
 </section>
 

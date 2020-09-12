@@ -13,8 +13,8 @@ export class BaseComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  getImageUrl(imageName: string, folderPath?: string): string {
+  getImageUrl(imageName: string, folderPath: string): string {
 
-    return ServerUrl.IMAGE_BASE_PATH + imageName;
+    return ServerUrl.IMAGE_BASE_PATH + folderPath + '/' + imageName;
   }
 }

@@ -33,9 +33,9 @@ const routes: Routes = [];
 @NgModule({
   imports: [RouterModule.forRoot(
     [
-      
+
       {
-        
+
 
         path: '',
         component: HomeComponent,
@@ -130,16 +130,17 @@ const routes: Routes = [];
       //   path: 'avalon-beauty',
       //   component: AvalonBeautyComponent
       // }
-    ], 
-    { 
-      useHash: true ,
-      scrollPositionRestoration: 'enabled'
+    ],
+    {
+      useHash: true,
+      scrollPositionRestoration: 'enabled',
+      onSameUrlNavigation: 'reload',
     },
-    
+
   )],
   exports: [RouterModule],
   providers: [FeaturedPropertiesResolver, PropertiesResolver, BlogsResolver]
 })
-export class AppRoutingModule { 
-  
+export class AppRoutingModule {
+
 }

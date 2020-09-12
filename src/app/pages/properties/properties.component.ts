@@ -1,18 +1,21 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { BaseComponent } from '../../core/base/base.component';
 
 @Component({
   selector: 'app-properties',
   templateUrl: './properties.component.html',
   styleUrls: ['./properties.component.css']
 })
-export class PropertiesComponent implements OnInit {
+export class PropertiesComponent extends BaseComponent implements OnInit {
 
   allProjectsList: any[] = [];
 
   constructor(
     private route: ActivatedRoute
   ) {
+    super();
+
     //All Properties
     if (this.route.snapshot.data.properties) {
 
