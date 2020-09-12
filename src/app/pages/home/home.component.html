@@ -83,19 +83,20 @@
     </ul>
     <div class="carousel-inner pt-3">
 
+      <!-- Featured Properties Carousel -->
       <div *ngFor="let featuredProject of featuredProjectsList;let i=index"
         [ngClass]="{'carousel-item': true, 'active': i==0}">
         <div class="row">
           <div class="col-2  text-right">
-            <div class="bg">
+            <!-- <div class="bg">
               <i class="fa fa-share-alt text-white" id="share1"></i>
-            </div>
+            </div> -->
           </div>
           <div class="col-md-5 col-sm-12">
             <img [src]="getImageUrl(featuredProject.featured_image)" alt="Los Angeles" width="100%" height="350">
           </div>
           <div class="col-md-5 col-sm-12 mt-3">
-            <span style="color: gray;"><i class="fas fa-bars fa-1x"></i>{{featuredProject.type}}</span>
+            <span style="color: gray;"><i class="fas fa-bars fa-1x"></i>{{featuredProject.type_name}}</span>
 
             <h5 class="pt-4">{{featuredProject.property_name}}</h5>
             <div class="bg-white" id="mainPara">
@@ -145,13 +146,13 @@
           <div class="card-body p-0" id="hovereffect">
             <img class="card-img-top" [src]="getImageUrl(propertyDetails.featured_image)" alt="Card image"
               style="width:100%;height:50vh">
-              <div class="overlay">
-            <div class="card-img-overlay text-center">
-             
-              <a href="html/home_property.html?id={{propertyDetails.prop_id}}" target="_blank"  class="info"
-                style="font-size: 15px;">VIEW PROJECT</a>
+            <div class="overlay">
+              <div class="card-img-overlay text-center">
+
+                <a href="html/home_property.html?id={{propertyDetails.prop_id}}" target="_blank" class="info"
+                  style="font-size: 15px;">VIEW PROJECT</a>
+              </div>
             </div>
-          </div>
           </div>
           <ul class="list-group list-group-flush">
             <li class="list-group-item">
@@ -159,16 +160,18 @@
                 <h5>{{propertyDetails.property_name}}</h5>
                 <p>
                   <span style="color: #F58634;"><i class="fas fa-map-marker-alt" aria-hidden="true"></i></span>
-                  {{propertyDetails.city}}
+                  {{propertyDetails.location_name }} {{propertyDetails.city}}
                 </p>
-              </div><a href="" style="float: right;"><i class="fas fa-share-alt"></i></a>
+              </div><a href="" style="float: right;">
+                <!-- <i class="fas fa-share-alt"></i> -->
+              </a>
             </li>
             <li class="list-group-item" style="height: 60px;">
               <div class="property_amenties">
-                <small class="property_area" style="float: left;">Bungalows</small>
+                <small class="property_area" style="float: left;">{{propertyDetails.type_name}}</small>
 
 
-                <small style="float: right; ">RERA NO. A00000000000</small>
+                <small style="float: right; ">RERA NO. {{propertyDetails.rera_number}}</small>
 
               </div>
 
@@ -218,8 +221,8 @@
               <!-- <img class="" [src]="getImageUrl(blogsList[0].featured_image)" alt="Card image" -->
               <img class="" src="assets/img/blog/05.png" alt="Card image"
                 style="width:100%;height:40vh;border-radius: 20px;">
-              <div class="card-img-overlay text-white">
-                <small class="img-title pl-4">{{blogsList[0].category}}</small>
+              <div class="card-img-overlay text-white" style="margin-top: 0% !important;">
+                <small class="img-title pl-4">{{blogsList[0].name}}</small>
                 <h5 class="pl-4">{{blogsList[0].title}}</h5>
                 <h5 class="date didot-font pl-4">{{blogsList[0].created_at | date: 'dd MMM'}}</h5>
                 <a class="btn btn-primary btn-sm ml-4" [routerLink]="['/blogdetail',blogsList[0].id]">MORE</a>
@@ -236,7 +239,7 @@
                 <!-- <img class="card-img-top" [src]="getImageUrl(blogsList[3].featured_image)" alt="Card image"> -->
                 <img class="card-img-top" src="assets/img/blog/05.png" alt="Card image">
                 <div class="card-img-overlay text-white">
-                  <small class="img-title pl-4">{{blogsList[3].category }}</small>
+                  <small class="img-title pl-4">{{blogsList[3].name }}</small>
                   <h5 class="pl-4">{{blogsList[3].title }}</h5>
                   <h5 class="date didot-font pl-4">{{blogsList[3].created_at | date: 'dd MMM' }}</h5>
                   <a class="btn btn-primary btn-sm ml-4" [routerLink]="['/blogdetail',blogsList[3].id]">MORE</a>
@@ -251,7 +254,7 @@
                 <!-- <img class="card-img-top" [src]="getImageUrl(blogsList[4].featured_image)" alt="Card image"> -->
                 <img class="card-img-top" src="assets/img/blog/05.png" alt="Card image">
                 <div class="card-img-overlay text-white">
-                  <small class="img-title pl-4">{{blogsList[4].category }}</small>
+                  <small class="img-title pl-4">{{blogsList[4].name }}</small>
                   <h5 class="pl-4">{{blogsList[4].title }}</h5>
                   <h5 class="date didot-font pl-4">{{blogsList[4].created_at | date: 'dd MMM' }}</h5>
                   <a class="btn btn-primary btn-sm ml-4" [routerLink]="['/blogdetail',blogsList[4].id]">MORE</a>
@@ -274,7 +277,7 @@
                 <!-- <img class="card-img-top" [src]="getImageUrl(blogsList[1].featured_image)" alt="Card image"> -->
                 <img class="card-img-top" src="assets/img/blog/05.png" alt="Card image">
                 <div class="card-img-overlay text-white">
-                  <small class="img-title pl-4">{{blogsList[1].category }}</small>
+                  <small class="img-title pl-4">{{blogsList[1].name }}</small>
                   <h5 class="pl-4">{{blogsList[1].title }}</h5>
                   <h5 class="date didot-font pl-4">{{blogsList[1].created_at | date: 'dd MMM' }}</h5>
                   <a class="btn btn-primary btn-sm ml-4" [routerLink]="['/blogdetail',blogsList[1].id]">MORE</a>
@@ -289,7 +292,7 @@
                 <!-- <img class="card-img-top" [src]="getImageUrl(blogsList[2].featured_image)" alt="Card image"> -->
                 <img class="card-img-top" src="assets/img/blog/06.png" alt="Card image">
                 <div class="card-img-overlay text-white">
-                  <small class="img-title pl-4">{{blogsList[2].category }}</small>
+                  <small class="img-title pl-4">{{blogsList[2].name }}</small>
                   <h5 class="pl-4">{{blogsList[2].title }}</h5>
                   <h5 class="date didot-font pl-4">{{blogsList[2].created_at | date: 'dd MMM' }}</h5>
                   <a class="btn btn-primary btn-sm ml-4" [routerLink]="['/blogdetail',blogsList[2].id]">MORE</a>
@@ -306,8 +309,8 @@
             <div class="card-body p-0">
               <!-- <img class="card-img-top" [src]="getImageUrl(blogsList[5].featured_image)" alt="Card image" style="width:100%;height:40vh;"> -->
               <img class="card-img-top" src="assets/img/blog/02.png" alt="Card image" style="width:100%;height:40vh;">
-              <div class="card-img-overlay text-white">
-                <small class="img-title pl-4">{{blogsList[5].category }}</small>
+              <div class="card-img-overlay text-white" style="margin-top: 0% !important;">
+                <small class="img-title pl-4">{{blogsList[5].name }}</small>
                 <h5 class="pl-4">{{blogsList[5].title }}</h5>
                 <h5 class="date didot-font pl-4">{{blogsList[5].created_at | date: 'dd MMM' }}</h5>
                 <a class="btn btn-primary btn-sm ml-4" [routerLink]="['/blogdetail',blogsList[5].id]">MORE</a>

@@ -1,0 +1,2119 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <title>Avalon - Technology </title>
+    <!-- <base href="/panchshiltowers/"> -->
+    <meta charset="utf-8">
+
+    <link rel="stylesheet" href="vendor/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="vendor/font-awesome/css/font-awesome.css">
+    <link rel="stylesheet" href="assets/css/swiper.min.css">
+    <link rel="stylesheet" href="assets/css/style.min.css">
+    <link rel="stylesheet" href="assets/css/owl.carousel.min.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <style>
+        #mapdiv {
+
+            flex-direction: row;
+            justify-content: center;
+            width: 100%;
+        }
+
+        #mapdiv #map iframe {
+            width: 100% !important;
+        }
+
+        .banner-jump-cursor {
+            position: absolute;
+            bottom: 6%;
+            z-index: 999999;
+            text-align: center;
+            left: 0;
+            right: 0;
+        }
+
+        .banner-jump-cursor img {
+            width: 30px;
+            cursor: pointer;
+            -moz-animation: bounce 2s infinite;
+            -webkit-animation: bounce 2s infinite;
+            animation: bounce 2s infinite;
+        }
+
+        .queryFormBtn>div {
+            display: none;
+        }
+
+        /*animation*/
+
+        @-moz-keyframes bounce {
+
+            0%,
+            20%,
+            50%,
+            80%,
+            100% {
+                -moz-transform: translateY(0);
+                transform: translateY(0);
+            }
+
+            40% {
+                -moz-transform: translateY(-30px);
+                transform: translateY(-30px);
+            }
+
+            60% {
+                -moz-transform: translateY(-15px);
+                transform: translateY(-15px);
+            }
+        }
+
+        @-webkit-keyframes bounce {
+
+            0%,
+            20%,
+            50%,
+            80%,
+            100% {
+                -webkit-transform: translateY(0);
+                transform: translateY(0);
+            }
+
+            40% {
+                -webkit-transform: translateY(-30px);
+                transform: translateY(-30px);
+            }
+
+            60% {
+                -webkit-transform: translateY(-15px);
+                transform: translateY(-15px);
+            }
+        }
+
+        @keyframes bounce {
+
+            0%,
+            20%,
+            50%,
+            80%,
+            100% {
+                -moz-transform: translateY(0);
+                -ms-transform: translateY(0);
+                -webkit-transform: translateY(0);
+                transform: translateY(0);
+            }
+
+            40% {
+                -moz-transform: translateY(-30px);
+                -ms-transform: translateY(-30px);
+                -webkit-transform: translateY(-30px);
+                transform: translateY(-30px);
+            }
+
+            60% {
+                -moz-transform: translateY(-15px);
+                -ms-transform: translateY(-15px);
+                -webkit-transform: translateY(-15px);
+                transform: translateY(-15px);
+            }
+        }
+
+        .homeBg {
+            position: relative;
+        }
+
+
+        @media(max-width: 531px) and (min-width: 421px) {
+            #mapdiv img {
+                left: 25% !important;
+            }
+        }
+
+        @media(max-width: 768px) and (min-width: 532px) {
+            #mapdiv img {
+                left: 35% !important;
+            }
+        }
+
+        .contactmap iframe {
+            width: 100% !important;
+        }
+
+        .homesubTitile {
+            font-size: 3.8rem;
+            line-height: 1.8;
+            color: #fff;
+            /*   font-family: "open_sanslight";*/
+            font-family: 'TrajanProRegular';
+            padding-top: 25vh;
+        }
+
+        .home_subtitle {
+            font-size: 2.8rem;
+            line-height: 1.8;
+            /*   font-family: "open_sanslight";*/
+            font-family: 'TrajanProRegular';
+            color: #fff;
+        }
+
+        @media only screen and (max-width: 768px) {
+            .homesubTitile {
+                font-size: 2rem;
+                padding-top: 3rem;
+            }
+
+            .home_subtitle {
+                font-size: 1.6rem;
+            }
+        }
+
+        /* For Firefox */
+        input[type='number'] {
+            -moz-appearance: textfield;
+        }
+
+        /* Webkit browsers like Safari and Chrome */
+        input[type=number]::-webkit-inner-spin-button,
+        input[type=number]::-webkit-outer-spin-button {
+            -webkit-appearance: none;
+            margin: 0;
+        }
+
+
+
+        #mapdiv img {
+            display: none;
+            position: absolute;
+            left: 40%;
+            margin-top: 5rem;
+
+        }
+
+        @media(max-width: 420px) {
+            #mapdiv img {
+                left: 0% !important;
+            }
+        }
+
+        .homevideo iframe,
+        .testimonialbg iframe,
+        .technologybg iframe {
+            width: 100%;
+            height: 100%;
+            display: none;
+        }
+
+
+
+        .animation-element {
+            opacity: 0;
+            /*position: relative;*/
+        }
+
+        /*animation element sliding left*/
+
+        .animation-element.slide-left {
+            opacity: 0;
+            -moz-transition: all 500ms linear;
+            -webkit-transition: all 500ms linear;
+            -o-transition: all 500ms linear;
+            transition: all 500ms linear;
+            -moz-transform: translate3d(-100px, 0px, 0px);
+            -webkit-transform: translate3d(-100px, 0px, 0px);
+            -o-transform: translate(-100px, 0px);
+            -ms-transform: translate(-100px, 0px);
+            transform: translate3d(-100px, 0px, 0px);
+        }
+
+        .animation-element.slide-left.in-view {
+            opacity: 1;
+            -moz-transform: translate3d(0px, 0px, 0px);
+            -webkit-transform: translate3d(0px, 0px, 0px);
+            -o-transform: translate(0px, 0px);
+            -ms-transform: translate(0px, 0px);
+            transform: translate3d(0px, 0px, 0px);
+        }
+
+
+        .testimonialbg iframe,
+        .technologybg iframe {
+            position: absolute;
+            top: 0;
+        }
+
+
+        #planfeedform .closebtn {
+            position: absolute;
+            right: 0;
+            margin-right: 1rem;
+            outline: 0;
+            font-size: 25px;
+            opacity: .5 !important;
+        }
+
+
+        .parallax {
+            background-attachment: scroll;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+
+        /* body.open {
+        overflow: hidden;
+    } */
+    </style>
+
+    <!-- Required JS -->
+    <script src="assets/js/jquery.min.js"></script>
+
+    <!-- API Calls Script -->
+    <script src="js/main.js" type="text/javascript"></script>
+</head>
+
+<body>
+
+    <script type="text/javascript">
+
+        $(document).ready(function () {
+
+            let urlParams = getUrlVars();
+
+            // Api call to get section 1 images
+            $.get(technologyApiEndpoint + urlParams["id"], function (response, status) {
+
+                console.log("response:", response);
+
+                let data = response.data;
+                console.log("Data", data)
+
+                if (data.length > 0) {
+
+                    console.log("data extracted = ", data);
+
+                    let elem = $('#techFeatures');
+
+                    $.each(data, function (index, value) {
+
+                        console.log(index + ":" + value);
+
+                        let imgPath = imageBaseUrl + value.img;
+
+                        let htmlToAppend = `<article class="caption col-sm-6 col-md-6 col-lg-4 padding-none">
+                            <div class="pickgradient">
+                                <img alt="ifrastructure" class="caption__media img-fluid"
+                                    src="${imgPath}" />
+                            </div>
+                            <div class="caption__overlay">
+                                <h1 class="caption__overlay__title">${value.title}</h1>
+                                <p class="caption__overlay__content">${value.description}</p>
+                            </div>
+                        </article>`;
+
+                        elem.append(htmlToAppend);
+                    });
+                }
+            });
+        });
+    </script>
+
+    <header class="container-fluid header">
+        <div class="row header__inner">
+            <div class="col-xs-3 col-sm-3 col-md-3 header__inner__hamburger">
+                <div class="header__inner__hamburger__menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+            <div class="col-xs-6 col-sm-6 col-md-6 header__inner__logo text-center">
+                <a href="home_property.html" class="header__inner__logo__link">
+                    <img src="assets/images/Esteban-I.png" alt="Avalon" class="img-responsive">
+                </a>
+            </div>
+            <div class="col-xs-3 col-sm-3 col-md-3">
+                <a href="home_property.html" class="header__inner__logo__link">
+                    <img src="assets/images/logo1.jpg" target="_blank" alt="Avalon"
+                        class="panchshil__logo img-responsive">
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <nav class="nav">
+        <div class="nav__close">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+        <div class="nav__inner">
+            <ul>
+                <li>
+                    <a href="">
+                        <span><img src="assets/images/logo1.jpg" style="height: 60px;width: 60px;" alt="Avalon"
+                                class="img-repsonsive"></span><span
+                            style="padding-left: 15px; font-size: 20px;">Avalon</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="home_property.html">Home</a>
+                </li>
+
+                <li>
+                    <a href="interior.html">Interiors</a>
+                </li>
+                <li>
+                    <a href="technology.html">Technology</a>
+                </li>
+                <li>
+                    <a href="amenities.html">Amenities</a>
+                </li>
+                <li>
+                    <a href="plans.html">Plans</a>
+                </li>
+
+                <li>
+                    <a href="gallery.html">Gallery</a>
+                </li>
+
+                <li>
+                    <a href="contact.html">Contact</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <div class="backdrop"></div>
+
+    <!-- BANNER SECTION -->
+
+    <div class="technologybg parallax"
+        style="background-image:url('assets/images/Esteban_banner - Ongoing.jpg');position:relative;">
+        <!-- <div class="text-center headSection" style="z-index:999">
+        <div>
+            <div id="nav-icon3" class="navicon3 deskbar"  >
+                  <span></span>
+                  <span></span>
+                  <span></span>
+                  <span></span>
+                </div>
+     
+            <i class="fa fa-bars fa-2x mobbar colorwhite" onclick="openmobNav()"></i>
+
+        </div>
+        <div class="titile">
+            <img onclick="location.href='https://www.panchshil.com/panchshiltowers/'"  alt="Panchshil Tower logo"   src="https://www.panchshil.com/panchshiltowers/images/pt-logo.png"/>
+        </div>
+
+        <img class="playpause videoModalTriger" id="playvideo"  alt="play video" src="https://www.panchshil.com/panchshiltowers/admin/images/uploads/Videos/59c8f4eb28fc1.png" data-toggle="modal" data-target="#videoModal" data-videoModal="https://www.youtube.com/embed/sMOapGiBNmw" />
+        <div class="testsubTitile">A Film by Panchshil</div>
+    </div> 
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/sMOapGiBNmw?rel=0&amp;showinfo=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>    -->
+    </div>
+
+    <!-- End Banner Section -->
+
+
+
+    <!-- <section>
+        <div class="row no-margin">
+            <div class="testimonialsCarouselbg">
+                <div class="container">
+                   <div id="testimonialsCarousel" class="carousel slide testimonialsCarousel" data-ride="carousel">
+
+                        <div class="carousel-inner">
+                           <div class="item active text-center" >
+                                <h4>
+                                    Use of Global Technology                                </h4>
+
+                                <p style="text-align:center">The hallmark of the project is in its use of technology and construction best-practices. For instance, Panchshil Towers uses Dry Construction Technique (DCT), which is a global best practice and reduces hassles for repairs, renovation and long-term maintenance. The project also uses pre-fabricated bathrooms, which are perfectly finished bathrooms&nbsp;made offsite, and then placed on the floors of the apartments.</p>
+                                <img alt="seperator" src="images/wave.png" />
+                            </div> 
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section> -->
+
+    <section class="container">
+        <div class="row middleTittle">
+            <div class="text-center">
+                <h2>Use of Global Technology</h2>
+                <p style="text-align:center">The hallmark of the project is in its use of technology and construction
+                    best-practices. For instance, Panchshil Towers uses Dry Construction Technique (DCT), which is a
+                    global best practice and reduces hassles for repairs, renovation and long-term maintenance. The
+                    project also uses pre-fabricated bathrooms, which are perfectly finished bathrooms&nbsp;made
+                    offsite, and then placed on the floors of the apartments.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="dividerSection text-center">
+        <img src="assets/images/wave.png" alt="divider">
+    </section>
+
+
+
+
+
+
+    <section class="infraSection padding_3_5">
+        <h3 class="header_3 text-center" style="margin: 5rem 0 7rem;">CONSTRUCTION BEST PRACTICES</h3>
+        <div class="container">
+
+
+
+            <div class="row technology topmargin2mob animation-element slide-left ">
+                <div class="col-md-4 content no-padding tcaption">
+                    <div class="info">
+                        <div class="verticalBarred"></div>
+                        <div>
+                            <p></p>
+                            <p>DRY CONSTRUCTION TECHNIQUE</p>
+                            <p>Path breaking ‘Dry Construction’ approach for speed of construction, ease of repairs and
+                                maintenance.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-8 image no-padding tfooter">
+                    <img alt="key techniques" src="assets/images/59cc9a7bbb09a.png" />
+                </div>
+            </div>
+
+            <div class="row technology topmargin2mob animation-element slide-left ">
+                <div class="col-md-8 image no-padding">
+                    <img alt="Key Techniques" src="assets/images/5a1ec518990cf.jpg" />
+                </div>
+                <div class="col-md-4 content no-padding">
+                    <div class="info">
+                        <div class="verticalBarred"></div>
+                        <div>
+                            <p></p>
+                            <p>CONTEMPORARY FACADE</p>
+                            <p>Façade made of Glass and Aluminum Composite Panels (ACP) ensuring a lasting contemporary
+                                look.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+
+
+            <div class="row technology topmargin2mob animation-element slide-left ">
+                <div class="col-md-4 content no-padding tcaption">
+                    <div class="info">
+                        <div class="verticalBarred"></div>
+                        <div>
+                            <p></p>
+                            <p>PRE-FABRICATED BATHROOMS</p>
+                            <p>These are fitted directly into the apartments.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-8 image no-padding tfooter">
+                    <img alt="key techniques" src="assets/images/5a157a990f851.jpg" />
+                </div>
+            </div>
+
+            <div class="row technology topmargin2mob animation-element slide-left ">
+                <div class="col-md-8 image no-padding">
+                    <img alt="Key Techniques" src="assets/images/5a157aa29f145.jpg" />
+                </div>
+                <div class="col-md-4 content no-padding">
+                    <div class="info">
+                        <div class="verticalBarred"></div>
+                        <div>
+                            <p></p>
+                            <p>FIREFIGHTING SYSTEM</p>
+                            <p>Equipped with firefighting systems from Germany that are non-welded, with zero chance of
+                                corrosion or leakage.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+
+        </div>
+        <div class="container text-right" style="padding-top: 5px;">
+            <p>*Images for Representational Purposes only.</p>
+        </div>
+    </section>
+
+
+
+
+    <section class="infraSection padding_3_5">
+        <h3 class="header_3 text-center">TECHNOLOGY FEATURES</h3>
+        <div class="container">
+            <div class="row" id="techFeatures">
+
+            </div>
+        </div>
+    </section>
+
+
+    <!-- popup video -->
+    <div class="modal fade" id="videoModal" tabindex="-1" role="dialog" aria-labelledby="videoModal" aria-hidden="true">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
+                <button type="button" class="close btn-round btn-primary" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+                <div class="embed-responsive embed-responsive-16by9">
+                    <iframe class="embed-responsive-item" src="" allowfullscreen></iframe>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <style>
+        #videoModal .modal-content {
+            background-color: transparent;
+            box-shadow: none;
+            border: transparent;
+        }
+
+        #videoModal .modal-content button {
+            width: 30px;
+            height: 30px;
+            opacity: 1;
+            background-color: #fff;
+            right: -1%;
+            top: -2%;
+            position: absolute;
+            z-index: 999;
+        }
+    </style>
+    <div class="form_bg ">
+        <div class="container text-right">
+            <p style="margin-top: -46px;">Shot on location</p>
+        </div>
+
+        <div class="container margin_2">
+            <div>
+                <div class="verticalBar inlineDiv"></div>
+                <div class="inlineDiv" style="margin: 4rem 1rem;">
+                    <p>Get in Touch</p>
+                    <p>SUBMIT YOUR QUERY</p>
+                </div>
+            </div>
+            <form class="form-inline queryForm" id="getintouchForm">
+                <div class="form-group margintop15">
+                    <input type="text" class="form-control" onfocus="hideerr()" required id="getintouchname"
+                        autocomplete="off" placeholder="NAME" name="name">
+                </div>
+                <div class="form-group margintop15">
+                    <input type="email" class="form-control" onfocus="hideerr()" required placeholder="EMAIL"
+                        autocomplete="off" name="email" id="getintouchemail">
+                </div>
+                <div class="clearfix"></div>
+
+                <div class="form-group margintop15">
+                    <select class="form-control" onfocus="hideerr()" name="cc" id="getintouchcccode"
+                        style="height:34px;">
+
+                        <option value='+93'>Afghanistan&nbsp;(+93)</option>
+                        <option value='+355'>Albania&nbsp;(+355)</option>
+                        <option value='+213'>Algeria&nbsp;(+213)</option>
+                        <option value='+1 684'>American Samoa&nbsp;(+1 684)</option>
+                        <option value='+376'>Andorra&nbsp;(+376)</option>
+                        <option value='+244'>Angola&nbsp;(+244)</option>
+                        <option value='+1 264'>Anguilla&nbsp;(+1 264)</option>
+                        <option value='+1 268'>Antigua And Barbuda&nbsp;(+1 268)</option>
+                        <option value='+54'>Argentina&nbsp;(+54)</option>
+                        <option value='+374'>Armenia&nbsp;(+374)</option>
+                        <option value='+297'>Aruba&nbsp;(+297)</option>
+                        <option value='+61'>Australia&nbsp;(+61)</option>
+                        <option value='+43'>Austria&nbsp;(+43)</option>
+                        <option value='+994'>Azerbaijan&nbsp;(+994)</option>
+                        <option value='+973'>Bahrain&nbsp;(+973)</option>
+                        <option value='+880'>Bangladesh&nbsp;(+880)</option>
+                        <option value='+1 246'>Barbados&nbsp;(+1 246)</option>
+                        <option value='+375'>Belarus&nbsp;(+375)</option>
+                        <option value='+32'>Belgium&nbsp;(+32)</option>
+                        <option value='+501'>Belize&nbsp;(+501)</option>
+                        <option value='+229'>Benin&nbsp;(+229)</option>
+                        <option value='+1 441'>Bermuda&nbsp;(+1 441)</option>
+                        <option value='+975'>Bhutan&nbsp;(+975)</option>
+                        <option value='+591'>Bolivia&nbsp;(+591)</option>
+                        <option value='+387'>Bosnia and Herzegovina&nbsp;(+387)</option>
+                        <option value='+267'>Botswana&nbsp;(+267)</option>
+                        <option value='+55'>Brazil&nbsp;(+55)</option>
+                        <option value='+246'>British Indian Ocean Territory&nbsp;(+246)</option>
+                        <option value='+673'>Brunei&nbsp;(+673)</option>
+                        <option value='+359'>Bulgaria&nbsp;(+359)</option>
+                        <option value='+226'>Burkina Faso&nbsp;(+226)</option>
+                        <option value='+257'>Burundi&nbsp;(+257)</option>
+                        <option value='+855'>Cambodia&nbsp;(+855)</option>
+                        <option value='+237'>Cameroon&nbsp;(+237)</option>
+                        <option value='+1'>Canada&nbsp;(+1)</option>
+                        <option value='+238'>Cape Verde&nbsp;(+238)</option>
+                        <option value='+ 345'>Cayman Islands&nbsp;(+ 345)</option>
+                        <option value='+236'>Central African Republic&nbsp;(+236)</option>
+                        <option value='+235'>Chad&nbsp;(+235)</option>
+                        <option value='+56'>Chile&nbsp;(+56)</option>
+                        <option value='+86'>China&nbsp;(+86)</option>
+                        <option value='+61'>Christmas Island&nbsp;(+61)</option>
+                        <option value='+57'>Colombia&nbsp;(+57)</option>
+                        <option value='+269'>Comoros&nbsp;(+269)</option>
+                        <option value='+242'>Congo&nbsp;(+242)</option>
+                        <option value='+682'>Cook Islands&nbsp;(+682)</option>
+                        <option value='+506'>Costa Rica&nbsp;(+506)</option>
+                        <option value='+53'>Cuba&nbsp;(+53)</option>
+                        <option value='+537'>Cyprus&nbsp;(+537)</option>
+                        <option value='+420'>Czech Republic&nbsp;(+420)</option>
+                        <option value='+45'>Denmark&nbsp;(+45)</option>
+                        <option value='+253'>Djibouti&nbsp;(+253)</option>
+                        <option value='+1 767'>Dominica&nbsp;(+1 767)</option>
+                        <option value='+1 809'>Dominican Republic&nbsp;(+1 809)</option>
+                        <option value='+670'>East Timor&nbsp;(+670)</option>
+                        <option value='+593'>Ecuador&nbsp;(+593)</option>
+                        <option value='+20'>Egypt&nbsp;(+20)</option>
+                        <option value='+503'>El Salvador&nbsp;(+503)</option>
+                        <option value='+240'>Equatorial Guinea&nbsp;(+240)</option>
+                        <option value='+291'>Eritrea&nbsp;(+291)</option>
+                        <option value='+372'>Estonia&nbsp;(+372)</option>
+                        <option value='+251'>Ethiopia&nbsp;(+251)</option>
+                        <option value='+500'>Falkland Islands&nbsp;(+500)</option>
+                        <option value='+298'>Faroe Islands&nbsp;(+298)</option>
+                        <option value='+358'>Finland&nbsp;(+358)</option>
+                        <option value='+33'>France&nbsp;(+33)</option>
+                        <option value='+594'>French Guiana&nbsp;(+594)</option>
+                        <option value='+689'>French Polynesia&nbsp;(+689)</option>
+                        <option value='+241'>Gabon&nbsp;(+241)</option>
+                        <option value='+995'>Georgia&nbsp;(+995)</option>
+                        <option value='+49'>Germany&nbsp;(+49)</option>
+                        <option value='+233'>Ghana&nbsp;(+233)</option>
+                        <option value='+350'>Gibraltar&nbsp;(+350)</option>
+                        <option value='+30'>Greece&nbsp;(+30)</option>
+                        <option value='+299'>Greenland&nbsp;(+299)</option>
+                        <option value='+1 473'>Grenada&nbsp;(+1 473)</option>
+                        <option value='+590'>Guadeloupe&nbsp;(+590)</option>
+                        <option value='+1 671'>Guam&nbsp;(+1 671)</option>
+                        <option value='+502'>Guatemala&nbsp;(+502)</option>
+                        <option value='+224'>Guinea&nbsp;(+224)</option>
+                        <option value='+245'>Guinea-Bissau&nbsp;(+245)</option>
+                        <option value='+595'>Guyana&nbsp;(+595)</option>
+                        <option value='+509'>Haiti&nbsp;(+509)</option>
+                        <option value='+504'>Honduras&nbsp;(+504)</option>
+                        <option value='+36'>Hungary&nbsp;(+36)</option>
+                        <option value='+354'>Iceland&nbsp;(+354)</option>
+                        <option value='+91'>India&nbsp;(+91)</option>
+                        <option value='+62'>Indonesia&nbsp;(+62)</option>
+                        <option value='+98'>Iran&nbsp;(+98)</option>
+                        <option value='+964'>Iraq&nbsp;(+964)</option>
+                        <option value='+353'>Ireland&nbsp;(+353)</option>
+                        <option value='+972'>Israel&nbsp;(+972)</option>
+                        <option value='+39'>Italy&nbsp;(+39)</option>
+                        <option value='+1 876'>Jamaica&nbsp;(+1 876)</option>
+                        <option value='+81'>Japan&nbsp;(+81)</option>
+                        <option value='+962'>Jordan&nbsp;(+962)</option>
+                        <option value='+7 7'>Kazakhstan&nbsp;(+7 7)</option>
+                        <option value='+254'>Kenya&nbsp;(+254)</option>
+                        <option value='+686'>Kiribati&nbsp;(+686)</option>
+                        <option value='+965'>Kuwait&nbsp;(+965)</option>
+                        <option value='+996'>Kyrgyzstan&nbsp;(+996)</option>
+                        <option value='+856'>Laos&nbsp;(+856)</option>
+                        <option value='+371'>Latvia&nbsp;(+371)</option>
+                        <option value='+961'>Lebanon&nbsp;(+961)</option>
+                        <option value='+266'>Lesotho&nbsp;(+266)</option>
+                        <option value='+231'>Liberia&nbsp;(+231)</option>
+                        <option value='+218'>Libya&nbsp;(+218)</option>
+                        <option value='+423'>Liechtenstein&nbsp;(+423)</option>
+                        <option value='+370'>Lithuania&nbsp;(+370)</option>
+                        <option value='+352'>Luxembourg&nbsp;(+352)</option>
+                        <option value='+389'>Macedonia&nbsp;(+389)</option>
+                        <option value='+261'>Madagascar&nbsp;(+261)</option>
+                        <option value='+265'>Malawi&nbsp;(+265)</option>
+                        <option value='+60'>Malaysia&nbsp;(+60)</option>
+                        <option value='+960'>Maldives&nbsp;(+960)</option>
+                        <option value='+223'>Mali&nbsp;(+223)</option>
+                        <option value='+356'>Malta&nbsp;(+356)</option>
+                        <option value='+692'>Marshall Islands&nbsp;(+692)</option>
+                        <option value='+596'>Martinique&nbsp;(+596)</option>
+                        <option value='+222'>Mauritania&nbsp;(+222)</option>
+                        <option value='+230'>Mauritius&nbsp;(+230)</option>
+                        <option value='+262'>Mayotte&nbsp;(+262)</option>
+                        <option value='+52'>Mexico&nbsp;(+52)</option>
+                        <option value='+691'>Micronesia&nbsp;(+691)</option>
+                        <option value='+373'>Moldova&nbsp;(+373)</option>
+                        <option value='+377'>Monaco&nbsp;(+377)</option>
+                        <option value='+976'>Mongolia&nbsp;(+976)</option>
+                        <option value='+1664'>Montserrat&nbsp;(+1664)</option>
+                        <option value='+212'>Morocco&nbsp;(+212)</option>
+                        <option value='+95'>Myanmar&nbsp;(+95)</option>
+                        <option value='+264'>Namibia&nbsp;(+264)</option>
+                        <option value='+674'>Nauru&nbsp;(+674)</option>
+                        <option value='+977'>Nepal&nbsp;(+977)</option>
+                        <option value='+599'>Netherlands Antilles&nbsp;(+599)</option>
+                        <option value='+687'>New Caledonia&nbsp;(+687)</option>
+                        <option value='+64'>New Zealand&nbsp;(+64)</option>
+                        <option value='+505'>Nicaragua&nbsp;(+505)</option>
+                        <option value='+227'>Niger&nbsp;(+227)</option>
+                        <option value='+234'>Nigeria&nbsp;(+234)</option>
+                        <option value='+683'>Niue&nbsp;(+683)</option>
+                        <option value='+672'>Norfolk Island&nbsp;(+672)</option>
+                        <option value='+1 670'>Northern Mariana Islands&nbsp;(+1 670)</option>
+                        <option value='+47'>Norway&nbsp;(+47)</option>
+                        <option value='+968'>Oman&nbsp;(+968)</option>
+                        <option value='+92'>Pakistan&nbsp;(+92)</option>
+                        <option value='+680'>Palau&nbsp;(+680)</option>
+                        <option value='+507'>Panama&nbsp;(+507)</option>
+                        <option value='+675'>Papua new Guinea&nbsp;(+675)</option>
+                        <option value='+595'>Paraguay&nbsp;(+595)</option>
+                        <option value='+51'>Peru&nbsp;(+51)</option>
+                        <option value='+63'>Philippines&nbsp;(+63)</option>
+                        <option value='+48'>Poland&nbsp;(+48)</option>
+                        <option value='+351'>Portugal&nbsp;(+351)</option>
+                        <option value='+1 787'>Puerto Rico&nbsp;(+1 787)</option>
+                        <option value='+974'>Qatar&nbsp;(+974)</option>
+                        <option value='+262'>Reunion&nbsp;(+262)</option>
+                        <option value='+40'>Romania&nbsp;(+40)</option>
+                        <option value='+7'>Russia&nbsp;(+7)</option>
+                        <option value='+250'>Rwanda&nbsp;(+250)</option>
+                        <option value='+685'>Samoa&nbsp;(+685)</option>
+                        <option value='+378'>San Marino&nbsp;(+378)</option>
+                        <option value='+966'>Saudi Arabia&nbsp;(+966)</option>
+                        <option value='+221'>Senegal&nbsp;(+221)</option>
+                        <option value='+381'>Serbia&nbsp;(+381)</option>
+                        <option value='+248'>Seychelles&nbsp;(+248)</option>
+                        <option value='+232'>Sierra Leone&nbsp;(+232)</option>
+                        <option value='+65'>Singapore&nbsp;(+65)</option>
+                        <option value='+421'>Slovakia&nbsp;(+421)</option>
+                        <option value='+386'>Slovenia&nbsp;(+386)</option>
+                        <option value='+677'>Solomon Islands&nbsp;(+677)</option>
+                        <option value='+27'>South Africa&nbsp;(+27)</option>
+                        <option value='+34'>Spain&nbsp;(+34)</option>
+                        <option value='+94'>Sri Lanka&nbsp;(+94)</option>
+                        <option value='+249'>Sudan&nbsp;(+249)</option>
+                        <option value='+597'>Suriname&nbsp;(+597)</option>
+                        <option value='+268'>Swaziland&nbsp;(+268)</option>
+                        <option value='+46'>Sweden&nbsp;(+46)</option>
+                        <option value='+41'>Switzerland&nbsp;(+41)</option>
+                        <option value='+963'>Syria&nbsp;(+963)</option>
+                        <option value='+886'>Taiwan&nbsp;(+886)</option>
+                        <option value='+992'>Tajikistan&nbsp;(+992)</option>
+                        <option value='+255'>Tanzania&nbsp;(+255)</option>
+                        <option value='+66'>Thailand&nbsp;(+66)</option>
+                        <option value='+228'>Togo&nbsp;(+228)</option>
+                        <option value='+690'>Tokelau&nbsp;(+690)</option>
+                        <option value='+676'>Tonga&nbsp;(+676)</option>
+                        <option value='+1 868'>Trinidad And Tobago&nbsp;(+1 868)</option>
+                        <option value='+216'>Tunisia&nbsp;(+216)</option>
+                        <option value='+90'>Turkey&nbsp;(+90)</option>
+                        <option value='+993'>Turkmenistan&nbsp;(+993)</option>
+                        <option value='+1 649'>Turks And Caicos Islands&nbsp;(+1 649)</option>
+                        <option value='+688'>Tuvalu&nbsp;(+688)</option>
+                        <option value='+256'>Uganda&nbsp;(+256)</option>
+                        <option value='+380'>Ukraine&nbsp;(+380)</option>
+                        <option value='+971'>United Arab Emirates&nbsp;(+971)</option>
+                        <option value='+44'>United Kingdom&nbsp;(+44)</option>
+                        <option value='+1'>United States&nbsp;(+1)</option>
+                        <option value='+598'>Uruguay&nbsp;(+598)</option>
+                        <option value='+998'>Uzbekistan&nbsp;(+998)</option>
+                        <option value='+678'>Vanuatu&nbsp;(+678)</option>
+                        <option value='+58'>Venezuela&nbsp;(+58)</option>
+                        <option value='+84'>Vietnam&nbsp;(+84)</option>
+                        <option value='+967'>Yemen&nbsp;(+967)</option>
+                        <option value='+260'>Zambia&nbsp;(+260)</option>
+                        <option value='+263'>Zimbabwe&nbsp;(+263)</option>
+                    </select>
+                </div>
+                <div class="form-group margintop15">
+
+                    <input type="number" class="form-control" onfocus="hideerr()" required placeholder="MOBILE"
+                        style="width:80%;" autocomplete="off" name="mobile" min="1" id="getintouchmobile">
+                </div>
+
+                <div class="margintop15">
+                    <input class="form-control" onfocus="hideerr()" placeholder="TYPE YOUR QUERY" autocomplete="off"
+                        name="message" id="getintouchmsg">
+                </div>
+                <div class="queryFormBtn">
+                    <button type="reset" class="btn btn-default custom-btn">clear</button>
+                    <button type="button" class="btn btn-default custom-btn submitForm g-recaptcha"
+                        data-sitekey="6LcSkj4UAAAAAA9t4dzc1U_i6DWBUSRiQ9H-uTip" data-callback="submitgetintouchForm"
+                        onclick="submitgetintouchForm(getintouchname.value,getintouchemail.value,getintouchmobile.value,getintouchmsg.value);">submit</button>
+                    <!--                <button class="g-recaptcha" data-sitekey="6LcSkj4UAAAAAA9t4dzc1U_i6DWBUSRiQ9H-uTip" data-callback="submitgetintouchForm"> Submit </button>-->
+                </div>
+
+
+                <div style="margin-top : 20px;display:none;" id="success">
+                    <strong>Thank you!</strong> We will email you the project brochure, be sure to check spam!
+                </div>
+
+                <div id="failed" style="margin-top : 20px;display:none;">
+                    <strong>Failed!</strong> Please try again after some time.
+                </div>
+
+                <div id="failedemail" style="margin-top : 20px;display:none;">
+                    <strong>Email !</strong> Please check Your email.
+                </div>
+
+                <div id="failedempty" style="margin-top : 20px;display:none;">
+                    <strong>Failed !</strong> Please fill form details.
+                </div>
+
+                <div id="mobileerr" style="margin-top : 20px;display:none;">
+                    <strong>Failed !</strong> Please check mobile number.
+                </div>
+
+                <div id="failedname" style="margin-top : 20px;display:none;">
+                    <strong>Failed !</strong> Please check Your name.
+                </div>
+
+            </form>
+        </div>
+    </div>
+
+
+
+    <!-- Footer About Us -->
+    <div class="container-fluid">
+        <div class="row about-panchshil"
+            style="background: url(assets/images/footer-about.jpg) top left no-repeat;background-size:cover;">
+            <div class="container about-panchshil-inner">
+                <div class="row">
+                    <div class="col text-center">
+                        <h1 style="background: url(assets/images/footer-about.jpg);background-position:center;) ">
+                            About Avalon</h1>
+                        <p>Established in 2002, Avalon is one of India&#039;s finest luxury real estate
+                            developers. Renowned for its leadership and excellence in real estate development,
+                            the
+                            company has successfully delivered over 20 million sq. ft. of prime real estate,</p>
+                    </div>
+                </div>
+                <!-- <div class="row knowmorebtns">
+            <div class="col-xs-12 col-md-6 col-sm-6 leftbtn">
+                <button class="btn custom-btn about-panchshil-btn " onclick="window.open('http://panchshil.com/')">KNOW MORE</button>
+            </div>
+            <div class="col-xs-12 col-md-6 col-sm-6 rightbtn">
+                <button class="btn custom-btn about-panchshil-btn" onclick="window.open('http://panchshil.com/')">VIEW ALL PROPERTIES</button>
+            </div>
+        </div> -->
+            </div>
+        </div>
+    </div>
+    <!-- Footer About Us -->
+
+    <!-- End Banner Section -->
+
+
+
+
+
+
+
+
+    <div class="socialmediaFooter">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-3 col-md-3 col-lg-3 text-left">
+                    <a href="" target="_blank">PRIVACY
+                        POLICY</a>
+                </div>
+                <div class="col-sm-6 col-md-6 col-lg-6 footer_social_links__wrap text-center">
+                    <a class="col-sm-3 col-md-3 col-lg-3 footer_social_links" target="_blank" href=""><i
+                            class="fa fa-facebook" aria-hidden="true"></i></a>
+
+
+                    <a class="col-sm-3 col-md-3 col-lg-3 footer_social_links" target="_blank" href=""><i
+                            class="fa fa-instagram" aria-hidden="true"></i></a>
+
+
+                    <a class="col-sm-3 col-md-3 col-lg-3 footer_social_links" target="_blank" href=""><i
+                            class="fa fa-linkedin" aria-hidden="true"></i></a>
+
+
+                    <a class="col-sm-3 col-md-3 col-lg-3 footer_social_links" target="_blank" href="#"><i
+                            class="fa fa-youtube-play" aria-hidden="true"></i></a>
+
+
+
+
+
+                    <!--   <a class="col-sm-3 col-md-3 col-lg-3" href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+                    <a class="col-sm-3 col-md-3 col-lg-3" href="#"><i class="fa fa-youtube-play" aria-hidden="true"></i></a>
+                    <a class="col-sm-3 col-md-3 col-lg-3" href="#"><i class="fa fa-google-plus" aria-hidden="true"></i></a> -->
+                </div>
+                <div class="col-sm-3 col-md-3 col-lg-3 text-right">
+                    <a href="#" target="_blank">DISCLAIMER</a>
+                </div>
+            </div>
+        </div>
+        <div class="row tnt_footer">
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-6 text-left">
+                        <p>ALL RIGHTS RESERVED</p>
+                    </div>
+                    <div class="col-sm-6 text-right">
+                        <p>SEEDED BY<a href="http://puretechnology.in/" target="_blank"> PURE TECH CODEX</a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+
+
+    <!-- <div id="mySidenav" class="sidenav">
+      <a href="javascript:void(0)" class="closebtn" onclick="closemobNav()">&times;</a>
+      <a class="" href="https://www.panchshil.com/panchshiltowers/interiors/">Interiors</a>
+      <a class="li_active" href="https://www.panchshil.com/panchshiltowers/technology/">Technology</a>
+      <a class="" href="https://www.panchshil.com/panchshiltowers/amenities/">Amenities</a>
+      <a class="" href="https://www.panchshil.com/panchshiltowers/plans/">Plans</a>
+      <a class="" href="https://www.panchshil.com/panchshiltowers/public-infra/">Highlights</a>
+      <a class="" href="https://www.panchshil.com/panchshiltowers/gallery/">Gallery</a>
+      <a class="" href="https://www.panchshil.com/panchshiltowers/testimonials/">Testimonials</a>
+      <a class="" href="https://www.panchshil.com/panchshiltowers/contact/">Contact</a>
+  </div> -->
+
+
+
+    <!-- <div class="enquiry_floating_btn" data-toggle="modal" data-target="#cutsom_modal">
+        <span>Enquire</span>
+    </div> -->
+
+    <!-- <div class="wahtsapp_floating_btn">
+    <a href="https://wa.me/917030902895?text=Hello%20Abhishek%20%2C%20I%20am%20interested%20to%20know%20more%20details.%20Please%20get%20in%20touch."><i class="fa fa-whatsapp" aria-hidden="true"></i> Get Details on WhatsApp</a>
+</div> -->
+
+    <!--
+<div class="callicons">
+    <a data-toggle="modal" data-target="#cutsom_modal">
+        <img alt="callicon" src="https://www.panchshil.com/panchshiltowers/images/enquiry.png"  />
+    </a>
+</div>
+-->
+
+
+    <div class="modal fade" id="enquirymodal" role="dialog">
+        <div class="modal-dialog">
+            <!-- Modal content-->
+            <div class="modal-content"
+                style="background-image: url(https://www.panchshil.com/panchshiltowers/images/homeaboutbg.png);background-size:cover;">
+                <form id="footerForm" method="POST">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        <h4 class="modal-title">Enquiry Form</h4>
+                    </div>
+                    <div class="modal-body">
+                        <div class="form-group">
+                            <label for="ftname">Name</label>
+                            <input type="text" class="form-control" name="name" id="ftname" onfocus="hideerrft()">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="ftemail">Email</label>
+                            <input type="email" class="form-control" name="email" id="ftemail" onfocus="hideerrft()">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="ftmobile">Phone No.</label>
+                            <input type="number" min="1" class="form-control" name="mobile" id="ftmobile"
+                                onfocus="hideerrft()">
+                        </div>
+
+
+                        <div class="form-group">
+                            <label for="ftmsg">Type your query</label>
+                            <textarea class="form-control " id="ftmsg" name="message" onfocus="hideerrft()"> </textarea>
+                        </div>
+
+
+                    </div>
+
+
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default"
+                            onclick="submitfooterForm(ftname.value,ftemail.value,ftmobile.value,ftmsg.value);">Submit</button>
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+
+
+                        <div style="margin-top : 20px;display:none;text-align:left;" id="successmsg">
+                            <strong>Thank you!</strong> We will email you the project brochure, be sure to check spam!
+                        </div>
+
+                        <div id="failedmsg" style="display:none;margin-top : 20px;text-align:left;">
+                            <strong>Failed!</strong> Please try again after some time.
+                        </div>
+
+                        <div id="failedemailmsg" style="margin-top : 20px;display:none;text-align:left;">
+                            <strong>Email !</strong> Please check Your email.
+                        </div>
+
+                        <div id="failedemptymsg" style="margin-top : 20px;display:none;text-align:left;">
+                            <strong>Failed !</strong> Please fill form details.
+                        </div>
+
+                        <div id="mobileerrmsg" style="margin-top : 20px;display:none;text-align:left;">
+                            <strong>Failed !</strong> Please check mobile number.
+                        </div>
+
+                        <div id="failednamemsg" style="margin-top : 20px;display:none;">
+                            <strong>Failed !</strong> Please check Your names.
+                        </div>
+
+
+
+                    </div>
+                </form>
+
+
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="cutsom_modal" role="dialog">
+        <div class="modal-dialog">
+
+            <!-- Modal content-->
+            <div class="modal-content">
+                <div class="modal-body" style="padding:0 !important;">
+
+                    <div class="feedform">
+                        <!-- <img class="borderimg" alt="diamond border" src="https://www.panchshil.com/panchshiltowers/images/diamond_border_1.png" /> -->
+                        <button type="button" class="close closebtn custom_close" data-dismiss="modal">&times;</button>
+                        <div class="row">
+                            <div>
+                                <div class="verticalBar inlineDiv"></div>
+                                <div class="inlineDiv" style="margin: 2rem 1rem;">
+                                    <p>Get in Touch</p>
+                                    <p>SUBMIT YOUR QUERY</p>
+                                </div>
+                            </div>
+                            <form class="form-inline queryForm" id="formfeed">
+                                <div class="col-md-12">
+                                    <input type="text" class="form-control" onfocus="hidefeederr()" required
+                                        id="feedname" autocomplete="off" placeholder="NAME *" name="name">
+                                </div>
+                                <div class="col-md-12">
+                                    <input type="email" class="form-control" onfocus="hidefeederr()" required
+                                        placeholder="EMAIL *" autocomplete="off" name="feedemail" id="feedemail">
+                                </div>
+
+                                <div class="col-md-4">
+                                    <select class="form-control" name="feedcc" data-live-search="true">
+
+                                        <option value='+93'>Afghanistan&nbsp;(+93)</option>
+                                        <option value='+355'>Albania&nbsp;(+355)</option>
+                                        <option value='+213'>Algeria&nbsp;(+213)</option>
+                                        <option value='+1 684'>American Samoa&nbsp;(+1 684)</option>
+                                        <option value='+376'>Andorra&nbsp;(+376)</option>
+                                        <option value='+244'>Angola&nbsp;(+244)</option>
+                                        <option value='+1 264'>Anguilla&nbsp;(+1 264)</option>
+                                        <option value='+1 268'>Antigua And Barbuda&nbsp;(+1 268)</option>
+                                        <option value='+54'>Argentina&nbsp;(+54)</option>
+                                        <option value='+374'>Armenia&nbsp;(+374)</option>
+                                        <option value='+297'>Aruba&nbsp;(+297)</option>
+                                        <option value='+61'>Australia&nbsp;(+61)</option>
+                                        <option value='+43'>Austria&nbsp;(+43)</option>
+                                        <option value='+994'>Azerbaijan&nbsp;(+994)</option>
+                                        <option value='+973'>Bahrain&nbsp;(+973)</option>
+                                        <option value='+880'>Bangladesh&nbsp;(+880)</option>
+                                        <option value='+1 246'>Barbados&nbsp;(+1 246)</option>
+                                        <option value='+375'>Belarus&nbsp;(+375)</option>
+                                        <option value='+32'>Belgium&nbsp;(+32)</option>
+                                        <option value='+501'>Belize&nbsp;(+501)</option>
+                                        <option value='+229'>Benin&nbsp;(+229)</option>
+                                        <option value='+1 441'>Bermuda&nbsp;(+1 441)</option>
+                                        <option value='+975'>Bhutan&nbsp;(+975)</option>
+                                        <option value='+591'>Bolivia&nbsp;(+591)</option>
+                                        <option value='+387'>Bosnia and Herzegovina&nbsp;(+387)</option>
+                                        <option value='+267'>Botswana&nbsp;(+267)</option>
+                                        <option value='+55'>Brazil&nbsp;(+55)</option>
+                                        <option value='+246'>British Indian Ocean Territory&nbsp;(+246)</option>
+                                        <option value='+673'>Brunei&nbsp;(+673)</option>
+                                        <option value='+359'>Bulgaria&nbsp;(+359)</option>
+                                        <option value='+226'>Burkina Faso&nbsp;(+226)</option>
+                                        <option value='+257'>Burundi&nbsp;(+257)</option>
+                                        <option value='+855'>Cambodia&nbsp;(+855)</option>
+                                        <option value='+237'>Cameroon&nbsp;(+237)</option>
+                                        <option value='+1'>Canada&nbsp;(+1)</option>
+                                        <option value='+238'>Cape Verde&nbsp;(+238)</option>
+                                        <option value='+ 345'>Cayman Islands&nbsp;(+ 345)</option>
+                                        <option value='+236'>Central African Republic&nbsp;(+236)</option>
+                                        <option value='+235'>Chad&nbsp;(+235)</option>
+                                        <option value='+56'>Chile&nbsp;(+56)</option>
+                                        <option value='+86'>China&nbsp;(+86)</option>
+                                        <option value='+61'>Christmas Island&nbsp;(+61)</option>
+                                        <option value='+57'>Colombia&nbsp;(+57)</option>
+                                        <option value='+269'>Comoros&nbsp;(+269)</option>
+                                        <option value='+242'>Congo&nbsp;(+242)</option>
+                                        <option value='+682'>Cook Islands&nbsp;(+682)</option>
+                                        <option value='+506'>Costa Rica&nbsp;(+506)</option>
+                                        <option value='+53'>Cuba&nbsp;(+53)</option>
+                                        <option value='+537'>Cyprus&nbsp;(+537)</option>
+                                        <option value='+420'>Czech Republic&nbsp;(+420)</option>
+                                        <option value='+45'>Denmark&nbsp;(+45)</option>
+                                        <option value='+253'>Djibouti&nbsp;(+253)</option>
+                                        <option value='+1 767'>Dominica&nbsp;(+1 767)</option>
+                                        <option value='+1 809'>Dominican Republic&nbsp;(+1 809)</option>
+                                        <option value='+670'>East Timor&nbsp;(+670)</option>
+                                        <option value='+593'>Ecuador&nbsp;(+593)</option>
+                                        <option value='+20'>Egypt&nbsp;(+20)</option>
+                                        <option value='+503'>El Salvador&nbsp;(+503)</option>
+                                        <option value='+240'>Equatorial Guinea&nbsp;(+240)</option>
+                                        <option value='+291'>Eritrea&nbsp;(+291)</option>
+                                        <option value='+372'>Estonia&nbsp;(+372)</option>
+                                        <option value='+251'>Ethiopia&nbsp;(+251)</option>
+                                        <option value='+500'>Falkland Islands&nbsp;(+500)</option>
+                                        <option value='+298'>Faroe Islands&nbsp;(+298)</option>
+                                        <option value='+358'>Finland&nbsp;(+358)</option>
+                                        <option value='+33'>France&nbsp;(+33)</option>
+                                        <option value='+594'>French Guiana&nbsp;(+594)</option>
+                                        <option value='+689'>French Polynesia&nbsp;(+689)</option>
+                                        <option value='+241'>Gabon&nbsp;(+241)</option>
+                                        <option value='+995'>Georgia&nbsp;(+995)</option>
+                                        <option value='+49'>Germany&nbsp;(+49)</option>
+                                        <option value='+233'>Ghana&nbsp;(+233)</option>
+                                        <option value='+350'>Gibraltar&nbsp;(+350)</option>
+                                        <option value='+30'>Greece&nbsp;(+30)</option>
+                                        <option value='+299'>Greenland&nbsp;(+299)</option>
+                                        <option value='+1 473'>Grenada&nbsp;(+1 473)</option>
+                                        <option value='+590'>Guadeloupe&nbsp;(+590)</option>
+                                        <option value='+1 671'>Guam&nbsp;(+1 671)</option>
+                                        <option value='+502'>Guatemala&nbsp;(+502)</option>
+                                        <option value='+224'>Guinea&nbsp;(+224)</option>
+                                        <option value='+245'>Guinea-Bissau&nbsp;(+245)</option>
+                                        <option value='+595'>Guyana&nbsp;(+595)</option>
+                                        <option value='+509'>Haiti&nbsp;(+509)</option>
+                                        <option value='+504'>Honduras&nbsp;(+504)</option>
+                                        <option value='+36'>Hungary&nbsp;(+36)</option>
+                                        <option value='+354'>Iceland&nbsp;(+354)</option>
+                                        <option selected value='+91'>India&nbsp;(+91)</option>
+                                        <option value='+62'>Indonesia&nbsp;(+62)</option>
+                                        <option value='+98'>Iran&nbsp;(+98)</option>
+                                        <option value='+964'>Iraq&nbsp;(+964)</option>
+                                        <option value='+353'>Ireland&nbsp;(+353)</option>
+                                        <option value='+972'>Israel&nbsp;(+972)</option>
+                                        <option value='+39'>Italy&nbsp;(+39)</option>
+                                        <option value='+1 876'>Jamaica&nbsp;(+1 876)</option>
+                                        <option value='+81'>Japan&nbsp;(+81)</option>
+                                        <option value='+962'>Jordan&nbsp;(+962)</option>
+                                        <option value='+7 7'>Kazakhstan&nbsp;(+7 7)</option>
+                                        <option value='+254'>Kenya&nbsp;(+254)</option>
+                                        <option value='+686'>Kiribati&nbsp;(+686)</option>
+                                        <option value='+965'>Kuwait&nbsp;(+965)</option>
+                                        <option value='+996'>Kyrgyzstan&nbsp;(+996)</option>
+                                        <option value='+856'>Laos&nbsp;(+856)</option>
+                                        <option value='+371'>Latvia&nbsp;(+371)</option>
+                                        <option value='+961'>Lebanon&nbsp;(+961)</option>
+                                        <option value='+266'>Lesotho&nbsp;(+266)</option>
+                                        <option value='+231'>Liberia&nbsp;(+231)</option>
+                                        <option value='+218'>Libya&nbsp;(+218)</option>
+                                        <option value='+423'>Liechtenstein&nbsp;(+423)</option>
+                                        <option value='+370'>Lithuania&nbsp;(+370)</option>
+                                        <option value='+352'>Luxembourg&nbsp;(+352)</option>
+                                        <option value='+389'>Macedonia&nbsp;(+389)</option>
+                                        <option value='+261'>Madagascar&nbsp;(+261)</option>
+                                        <option value='+265'>Malawi&nbsp;(+265)</option>
+                                        <option value='+60'>Malaysia&nbsp;(+60)</option>
+                                        <option value='+960'>Maldives&nbsp;(+960)</option>
+                                        <option value='+223'>Mali&nbsp;(+223)</option>
+                                        <option value='+356'>Malta&nbsp;(+356)</option>
+                                        <option value='+692'>Marshall Islands&nbsp;(+692)</option>
+                                        <option value='+596'>Martinique&nbsp;(+596)</option>
+                                        <option value='+222'>Mauritania&nbsp;(+222)</option>
+                                        <option value='+230'>Mauritius&nbsp;(+230)</option>
+                                        <option value='+262'>Mayotte&nbsp;(+262)</option>
+                                        <option value='+52'>Mexico&nbsp;(+52)</option>
+                                        <option value='+691'>Micronesia&nbsp;(+691)</option>
+                                        <option value='+373'>Moldova&nbsp;(+373)</option>
+                                        <option value='+377'>Monaco&nbsp;(+377)</option>
+                                        <option value='+976'>Mongolia&nbsp;(+976)</option>
+                                        <option value='+1664'>Montserrat&nbsp;(+1664)</option>
+                                        <option value='+212'>Morocco&nbsp;(+212)</option>
+                                        <option value='+95'>Myanmar&nbsp;(+95)</option>
+                                        <option value='+264'>Namibia&nbsp;(+264)</option>
+                                        <option value='+674'>Nauru&nbsp;(+674)</option>
+                                        <option value='+977'>Nepal&nbsp;(+977)</option>
+                                        <option value='+599'>Netherlands Antilles&nbsp;(+599)</option>
+                                        <option value='+687'>New Caledonia&nbsp;(+687)</option>
+                                        <option value='+64'>New Zealand&nbsp;(+64)</option>
+                                        <option value='+505'>Nicaragua&nbsp;(+505)</option>
+                                        <option value='+227'>Niger&nbsp;(+227)</option>
+                                        <option value='+234'>Nigeria&nbsp;(+234)</option>
+                                        <option value='+683'>Niue&nbsp;(+683)</option>
+                                        <option value='+672'>Norfolk Island&nbsp;(+672)</option>
+                                        <option value='+1 670'>Northern Mariana Islands&nbsp;(+1 670)</option>
+                                        <option value='+47'>Norway&nbsp;(+47)</option>
+                                        <option value='+968'>Oman&nbsp;(+968)</option>
+                                        <option value='+92'>Pakistan&nbsp;(+92)</option>
+                                        <option value='+680'>Palau&nbsp;(+680)</option>
+                                        <option value='+507'>Panama&nbsp;(+507)</option>
+                                        <option value='+675'>Papua new Guinea&nbsp;(+675)</option>
+                                        <option value='+595'>Paraguay&nbsp;(+595)</option>
+                                        <option value='+51'>Peru&nbsp;(+51)</option>
+                                        <option value='+63'>Philippines&nbsp;(+63)</option>
+                                        <option value='+48'>Poland&nbsp;(+48)</option>
+                                        <option value='+351'>Portugal&nbsp;(+351)</option>
+                                        <option value='+1 787'>Puerto Rico&nbsp;(+1 787)</option>
+                                        <option value='+974'>Qatar&nbsp;(+974)</option>
+                                        <option value='+262'>Reunion&nbsp;(+262)</option>
+                                        <option value='+40'>Romania&nbsp;(+40)</option>
+                                        <option value='+7'>Russia&nbsp;(+7)</option>
+                                        <option value='+250'>Rwanda&nbsp;(+250)</option>
+                                        <option value='+685'>Samoa&nbsp;(+685)</option>
+                                        <option value='+378'>San Marino&nbsp;(+378)</option>
+                                        <option value='+966'>Saudi Arabia&nbsp;(+966)</option>
+                                        <option value='+221'>Senegal&nbsp;(+221)</option>
+                                        <option value='+381'>Serbia&nbsp;(+381)</option>
+                                        <option value='+248'>Seychelles&nbsp;(+248)</option>
+                                        <option value='+232'>Sierra Leone&nbsp;(+232)</option>
+                                        <option value='+65'>Singapore&nbsp;(+65)</option>
+                                        <option value='+421'>Slovakia&nbsp;(+421)</option>
+                                        <option value='+386'>Slovenia&nbsp;(+386)</option>
+                                        <option value='+677'>Solomon Islands&nbsp;(+677)</option>
+                                        <option value='+27'>South Africa&nbsp;(+27)</option>
+                                        <option value='+34'>Spain&nbsp;(+34)</option>
+                                        <option value='+94'>Sri Lanka&nbsp;(+94)</option>
+                                        <option value='+249'>Sudan&nbsp;(+249)</option>
+                                        <option value='+597'>Suriname&nbsp;(+597)</option>
+                                        <option value='+268'>Swaziland&nbsp;(+268)</option>
+                                        <option value='+46'>Sweden&nbsp;(+46)</option>
+                                        <option value='+41'>Switzerland&nbsp;(+41)</option>
+                                        <option value='+963'>Syria&nbsp;(+963)</option>
+                                        <option value='+886'>Taiwan&nbsp;(+886)</option>
+                                        <option value='+992'>Tajikistan&nbsp;(+992)</option>
+                                        <option value='+255'>Tanzania&nbsp;(+255)</option>
+                                        <option value='+66'>Thailand&nbsp;(+66)</option>
+                                        <option value='+228'>Togo&nbsp;(+228)</option>
+                                        <option value='+690'>Tokelau&nbsp;(+690)</option>
+                                        <option value='+676'>Tonga&nbsp;(+676)</option>
+                                        <option value='+1 868'>Trinidad And Tobago&nbsp;(+1 868)</option>
+                                        <option value='+216'>Tunisia&nbsp;(+216)</option>
+                                        <option value='+90'>Turkey&nbsp;(+90)</option>
+                                        <option value='+993'>Turkmenistan&nbsp;(+993)</option>
+                                        <option value='+1 649'>Turks And Caicos Islands&nbsp;(+1 649)</option>
+                                        <option value='+688'>Tuvalu&nbsp;(+688)</option>
+                                        <option value='+256'>Uganda&nbsp;(+256)</option>
+                                        <option value='+380'>Ukraine&nbsp;(+380)</option>
+                                        <option value='+971'>United Arab Emirates&nbsp;(+971)</option>
+                                        <option value='+44'>United Kingdom&nbsp;(+44)</option>
+                                        <option value='+1'>United States&nbsp;(+1)</option>
+                                        <option value='+598'>Uruguay&nbsp;(+598)</option>
+                                        <option value='+998'>Uzbekistan&nbsp;(+998)</option>
+                                        <option value='+678'>Vanuatu&nbsp;(+678)</option>
+                                        <option value='+58'>Venezuela&nbsp;(+58)</option>
+                                        <option value='+84'>Vietnam&nbsp;(+84)</option>
+                                        <option value='+967'>Yemen&nbsp;(+967)</option>
+                                        <option value='+260'>Zambia&nbsp;(+260)</option>
+                                        <option value='+263'>Zimbabwe&nbsp;(+263)</option>
+                                    </select>
+
+                                </div>
+                                <div class="col-md-8">
+                                    <input type="tel" class="form-control" onfocus="hidefeederr()" required
+                                        placeholder="MOBILE *" autocomplete="off" name="mobile" min="1" id="feedmob">
+                                </div>
+
+                                <div class="col-md-12">
+                                    <input class="form-control" onfocus="hidefeederr()" placeholder="TYPE YOUR QUERY *"
+                                        autocomplete="off" name="message" id="feedquery">
+                                </div>
+                                <div class="queryFormBtn" style="float:unset;margin-left:1rem;">
+                                    <input type="hidden" id="feedpdf"
+                                        value="https://www.panchshil.com/panchshiltowers/admin/images/uploads/PDF/59d480396e64e.jpg">
+                                    <button type="button" class="btn btn-default custom-btn submitForm"
+                                        onclick="submitfeedForm(feedname.value,feedemail.value,feedcc.value,feedmob.value,feedquery.value,feedpdf.value);">submit</button>
+                                </div>
+
+
+
+                                <div class="alert alert-success" style="margin-top : 20px;display:none;"
+                                    id="successfeed">
+                                    <strong>Thank you!</strong> We will email you the project brochure, be sure to check
+                                    spam!
+                                </div>
+
+                                <div class="alert alert-warning" id="failedfeed"
+                                    style="margin-top : 20px;display:none;">
+                                    <strong>Failed!</strong> Please try again after some time.
+                                </div>
+
+
+                                <div class="alert alert-warning" id="failedemailfeed"
+                                    style="margin-top : 20px;display:none;">
+                                    <strong>Email !</strong> Please check Your email.
+                                </div>
+
+                                <div class="alert alert-warning" id="failedemptyfeed"
+                                    style="margin-top : 20px;display:none;">
+                                    <strong>Failed !</strong> Please fill form details.
+                                </div>
+
+                                <div class="alert alert-warning" id="mobileerrfeed"
+                                    style="margin-top : 20px;display:none;">
+                                    <strong>Failed !</strong> Please check mobile number.
+                                </div>
+                                <div class="alert alert-warning" id="failednamefeed"
+                                    style="margin-top : 20px;display:none;">
+                                    <strong>Failed !</strong> Please check Name.
+                                </div>
+
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- Phone modal -->
+    <div class="modal fade" id="myModal4" tabindex="-1" role="dialog" aria-labelledby="myModal4" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content"
+                style="background: url(images/diamond_border.png)top center;background-size: contain;background-repeat: no-repeat;background-color: #fff;position: relative;">
+
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <div style="padding: 4rem 0 0rem;">
+                        <div class="verticalBar inlineDiv"
+                            style="width: 0.4rem;background-color: #f5d360;height: 7rem;margin-top: 25px;vertical-align: top;">
+                        </div>
+                        <div class="inlineDiv" style="margin: 2rem 1rem;">
+                            <p>INSTANT CALLBACK</p>
+                            <p>SUBMIT YOUR DETAILS</p>
+                        </div>
+                    </div>
+
+                    <div class="modal-body" style="padding: 40px 20px 20px;">
+
+                        <form id="pop-up-form-phone" class="myModal">
+                            <!-- <div class="form-group">
+                                            <input type="text" class="form-control" id="phonename" name="name" placeholder="NAME *" required> 
+                                            <p id="invalid_phonecall_name" style="opacity:0;">Field Required</p>
+                                        </div> -->
+                            <div class="form-group" id="phonecall_number" style="margin-bottom: 0;">
+                                <select name="CountryName" id="newcountryphone">
+                                    <option data-countryCode="IN" value="91">India (+91)</option>
+                                    <optgroup label="Other countries">
+                                        <option data-countryCode="DZ" value="213">Algeria (+213)</option>
+                                        <option data-countryCode="AD" value="376">Andorra (+376)</option>
+                                        <option data-countryCode="AO" value="244">Angola (+244)</option>
+                                        <option data-countryCode="AI" value="1264">Anguilla (+1264)</option>
+                                        <option data-countryCode="AG" value="1268">Antigua &amp; Barbuda (+1268)
+                                        </option>
+                                        <option data-countryCode="AR" value="54">Argentina (+54)</option>
+                                        <option data-countryCode="AM" value="374">Armenia (+374)</option>
+                                        <option data-countryCode="AW" value="297">Aruba (+297)</option>
+                                        <option data-countryCode="AU" value="61">Australia (+61)</option>
+                                        <option data-countryCode="AT" value="43">Austria (+43)</option>
+                                        <option data-countryCode="AZ" value="994">Azerbaijan (+994)</option>
+                                        <option data-countryCode="BS" value="1242">Bahamas (+1242)</option>
+                                        <option data-countryCode="BH" value="973">Bahrain (+973)</option>
+                                        <option data-countryCode="BD" value="880">Bangladesh (+880)</option>
+                                        <option data-countryCode="BB" value="1246">Barbados (+1246)</option>
+                                        <option data-countryCode="BY" value="375">Belarus (+375)</option>
+                                        <option data-countryCode="BE" value="32">Belgium (+32)</option>
+                                        <option data-countryCode="BZ" value="501">Belize (+501)</option>
+                                        <option data-countryCode="BJ" value="229">Benin (+229)</option>
+                                        <option data-countryCode="BM" value="1441">Bermuda (+1441)</option>
+                                        <option data-countryCode="BT" value="975">Bhutan (+975)</option>
+                                        <option data-countryCode="BO" value="591">Bolivia (+591)</option>
+                                        <option data-countryCode="BA" value="387">Bosnia Herzegovina (+387)</option>
+                                        <option data-countryCode="BW" value="267">Botswana (+267)</option>
+                                        <option data-countryCode="BR" value="55">Brazil (+55)</option>
+                                        <option data-countryCode="BN" value="673">Brunei (+673)</option>
+                                        <option data-countryCode="BG" value="359">Bulgaria (+359)</option>
+                                        <option data-countryCode="BF" value="226">Burkina Faso (+226)</option>
+                                        <option data-countryCode="BI" value="257">Burundi (+257)</option>
+                                        <option data-countryCode="KH" value="855">Cambodia (+855)</option>
+                                        <option data-countryCode="CM" value="237">Cameroon (+237)</option>
+                                        <option data-countryCode="CA" value="1">Canada (+1)</option>
+                                        <option data-countryCode="CV" value="238">Cape Verde Islands (+238)</option>
+                                        <option data-countryCode="KY" value="1345">Cayman Islands (+1345)</option>
+                                        <option data-countryCode="CF" value="236">Central African Republic (+236)
+                                        </option>
+                                        <option data-countryCode="CL" value="56">Chile (+56)</option>
+                                        <option data-countryCode="CN" value="86">China (+86)</option>
+                                        <option data-countryCode="CO" value="57">Colombia (+57)</option>
+                                        <option data-countryCode="KM" value="269">Comoros (+269)</option>
+                                        <option data-countryCode="CG" value="242">Congo (+242)</option>
+                                        <option data-countryCode="CK" value="682">Cook Islands (+682)</option>
+                                        <option data-countryCode="CR" value="506">Costa Rica (+506)</option>
+                                        <option data-countryCode="HR" value="385">Croatia (+385)</option>
+                                        <option data-countryCode="CU" value="53">Cuba (+53)</option>
+                                        <option data-countryCode="CY" value="90392">Cyprus North (+90392)</option>
+                                        <option data-countryCode="CY" value="357">Cyprus South (+357)</option>
+                                        <option data-countryCode="CZ" value="42">Czech Republic (+42)</option>
+                                        <option data-countryCode="DK" value="45">Denmark (+45)</option>
+                                        <option data-countryCode="DJ" value="253">Djibouti (+253)</option>
+                                        <option data-countryCode="DM" value="1809">Dominica (+1809)</option>
+                                        <option data-countryCode="DO" value="1809">Dominican Republic (+1809)</option>
+                                        <option data-countryCode="EC" value="593">Ecuador (+593)</option>
+                                        <option data-countryCode="EG" value="20">Egypt (+20)</option>
+                                        <option data-countryCode="SV" value="503">El Salvador (+503)</option>
+                                        <option data-countryCode="GQ" value="240">Equatorial Guinea (+240)</option>
+                                        <option data-countryCode="ER" value="291">Eritrea (+291)</option>
+                                        <option data-countryCode="EE" value="372">Estonia (+372)</option>
+                                        <option data-countryCode="ET" value="251">Ethiopia (+251)</option>
+                                        <option data-countryCode="FK" value="500">Falkland Islands (+500)</option>
+                                        <option data-countryCode="FO" value="298">Faroe Islands (+298)</option>
+                                        <option data-countryCode="FJ" value="679">Fiji (+679)</option>
+                                        <option data-countryCode="FI" value="358">Finland (+358)</option>
+                                        <option data-countryCode="FR" value="33">France (+33)</option>
+                                        <option data-countryCode="GF" value="594">French Guiana (+594)</option>
+                                        <option data-countryCode="PF" value="689">French Polynesia (+689)</option>
+                                        <option data-countryCode="GA" value="241">Gabon (+241)</option>
+                                        <option data-countryCode="GM" value="220">Gambia (+220)</option>
+                                        <option data-countryCode="GE" value="7880">Georgia (+7880)</option>
+                                        <option data-countryCode="DE" value="49">Germany (+49)</option>
+                                        <option data-countryCode="GH" value="233">Ghana (+233)</option>
+                                        <option data-countryCode="GI" value="350">Gibraltar (+350)</option>
+                                        <option data-countryCode="GR" value="30">Greece (+30)</option>
+                                        <option data-countryCode="GL" value="299">Greenland (+299)</option>
+                                        <option data-countryCode="GD" value="1473">Grenada (+1473)</option>
+                                        <option data-countryCode="GP" value="590">Guadeloupe (+590)</option>
+                                        <option data-countryCode="GU" value="671">Guam (+671)</option>
+                                        <option data-countryCode="GT" value="502">Guatemala (+502)</option>
+                                        <option data-countryCode="GN" value="224">Guinea (+224)</option>
+                                        <option data-countryCode="GW" value="245">Guinea - Bissau (+245)</option>
+                                        <option data-countryCode="GY" value="592">Guyana (+592)</option>
+                                        <option data-countryCode="HT" value="509">Haiti (+509)</option>
+                                        <option data-countryCode="HN" value="504">Honduras (+504)</option>
+                                        <option data-countryCode="HK" value="852">Hong Kong (+852)</option>
+                                        <option data-countryCode="HU" value="36">Hungary (+36)</option>
+                                        <option data-countryCode="IS" value="354">Iceland (+354)</option>
+                                        <option data-countryCode="ID" value="62">Indonesia (+62)</option>
+                                        <option data-countryCode="IR" value="98">Iran (+98)</option>
+                                        <option data-countryCode="IQ" value="964">Iraq (+964)</option>
+                                        <option data-countryCode="IE" value="353">Ireland (+353)</option>
+                                        <option data-countryCode="IL" value="972">Israel (+972)</option>
+                                        <option data-countryCode="IT" value="39">Italy (+39)</option>
+                                        <option data-countryCode="JM" value="1876">Jamaica (+1876)</option>
+                                        <option data-countryCode="JP" value="81">Japan (+81)</option>
+                                        <option data-countryCode="JO" value="962">Jordan (+962)</option>
+                                        <option data-countryCode="KZ" value="7">Kazakhstan (+7)</option>
+                                        <option data-countryCode="KE" value="254">Kenya (+254)</option>
+                                        <option data-countryCode="KI" value="686">Kiribati (+686)</option>
+                                        <option data-countryCode="KP" value="850">Korea North (+850)</option>
+                                        <option data-countryCode="KR" value="82">Korea South (+82)</option>
+                                        <option data-countryCode="KW" value="965">Kuwait (+965)</option>
+                                        <option data-countryCode="KG" value="996">Kyrgyzstan (+996)</option>
+                                        <option data-countryCode="LA" value="856">Laos (+856)</option>
+                                        <option data-countryCode="LV" value="371">Latvia (+371)</option>
+                                        <option data-countryCode="LB" value="961">Lebanon (+961)</option>
+                                        <option data-countryCode="LS" value="266">Lesotho (+266)</option>
+                                        <option data-countryCode="LR" value="231">Liberia (+231)</option>
+                                        <option data-countryCode="LY" value="218">Libya (+218)</option>
+                                        <option data-countryCode="LI" value="417">Liechtenstein (+417)</option>
+                                        <option data-countryCode="LT" value="370">Lithuania (+370)</option>
+                                        <option data-countryCode="LU" value="352">Luxembourg (+352)</option>
+                                        <option data-countryCode="MO" value="853">Macao (+853)</option>
+                                        <option data-countryCode="MK" value="389">Macedonia (+389)</option>
+                                        <option data-countryCode="MG" value="261">Madagascar (+261)</option>
+                                        <option data-countryCode="MW" value="265">Malawi (+265)</option>
+                                        <option data-countryCode="MY" value="60">Malaysia (+60)</option>
+                                        <option data-countryCode="MV" value="960">Maldives (+960)</option>
+                                        <option data-countryCode="ML" value="223">Mali (+223)</option>
+                                        <option data-countryCode="MT" value="356">Malta (+356)</option>
+                                        <option data-countryCode="MH" value="692">Marshall Islands (+692)</option>
+                                        <option data-countryCode="MQ" value="596">Martinique (+596)</option>
+                                        <option data-countryCode="MR" value="222">Mauritania (+222)</option>
+                                        <option data-countryCode="YT" value="269">Mayotte (+269)</option>
+                                        <option data-countryCode="MX" value="52">Mexico (+52)</option>
+                                        <option data-countryCode="FM" value="691">Micronesia (+691)</option>
+                                        <option data-countryCode="MD" value="373">Moldova (+373)</option>
+                                        <option data-countryCode="MC" value="377">Monaco (+377)</option>
+                                        <option data-countryCode="MN" value="976">Mongolia (+976)</option>
+                                        <option data-countryCode="MS" value="1664">Montserrat (+1664)</option>
+                                        <option data-countryCode="MA" value="212">Morocco (+212)</option>
+                                        <option data-countryCode="MZ" value="258">Mozambique (+258)</option>
+                                        <option data-countryCode="MN" value="95">Myanmar (+95)</option>
+                                        <option data-countryCode="NA" value="264">Namibia (+264)</option>
+                                        <option data-countryCode="NR" value="674">Nauru (+674)</option>
+                                        <option data-countryCode="NP" value="977">Nepal (+977)</option>
+                                        <option data-countryCode="NL" value="31">Netherlands (+31)</option>
+                                        <option data-countryCode="NC" value="687">New Caledonia (+687)</option>
+                                        <option data-countryCode="NZ" value="64">New Zealand (+64)</option>
+                                        <option data-countryCode="NI" value="505">Nicaragua (+505)</option>
+                                        <option data-countryCode="NE" value="227">Niger (+227)</option>
+                                        <option data-countryCode="NG" value="234">Nigeria (+234)</option>
+                                        <option data-countryCode="NU" value="683">Niue (+683)</option>
+                                        <option data-countryCode="NF" value="672">Norfolk Islands (+672)</option>
+                                        <option data-countryCode="NP" value="670">Northern Marianas (+670)</option>
+                                        <option data-countryCode="NO" value="47">Norway (+47)</option>
+                                        <option data-countryCode="OM" value="968">Oman (+968)</option>
+                                        <option data-countryCode="PW" value="680">Palau (+680)</option>
+                                        <option data-countryCode="PA" value="507">Panama (+507)</option>
+                                        <option data-countryCode="PG" value="675">Papua New Guinea (+675)</option>
+                                        <option data-countryCode="PY" value="595">Paraguay (+595)</option>
+                                        <option data-countryCode="PE" value="51">Peru (+51)</option>
+                                        <option data-countryCode="PH" value="63">Philippines (+63)</option>
+                                        <option data-countryCode="PL" value="48">Poland (+48)</option>
+                                        <option data-countryCode="PT" value="351">Portugal (+351)</option>
+                                        <option data-countryCode="PR" value="1787">Puerto Rico (+1787)</option>
+                                        <option data-countryCode="QA" value="974">Qatar (+974)</option>
+                                        <option data-countryCode="RE" value="262">Reunion (+262)</option>
+                                        <option data-countryCode="RO" value="40">Romania (+40)</option>
+                                        <option data-countryCode="RU" value="7">Russia (+7)</option>
+                                        <option data-countryCode="RW" value="250">Rwanda (+250)</option>
+                                        <option data-countryCode="SM" value="378">San Marino (+378)</option>
+                                        <option data-countryCode="ST" value="239">Sao Tome &amp; Principe (+239)
+                                        </option>
+                                        <option data-countryCode="SA" value="966">Saudi Arabia (+966)</option>
+                                        <option data-countryCode="SN" value="221">Senegal (+221)</option>
+                                        <option data-countryCode="CS" value="381">Serbia (+381)</option>
+                                        <option data-countryCode="SC" value="248">Seychelles (+248)</option>
+                                        <option data-countryCode="SL" value="232">Sierra Leone (+232)</option>
+                                        <option data-countryCode="SG" value="65">Singapore (+65)</option>
+                                        <option data-countryCode="SK" value="421">Slovak Republic (+421)</option>
+                                        <option data-countryCode="SI" value="386">Slovenia (+386)</option>
+                                        <option data-countryCode="SB" value="677">Solomon Islands (+677)</option>
+                                        <option data-countryCode="SO" value="252">Somalia (+252)</option>
+                                        <option data-countryCode="ZA" value="27">South Africa (+27)</option>
+                                        <option data-countryCode="ES" value="34">Spain (+34)</option>
+                                        <option data-countryCode="LK" value="94">Sri Lanka (+94)</option>
+                                        <option data-countryCode="SH" value="290">St. Helena (+290)</option>
+                                        <option data-countryCode="KN" value="1869">St. Kitts (+1869)</option>
+                                        <option data-countryCode="SC" value="1758">St. Lucia (+1758)</option>
+                                        <option data-countryCode="SD" value="249">Sudan (+249)</option>
+                                        <option data-countryCode="SR" value="597">Suriname (+597)</option>
+                                        <option data-countryCode="SZ" value="268">Swaziland (+268)</option>
+                                        <option data-countryCode="SE" value="46">Sweden (+46)</option>
+                                        <option data-countryCode="CH" value="41">Switzerland (+41)</option>
+                                        <option data-countryCode="SI" value="963">Syria (+963)</option>
+                                        <option data-countryCode="TW" value="886">Taiwan (+886)</option>
+                                        <option data-countryCode="TJ" value="7">Tajikstan (+7)</option>
+                                        <option data-countryCode="TH" value="66">Thailand (+66)</option>
+                                        <option data-countryCode="TG" value="228">Togo (+228)</option>
+                                        <option data-countryCode="TO" value="676">Tonga (+676)</option>
+                                        <option data-countryCode="TT" value="1868">Trinidad &amp; Tobago (+1868)
+                                        </option>
+                                        <option data-countryCode="TN" value="216">Tunisia (+216)</option>
+                                        <option data-countryCode="TR" value="90">Turkey (+90)</option>
+                                        <option data-countryCode="TM" value="7">Turkmenistan (+7)</option>
+                                        <option data-countryCode="TM" value="993">Turkmenistan (+993)</option>
+                                        <option data-countryCode="TC" value="1649">Turks &amp; Caicos Islands (+1649)
+                                        </option>
+                                        <option data-countryCode="TV" value="688">Tuvalu (+688)</option>
+                                        <option data-countryCode="UG" value="256">Uganda (+256)</option>
+                                        <option data-countryCode="GB" value="44">UK (+44)</option>
+                                        <option data-countryCode="UA" value="380">Ukraine (+380)</option>
+                                        <option data-countryCode="AE" value="971">United Arab Emirates (+971)</option>
+                                        <option data-countryCode="UY" value="598">Uruguay (+598)</option>
+                                        <option data-countryCode="US" value="1">USA (+1)</option>
+                                        <option data-countryCode="UZ" value="7">Uzbekistan (+7)</option>
+                                        <option data-countryCode="VU" value="678">Vanuatu (+678)</option>
+                                        <option data-countryCode="VA" value="379">Vatican City (+379)</option>
+                                        <option data-countryCode="VE" value="58">Venezuela (+58)</option>
+                                        <option data-countryCode="VN" value="84">Vietnam (+84)</option>
+                                        <option data-countryCode="VG" value="84">Virgin Islands - British (+1284)
+                                        </option>
+                                        <option data-countryCode="VI" value="84">Virgin Islands - US (+1340)</option>
+                                        <option data-countryCode="WF" value="681">Wallis &amp; Futuna (+681)</option>
+                                        <option data-countryCode="YE" value="969">Yemen (North)(+969)</option>
+                                        <option data-countryCode="YE" value="967">Yemen (South)(+967)</option>
+                                        <option data-countryCode="ZM" value="260">Zambia (+260)</option>
+                                        <option data-countryCode="ZW" value="263">Zimbabwe (+263)</option>
+                                    </optgroup>
+                                </select>
+                                <!-- <p id="invalid_new_maobile" style="opacity:0;">Invalid Mobile</p>  -->
+                                <input type="text" class="form-control" id="phonecall" name="phone"
+                                    placeholder="MOBILE *" required>
+                                <p id="invalid_phonecall_mobile" style="opacity:0;">Invalid Mobile</p>
+                            </div>
+                            <div class="form-group" style="display:none;" id="otp-section">
+                                <label>ENTER 4 DIGIT OTP</label>
+                                <input type="text" class="form-control" id="otp" name="otp" placeholder="" required>
+                            </div>
+                            <div class="afterotp" style="display:none;text-align: center;">
+                                <img src="https://www.panchshil.com/panchshiltowers/images/check_icon.png"
+                                    alt="check icon">
+                            </div>
+                            <div class="modal-footer">
+                                <input type="submit" class="btn btn-default center-block" id="pop-up-form-submit-phone"
+                                    value="Submit">
+                                <input type="submit" class="btn btn-default center-block" id="pop-up-form-submit-otp"
+                                    style="border: 0;font-size: 1.89rem;text-transform: uppercase;font-weight: bolder;letter-spacing: 2px;padding-left: 8px;display:none;margin: auto;"
+                                    value="Submit">
+                                <button class="btn btn-default center-block" id="try-again"
+                                    style="border: 0;font-size: 1.89rem;text-transform: uppercase;font-weight: bolder;letter-spacing: 2px;padding-left: 8px;display:none;margin: auto;">TRY
+                                    AGAIN</button>
+                            </div>
+                            <div class="alert alert-info text-center" id="otp_alert" style="display: none;"></div>
+                        </form>
+                    </div>
+                </div><!-- /.modal-dialog -->
+            </div><!-- /.modal -->
+        </div><!-- phone Ends -->
+    </div>
+    <style>
+        .modal-dialog {
+            width: 800px;
+        }
+
+        .modal-header {
+            padding: 40px;
+        }
+
+        .modal-footer {
+            border: 0;
+        }
+
+        #pop-up-form-submit-phone {
+            border: 0;
+            font-size: 1.89rem;
+            text-transform: uppercase;
+            font-weight: bolder;
+            letter-spacing: 2px;
+            padding-left: 8px;
+        }
+
+        .modal-header .close {
+            font-size: 3rem;
+            color: #214561;
+            opacity: 1;
+            position: absolute;
+            right: 8px;
+            top: 8px;
+        }
+
+        #newcountryphone {
+            border-bottom: 2px solid #ccc;
+            border-radius: 0;
+            box-shadow: none;
+            float: left;
+        }
+
+        .form-group select {
+            background: transparent;
+            border: 0px;
+            height: 34px;
+            color: grey;
+            text-transform: uppercase;
+            font-size: 1.7rem;
+            letter-spacing: 1px;
+            max-width: 96%;
+            overflow: hidden !important;
+        }
+
+        .myModal select {
+            padding-left: 0;
+            font-family: "open_sansregular";
+            outline: 0;
+            width: 20% !important;
+        }
+
+        #phonecall {
+            border-bottom: 2px solid #ccc;
+            border-radius: 0;
+            box-shadow: none;
+            width: 75%;
+            float: right;
+        }
+
+        .myModal input {
+            border: 0;
+            font-size: 1.8rem;
+            padding-left: 0;
+            font-family: "open_sansregular";
+            color: #9a9ca9;
+            letter-spacing: 2px;
+        }
+
+        .form-group p {
+            padding-left: 1rem;
+            font-size: 16px;
+            padding-top: 3px;
+            font-weight: 500;
+            text-transform: capitalize;
+            font-family: verdana;
+            color: #fa0000;
+            clear: both;
+        }
+
+        .inlineDiv p {
+            font-size: 3rem;
+            margin: 0;
+            font-family: "theano_didotregular";
+        }
+
+        #otp-section {
+            width: 150px;
+            margin: auto;
+            text-align: center;
+        }
+
+        #otp-section label {
+            text-align: center;
+            margin-bottom: 2rem;
+            font-family: 'open_sanslight';
+            color: #6d6c62;
+        }
+
+        .myModal .form-group {
+            overflow: auto;
+        }
+
+        #otp {
+            border: 2px solid #ccc;
+            height: 45px;
+            text-align: center;
+        }
+
+        .myModal input {
+            box-shadow: none;
+            border-radius: 0;
+            font-size: 1.8rem;
+            padding-left: 0;
+            font-family: "open_sansregular";
+            color: #9a9ca9;
+            letter-spacing: 2px;
+        }
+
+        @media (max-width: 991px) and (min-width: 320px) {
+
+            .modal-dialog {
+                width: 95%;
+            }
+
+            .modal-header {
+                padding: 10px;
+            }
+
+            .inlineDiv p {
+                font-size: 1.8rem;
+            }
+
+            .modal {
+                z-index: 99999999;
+            }
+
+            .modal-header .close {
+                font-size: 4rem;
+                color: #214561;
+                opacity: 1;
+                position: absolute;
+                right: 8px;
+                top: 8px;
+            }
+
+        }
+
+        @media only screen and (max-width: 480px) {
+
+            .form-group select {
+                max-width: 100%;
+                width: 100%;
+            }
+
+        }
+    </style>
+
+
+    <!-- ====================
+    Feed form old popup
+    =========================-->
+    <!--
+     <div class="modal fade" id="feedform" role="dialog" >
+        <div class="modal-dialog" >
+            <div class="modal-content ">
+               
+                <div class="modal-body" style="padding:0;">
+
+                 <button type="button" class="close closebtn" data-dismiss="modal">&times;</button>
+
+                 <div class="feedform">
+                    <img class="borderimg" alt="diamond border" src="https://www.panchshil.com/panchshiltowers/images/diamond_border_1.png" />
+                    <div class="row">
+                        <div>
+                            <div class="verticalBar inlineDiv"></div>
+                            <div class="inlineDiv" style="margin: 2rem 1rem;">
+                                <p>Get in Touch</p>
+                                <p>SUBMIT YOUR QUERY</p>
+                            </div>
+                        </div>
+                        <form class="form-inline queryForm" id="formfeed" >
+                            <div class="col-md-12">
+                                <input type="text" class="form-control" onfocus="hidefeederr()"  required id="feedname" autocomplete="off" placeholder="NAME *" name="name">
+                            </div>
+                            <div class="col-md-12">
+                                <input type="email" class="form-control" onfocus="hidefeederr()" required placeholder="EMAIL *" autocomplete="off" name="feedemail" id="feedemail">
+                            </div>
+
+                            <div class="col-md-4">
+                                <select class="form-control" name="feedcc" data-live-search="true">
+
+                                    <option value=+93>Afghanistan&nbsp;(+93)</option><option value=+355>Albania&nbsp;(+355)</option><option value=+213>Algeria&nbsp;(+213)</option><option value=+1 684>American Samoa&nbsp;(+1 684)</option><option value=+376>Andorra&nbsp;(+376)</option><option value=+244>Angola&nbsp;(+244)</option><option value=+1 264>Anguilla&nbsp;(+1 264)</option><option value=+1 268>Antigua And Barbuda&nbsp;(+1 268)</option><option value=+54>Argentina&nbsp;(+54)</option><option value=+374>Armenia&nbsp;(+374)</option><option value=+297>Aruba&nbsp;(+297)</option><option value=+61>Australia&nbsp;(+61)</option><option value=+43>Austria&nbsp;(+43)</option><option value=+994>Azerbaijan&nbsp;(+994)</option><option value=+973>Bahrain&nbsp;(+973)</option><option value=+880>Bangladesh&nbsp;(+880)</option><option value=+1 246>Barbados&nbsp;(+1 246)</option><option value=+375>Belarus&nbsp;(+375)</option><option value=+32>Belgium&nbsp;(+32)</option><option value=+501>Belize&nbsp;(+501)</option><option value=+229>Benin&nbsp;(+229)</option><option value=+1 441>Bermuda&nbsp;(+1 441)</option><option value=+975>Bhutan&nbsp;(+975)</option><option value=+591>Bolivia&nbsp;(+591)</option><option value=+387>Bosnia and Herzegovina&nbsp;(+387)</option><option value=+267>Botswana&nbsp;(+267)</option><option value=+55>Brazil&nbsp;(+55)</option><option value=+246>British Indian Ocean Territory&nbsp;(+246)</option><option value=+673>Brunei&nbsp;(+673)</option><option value=+359>Bulgaria&nbsp;(+359)</option><option value=+226>Burkina Faso&nbsp;(+226)</option><option value=+257>Burundi&nbsp;(+257)</option><option value=+855>Cambodia&nbsp;(+855)</option><option value=+237>Cameroon&nbsp;(+237)</option><option value=+1>Canada&nbsp;(+1)</option><option value=+238>Cape Verde&nbsp;(+238)</option><option value=+ 345>Cayman Islands&nbsp;(+ 345)</option><option value=+236>Central African Republic&nbsp;(+236)</option><option value=+235>Chad&nbsp;(+235)</option><option value=+56>Chile&nbsp;(+56)</option><option value=+86>China&nbsp;(+86)</option><option value=+61>Christmas Island&nbsp;(+61)</option><option value=+57>Colombia&nbsp;(+57)</option><option value=+269>Comoros&nbsp;(+269)</option><option value=+242>Congo&nbsp;(+242)</option><option value=+682>Cook Islands&nbsp;(+682)</option><option value=+506>Costa Rica&nbsp;(+506)</option><option value=+53>Cuba&nbsp;(+53)</option><option value=+537>Cyprus&nbsp;(+537)</option><option value=+420>Czech Republic&nbsp;(+420)</option><option value=+45>Denmark&nbsp;(+45)</option><option value=+253>Djibouti&nbsp;(+253)</option><option value=+1 767>Dominica&nbsp;(+1 767)</option><option value=+1 809>Dominican Republic&nbsp;(+1 809)</option><option value=+670>East Timor&nbsp;(+670)</option><option value=+593>Ecuador&nbsp;(+593)</option><option value=+20>Egypt&nbsp;(+20)</option><option value=+503>El Salvador&nbsp;(+503)</option><option value=+240>Equatorial Guinea&nbsp;(+240)</option><option value=+291>Eritrea&nbsp;(+291)</option><option value=+372>Estonia&nbsp;(+372)</option><option value=+251>Ethiopia&nbsp;(+251)</option><option value=+500>Falkland Islands&nbsp;(+500)</option><option value=+298>Faroe Islands&nbsp;(+298)</option><option value=+358>Finland&nbsp;(+358)</option><option value=+33>France&nbsp;(+33)</option><option value=+594>French Guiana&nbsp;(+594)</option><option value=+689>French Polynesia&nbsp;(+689)</option><option value=+241>Gabon&nbsp;(+241)</option><option value=+995>Georgia&nbsp;(+995)</option><option value=+49>Germany&nbsp;(+49)</option><option value=+233>Ghana&nbsp;(+233)</option><option value=+350>Gibraltar&nbsp;(+350)</option><option value=+30>Greece&nbsp;(+30)</option><option value=+299>Greenland&nbsp;(+299)</option><option value=+1 473>Grenada&nbsp;(+1 473)</option><option value=+590>Guadeloupe&nbsp;(+590)</option><option value=+1 671>Guam&nbsp;(+1 671)</option><option value=+502>Guatemala&nbsp;(+502)</option><option value=+224>Guinea&nbsp;(+224)</option><option value=+245>Guinea-Bissau&nbsp;(+245)</option><option value=+595>Guyana&nbsp;(+595)</option><option value=+509>Haiti&nbsp;(+509)</option><option value=+504>Honduras&nbsp;(+504)</option><option value=+36>Hungary&nbsp;(+36)</option><option value=+354>Iceland&nbsp;(+354)</option><option selected value=+91>India&nbsp;(+91)</option><option value=+62>Indonesia&nbsp;(+62)</option><option value=+98>Iran&nbsp;(+98)</option><option value=+964>Iraq&nbsp;(+964)</option><option value=+353>Ireland&nbsp;(+353)</option><option value=+972>Israel&nbsp;(+972)</option><option value=+39>Italy&nbsp;(+39)</option><option value=+1 876>Jamaica&nbsp;(+1 876)</option><option value=+81>Japan&nbsp;(+81)</option><option value=+962>Jordan&nbsp;(+962)</option><option value=+7 7>Kazakhstan&nbsp;(+7 7)</option><option value=+254>Kenya&nbsp;(+254)</option><option value=+686>Kiribati&nbsp;(+686)</option><option value=+965>Kuwait&nbsp;(+965)</option><option value=+996>Kyrgyzstan&nbsp;(+996)</option><option value=+856>Laos&nbsp;(+856)</option><option value=+371>Latvia&nbsp;(+371)</option><option value=+961>Lebanon&nbsp;(+961)</option><option value=+266>Lesotho&nbsp;(+266)</option><option value=+231>Liberia&nbsp;(+231)</option><option value=+218>Libya&nbsp;(+218)</option><option value=+423>Liechtenstein&nbsp;(+423)</option><option value=+370>Lithuania&nbsp;(+370)</option><option value=+352>Luxembourg&nbsp;(+352)</option><option value=+389>Macedonia&nbsp;(+389)</option><option value=+261>Madagascar&nbsp;(+261)</option><option value=+265>Malawi&nbsp;(+265)</option><option value=+60>Malaysia&nbsp;(+60)</option><option value=+960>Maldives&nbsp;(+960)</option><option value=+223>Mali&nbsp;(+223)</option><option value=+356>Malta&nbsp;(+356)</option><option value=+692>Marshall Islands&nbsp;(+692)</option><option value=+596>Martinique&nbsp;(+596)</option><option value=+222>Mauritania&nbsp;(+222)</option><option value=+230>Mauritius&nbsp;(+230)</option><option value=+262>Mayotte&nbsp;(+262)</option><option value=+52>Mexico&nbsp;(+52)</option><option value=+691>Micronesia&nbsp;(+691)</option><option value=+373>Moldova&nbsp;(+373)</option><option value=+377>Monaco&nbsp;(+377)</option><option value=+976>Mongolia&nbsp;(+976)</option><option value=+1664>Montserrat&nbsp;(+1664)</option><option value=+212>Morocco&nbsp;(+212)</option><option value=+95>Myanmar&nbsp;(+95)</option><option value=+264>Namibia&nbsp;(+264)</option><option value=+674>Nauru&nbsp;(+674)</option><option value=+977>Nepal&nbsp;(+977)</option><option value=+599>Netherlands Antilles&nbsp;(+599)</option><option value=+687>New Caledonia&nbsp;(+687)</option><option value=+64>New Zealand&nbsp;(+64)</option><option value=+505>Nicaragua&nbsp;(+505)</option><option value=+227>Niger&nbsp;(+227)</option><option value=+234>Nigeria&nbsp;(+234)</option><option value=+683>Niue&nbsp;(+683)</option><option value=+672>Norfolk Island&nbsp;(+672)</option><option value=+1 670>Northern Mariana Islands&nbsp;(+1 670)</option><option value=+47>Norway&nbsp;(+47)</option><option value=+968>Oman&nbsp;(+968)</option><option value=+92>Pakistan&nbsp;(+92)</option><option value=+680>Palau&nbsp;(+680)</option><option value=+507>Panama&nbsp;(+507)</option><option value=+675>Papua new Guinea&nbsp;(+675)</option><option value=+595>Paraguay&nbsp;(+595)</option><option value=+51>Peru&nbsp;(+51)</option><option value=+63>Philippines&nbsp;(+63)</option><option value=+48>Poland&nbsp;(+48)</option><option value=+351>Portugal&nbsp;(+351)</option><option value=+1 787>Puerto Rico&nbsp;(+1 787)</option><option value=+974>Qatar&nbsp;(+974)</option><option value=+262>Reunion&nbsp;(+262)</option><option value=+40>Romania&nbsp;(+40)</option><option value=+7>Russia&nbsp;(+7)</option><option value=+250>Rwanda&nbsp;(+250)</option><option value=+685>Samoa&nbsp;(+685)</option><option value=+378>San Marino&nbsp;(+378)</option><option value=+966>Saudi Arabia&nbsp;(+966)</option><option value=+221>Senegal&nbsp;(+221)</option><option value=+381>Serbia&nbsp;(+381)</option><option value=+248>Seychelles&nbsp;(+248)</option><option value=+232>Sierra Leone&nbsp;(+232)</option><option value=+65>Singapore&nbsp;(+65)</option><option value=+421>Slovakia&nbsp;(+421)</option><option value=+386>Slovenia&nbsp;(+386)</option><option value=+677>Solomon Islands&nbsp;(+677)</option><option value=+27>South Africa&nbsp;(+27)</option><option value=+34>Spain&nbsp;(+34)</option><option value=+94>Sri Lanka&nbsp;(+94)</option><option value=+249>Sudan&nbsp;(+249)</option><option value=+597>Suriname&nbsp;(+597)</option><option value=+268>Swaziland&nbsp;(+268)</option><option value=+46>Sweden&nbsp;(+46)</option><option value=+41>Switzerland&nbsp;(+41)</option><option value=+963>Syria&nbsp;(+963)</option><option value=+886>Taiwan&nbsp;(+886)</option><option value=+992>Tajikistan&nbsp;(+992)</option><option value=+255>Tanzania&nbsp;(+255)</option><option value=+66>Thailand&nbsp;(+66)</option><option value=+228>Togo&nbsp;(+228)</option><option value=+690>Tokelau&nbsp;(+690)</option><option value=+676>Tonga&nbsp;(+676)</option><option value=+1 868>Trinidad And Tobago&nbsp;(+1 868)</option><option value=+216>Tunisia&nbsp;(+216)</option><option value=+90>Turkey&nbsp;(+90)</option><option value=+993>Turkmenistan&nbsp;(+993)</option><option value=+1 649>Turks And Caicos Islands&nbsp;(+1 649)</option><option value=+688>Tuvalu&nbsp;(+688)</option><option value=+256>Uganda&nbsp;(+256)</option><option value=+380>Ukraine&nbsp;(+380)</option><option value=+971>United Arab Emirates&nbsp;(+971)</option><option value=+44>United Kingdom&nbsp;(+44)</option><option value=+1>United States&nbsp;(+1)</option><option value=+598>Uruguay&nbsp;(+598)</option><option value=+998>Uzbekistan&nbsp;(+998)</option><option value=+678>Vanuatu&nbsp;(+678)</option><option value=+58>Venezuela&nbsp;(+58)</option><option value=+84>Vietnam&nbsp;(+84)</option><option value=+967>Yemen&nbsp;(+967)</option><option value=+260>Zambia&nbsp;(+260)</option><option value=+263>Zimbabwe&nbsp;(+263)</option>                                 
+                                </select>
+                                
+                            </div>
+                            <div class="col-md-8">
+                                <input type="number" class="form-control" onfocus="hidefeederr()" required placeholder="MOBILE *" autocomplete="off" name="mobile" min="1" id="feedmob">
+                            </div>
+                            
+                            <div class="col-md-12">
+                                <input class="form-control" onfocus="hidefeederr()" placeholder="TYPE YOUR QUERY *" autocomplete="off" name="message" id="feedquery">
+                            </div>
+                            <div class="queryFormBtn" style="float:unset;margin-left:1rem;">
+                                  <input type="hidden" id="feedpdf" value="https://www.panchshil.com/panchshiltowers/admin/images/uploads/PDF/59d480396e64e.jpg">
+                                <button type="button" class="btn btn-default custom-btn submitForm" onclick="submitfeedForm(feedname.value,feedemail.value,feedcc.value,feedmob.value,feedquery.value,feedpdf.value);" >submit</button>
+                            </div>
+
+
+
+                            <div class="alert alert-success" style="margin-top : 20px;display:none;" id="successfeed" >
+                              <strong>Thank you!</strong> We will email you the project brochure, be sure to check spam!
+                         </div>
+
+                         <div class="alert alert-warning" id="failedfeed" style="margin-top : 20px;display:none;">
+                            <strong>Failed!</strong> Please try again after some time.
+                        </div>
+
+
+                        <div class="alert alert-warning" id="failedemailfeed" style="margin-top : 20px;display:none;">
+                            <strong>Email !</strong> Please check Your email.
+                        </div>
+
+                        <div class="alert alert-warning" id="failedemptyfeed" style="margin-top : 20px;display:none;">
+                            <strong>Failed !</strong> Please fill form details.
+                        </div>
+
+                        <div class="alert alert-warning" id="mobileerrfeed" style="margin-top : 20px;display:none;">
+                         <strong>Failed !</strong> Please check mobile number.
+                     </div>
+                     <div class="alert alert-warning" id="failednamefeed" style="margin-top : 20px;display:none;">
+                         <strong>Failed !</strong> Please check Name.
+                     </div>
+
+                 </form>
+             </div>         
+         </div>
+         
+     </div>
+ </div>
+</div>
+</div> 
+-->
+
+    <!-- ====================
+        feed form popup end
+        =========================-->
+
+    <div class="disclaimer-modal">
+        <div class="disclaimer-modal-inner">
+            <p>
+                This disclaimer ("Disclaimer") will be applicable to the Website. By using or accessing the Website you
+                agree, acknowledge and accept all terms and conditions without any qualification or limitation. You
+                acknowledge and agree that the Company reserves the right to add, alter or delete material from the
+                Website at any time and may, at any time, revise these terms and conditions without prior notification.
+                You are bound by any such amendments and the Company therefore advises that you periodically visit this
+                page to review the current terms and conditions for usage of Website. You agree and acknowledge that it
+                is your responsibility to stay updated with terms and conditions of Website.<br>
+                The Websites and all its content are provided with all faults on an "as is" and "as available" basis. No
+                information given under this Website creates a warranty or expands the scope of any warranty that cannot
+                be disclaimed under applicable law. Your use of the Website is solely at your own risk. This website is
+                for guidance only. It does not constitute part of an offer or contract. Design & specifications are
+                subject to change without prior notice. Computer generated images are the artist's impression and are
+                indicative of the actual designs. <br>
+                Communication, content and material within the website may include design, imagery and conceptual
+                representations of the project / product under development. The same are being modified or even changed
+                entirely, to meet the terms, stipulations and recommendations of the Real Estate Regulation Act, 2016
+                (“RERA”) and rules made thereunder, and may vary from content available as of date.. You agree and
+                acknowledge the same and that these contents are subject to change at any time. You agree and
+                acknowledge that you are solely responsible for any action you take based upon these contents and that
+                the Company is not liable for the same. You are therefore required to verify all the details, including
+                area, amenities, services, terms of sales and payments and other relevant terms independently with the
+                sales team/ company prior to concluding any decision for buying any unit(s) in any of the said projects.
+                Till such time the details are fully updated, the said information will not be construed as an
+                advertisement. To find out more about a project / development, please telephone our sale representatives
+                or visit our sales office during opening hours and speak to one of our sales staff. <br>
+                In no event will the Company be liable for claim made by the users including seeking any cancellation
+                for any of the inaccuracies in the information provided in this Website, though all efforts have been
+                made to ensure accuracy. The Company will under no circumstance be liable for any expense, loss or
+                damage including, without limitation, indirect or consequential loss or damage, or any expense, loss or
+                damage whatsoever arising from use, or loss of use, of data, arising out of or in connection with the
+                use of this website.
+            </p>
+
+            <div class="accept_it text-center">
+                <label class="accept-container">I ACCEPT
+                    <input type="checkbox">
+                    <span class="checkmark"></span>
+                </label>
+            </div>
+        </div>
+    </div>
+
+    <style>
+        .wahtsapp_floating_btn {
+            position: fixed;
+            bottom: 1.5rem;
+            left: 1rem;
+            display: none;
+            background: #584f43;
+            padding: .5rem 1rem;
+            font-size: 1.5rem;
+            color: #fff;
+            border-radius: 23px;
+            z-index: 99999;
+        }
+
+        .wahtsapp_floating_btn a {
+            color: #fff;
+            font-family: open_sanslight;
+            font-size: 1.1rem;
+            text-decoration: none;
+        }
+
+        .wahtsapp_floating_btn a .fa {
+            font-size: 1.6rem;
+            margin-right: .5rem;
+        }
+
+        .enquiry_floating_btn {
+            position: fixed;
+            top: 15%;
+            right: 1%;
+            font-size: 17px;
+            color: #fff;
+            background-color: rgba(35, 31, 32, .5);
+            display: block;
+            cursor: pointer;
+            padding: 8px 15px;
+            z-index: 99999;
+
+        }
+
+        .accept-container {
+            display: block;
+            position: relative;
+            padding-left: 35px;
+            margin-bottom: 12px;
+            cursor: pointer;
+            font-size: 22px;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+            text-align: center;
+            float: none;
+            width: fit-content;
+            margin: auto;
+        }
+
+        .accept-container input {
+            position: absolute;
+            opacity: 0;
+        }
+
+        .checkmark {
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 25px;
+            width: 25px;
+            background-color: #eee;
+        }
+
+        /* On mouse-over, add a grey background color */
+        .accept-container:hover input~.checkmark {
+            background-color: #ccc;
+        }
+
+        /* When the checkbox is checked, add a blue background */
+        .accept-container input:checked~.checkmark {
+            background-color: #2196F3;
+        }
+
+        /* Create the checkmark/indicator (hidden when not checked) */
+        .checkmark::after {
+            content: "";
+            position: absolute;
+            display: none;
+        }
+
+        /* Show the checkmark when checked */
+        .accept-container input:checked~.checkmark:after {
+            display: block;
+        }
+
+        /* Style the checkmark/indicator */
+        .accept-container .checkmark:after {
+            left: 9px;
+            top: 4px;
+            width: 8px;
+            height: 15px;
+            border: solid white;
+            border-width: 0 3px 3px 0;
+            -webkit-transform: rotate(45deg);
+            -ms-transform: rotate(45deg);
+            transform: rotate(45deg);
+        }
+
+
+
+
+
+
+
+        .disclaimer-modal {
+            display: none;
+            position: fixed;
+            z-index: 999999999;
+            left: 0;
+            top: 0;
+            height: 100%;
+            width: 100%;
+            overflow: hidden;
+            background-color: rgba(0, 0, 0, 0.5);
+        }
+
+        .disclaimer-modal-inner {
+            background-color: #fff;
+            margin: auto;
+            padding: 6rem;
+            width: 80vw;
+            height: auto;
+            box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.2), 0 7px 20px 0 rgba(0, 0, 0, 0.17);
+            animation-name: modalopen;
+            animation-duration: 1s;
+            position: relative;
+            top: 50%;
+            transform: translateY(-50%);
+            overflow: auto;
+        }
+
+        .modalCloseBtn {
+            color: #ffffff;
+            float: right;
+            font-size: 4rem;
+            position: absolute;
+            top: 0.5rem;
+            right: 2rem;
+            z-index: 999999999;
+        }
+
+        @media(max-width:767px) {
+            .wahtsapp_floating_btn {
+                display: inline-block;
+            }
+        }
+    </style>
+
+    <script src="assets/js/swiper.min.js" defer></script>
+    <script src="assets/js/bootstrap.min.js" defer></script>
+    <script src="assets/js/owl.carousel.min.js" defer></script>
+    <script src="assets/js/jquery.lazy.min.js" defer></script>
+    <script src="assets/js/jquery.lazy.plugins.min.js" defer></script>
+    <script src="assets/js/lightbox.min.js" defer></script>
+    <script src="assets/js/common.js" defer></script>
+    <script src="assets/js/custom.js" defer></script>
+    <script src="assets/js/main.js" defer></script>
+
+</body>
+
+</html>
