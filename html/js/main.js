@@ -1,6 +1,6 @@
 //Global Constants
 var baseUrl = 'http://ptdevenv.co.in/avalon_realty_dev_env/';
-var imageBaseUrl = baseUrl + 'public/property/';
+var imageBaseUrl = baseUrl + 'public';
 
 // Property API Endpoints
 var singlePropertyApiEndpoint = baseUrl + 'singleProp?id=';
@@ -29,6 +29,16 @@ function getUrlVars() {
 		vars.push(hash[0]);
 		vars[hash[0]] = hash[1];
 	}
+
+	$('.read__more').each(function () {
+		this.href = this.href + '?id=' + vars['id'];
+		console.log(`this.href = ${this.href}`);
+	})
+
+	$('.read__more_1').each(function () {
+		this.href = this.href + '?id=' + vars['id'];
+		console.log(`this.href = ${this.href}`);
+	})
 
 	return vars;
 }

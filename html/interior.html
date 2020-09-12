@@ -297,11 +297,17 @@
                     elem.append('<div class="row">');
 
                     $.each(data, function (index, value) {
+
                         console.log(index + ":" + value);
+
+                        let imgPath = imageBaseUrl + value.folder + '/' + value.img;
+
+                        // let imgPath = `http://ptdevenv.co.in/avalon_realty_dev_env/public`;
+
                         let htmlToAppend = `<div class="col-md-6 ">
                             <div class="customCards" style="width:100%;">
                                 <a href="javascript:void(0)" data-title="${value.title}" data-lightbox="3.5-bhk-family">
-									<img src="http://ptdevenv.co.in/avalon_realty_dev_env/public/property/${value.img}" class="img-fluid" />
+									<img src="${imgPath}" class="img-fluid" />
 								</a>
                                 <p>${value.title}</p>
                             </div>
@@ -428,28 +434,28 @@
                     </a>
                 </li>
                 <li>
-                    <a href="home_property.html">Home</a>
+                    <a class="read__more_1" href="">Home</a>
                 </li>
 
                 <li>
-                    <a href="interior.html">Interiors</a>
+                    <a class="read__more_1" href="interior.html">Interiors</a>
                 </li>
                 <li>
-                    <a href="technology.html">Technology</a>
+                    <a class="read__more_1" href="technology.html">Technology</a>
                 </li>
                 <li>
-                    <a href="amenities.html">Amenities</a>
+                    <a class="read__more_1" href="amenities.html">Amenities</a>
                 </li>
                 <li>
-                    <a href="plans.html">Plans</a>
-                </li>
-
-                <li>
-                    <a href="gallery.html">Gallery</a>
+                    <a class="read__more_1" href="plans.html">Plans</a>
                 </li>
 
                 <li>
-                    <a href="contact.html">Contact</a>
+                    <a class="read__more_1" href="gallery.html">Gallery</a>
+                </li>
+
+                <li>
+                    <a class="read__more_1" href="contact.html">Contact</a>
                 </li>
             </ul>
         </div>
@@ -657,7 +663,7 @@
                     console.log(index + ":" + value);
 
                     let tabId = index + 1;
-                    let imgPath = imageBaseUrl + value.img;
+                    let imgPath = imageBaseUrl + value.folder + '/' + value.img;
 
                     let htmlToAppend = `<div id="tab-${tabId}" class="tab-content">
             				<div class="tabLeftContent">
@@ -669,7 +675,9 @@
             						</div>
             				</div>
             				<div class="tabRightContent">
-            					<p>Right Content</p>
+                                <p>
+                                    <img alt="Interior image" src="${imgPath}">
+                                </p>
             				</div>
             			</div>`;
 

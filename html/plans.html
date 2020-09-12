@@ -297,7 +297,7 @@
 
                         console.log(index + ":" + value);
 
-                        let imgPath = imageBaseUrl + value.img;
+                        let imgPath = imageBaseUrl + value.folder + '/' + value.img;
 
                         let htmlToAppend = `<section class="plansection">
                         <div class="container">
@@ -327,42 +327,70 @@
                             <div class="col-md-12 planimg">
                                 <img alt="floor plan image" src="${imgPath}" />
                             </div>
-                        </div>
+                        </div>`;
+
+                        let features = value.features;
+                        console.log(`features = ${features}`);
+
+                        let featuresLength = features.length;
+                        console.log(`featuresLength = ${featuresLength}`);
+
+                        if (featuresLength > 0) {
 
 
-                        <div class="container-fluid inner2">
-                            <div class="row about-gallery keyAmenities myamenities">
-                                <div class="col-xs-12 col-sm-7 col-md-7 col-lg-7 gallery padding-none   bigImgBox">
-                                    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 padding-none pickgradient">
-                                        <img alt="floor plan" src="assets/images/5ed4484f5e3e8.jpg" class="img-fluid">
-                                        <div class="hover-mask">
-                                            <h2>Living Room</h2>
-                                        </div>
-                                    </div>
-                                </div>
+                            for (let i = 0; i < featuresLength; i++) {
 
+                                let valuef = features[i];
+                                console.log(i + ":" + valuef);
 
-                                <div class="col-xs-12 col-sm-5 col-md-5 col-lg-5 gallery padding-none imgContainer">
-                                    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 padding-none pickgradient">
-                                        <img alt="floor plan" src="assets/images/5ed4484f5e47c.jpg" class="img-fluid">
-                                        <div class="hover-mask">
-                                            <h2>Family Lounge</h2>
-                                            <!-- <span class="separator"></span> -->
-                                        </div>
-                                    </div>
+                                let imgPath = imageBaseUrl + valuef.folder + '/' + valuef.img;
 
-                                    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 padding-none pickgradient">
-                                        <img alt="floor plan" src="assets/images/5ed4484f5e502.jpg" class="img-fluid" />
-                                        <div class="hover-mask">
-                                            <h2>Bedroom</h2>
-                                            <!-- <span class="separator"></span>        -->
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                                if (i == 0 || i % 3 == 0) {
+                                    htmlToAppend = `${htmlToAppend}<div class="container-fluid inner2">
+                                    <div class="row about-gallery keyAmenities myamenities">
+                                        <div class="col-xs-12 col-sm-7 col-md-7 col-lg-7 gallery padding-none bigImgBox">
+                                            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 padding-none pickgradient">
+                                                <img alt="floor plan" src="${imgPath}" class="img-fluid">
+                                                <div class="hover-mask">
+                                                    <h2>${valuef.title}</h2>
+                                                </div>
+                                            </div>
+                                        </div>`;
+                                } else {
 
-                        </section>
+                                    htmlToAppend = `${htmlToAppend}<div class="col-xs-12 col-sm-5 col-md-5 col-lg-5 gallery padding-none imgContainer">
+                                        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 padding-none pickgradient">
+                                            <img alt="floor plan" src="${imgPath}" class="img-fluid">
+                                            <div class="hover-mask">
+                                                <h2>${valuef.title}</h2>
+                                                <!-- <span class="separator"></span> -->
+                                            </div>
+                                        </div>`;
+
+                                    if (data[i + 1]) {
+                                        ++i;
+
+                                        let newValue = data[i];
+                                        let newImgPath = imageBaseUrl + newValue.folder + '/' + newValue.img;
+
+                                        htmlToAppend =
+                                            `${htmlToAppend}<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 padding-none pickgradient">
+                                            <img alt="floor plan" src="${newImgPath}" class="img-fluid" />
+                                            <div class="hover-mask">
+                                                <h2>${newValue.title}</h2>
+                                                <!-- <span class="separator"></span>        -->
+                                            </div>
+                                        </div>`;
+                                    }
+
+                                    htmlToAppend = `${htmlToAppend}</div>`;
+                                }
+
+                            }
+
+                        }
+
+                        htmlToAppend = `${htmlToAppend}</section>
                         <div class="container inner_hide2">
                         <p class="text-right" style="padding: 3px;    position: absolute;right: 0;">*Taxes as Applicable. Shot on
                             location.</p>

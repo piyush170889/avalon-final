@@ -306,7 +306,7 @@
                         let value = data[i];
                         console.log(i + ":" + value);
 
-                        let imgPath = imageBaseUrl + value.img;
+                        let imgPath = imageBaseUrl + value.folder + '/' + value.img;
 
                         let htmlToAppend = '';
                         if (i == 0 || i % 3 == 0) {
@@ -332,7 +332,7 @@
                                 ++i;
 
                                 let newValue = data[i];
-                                let newImgPath = imageBaseUrl + newValue.img;
+                                let newImgPath = imageBaseUrl + newValue.folder + '/' + newValue.img;
 
                                 htmlToAppend =
                                     `${htmlToAppend}<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 padding-none">
