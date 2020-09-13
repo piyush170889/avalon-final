@@ -268,6 +268,8 @@
 
     <!-- Required JS -->
     <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/js/swiper.min.js"></script>
+    <script src="assets/js/common.js"></script>
 
     <!-- API Calls Script -->
     <script src="js/main.js" type="text/javascript"></script>
@@ -399,6 +401,8 @@
                         elem.append(htmlToAppend);
                     });
                 }
+
+                setClickEventOnTabs();
             });
         });
     </script>
@@ -441,28 +445,28 @@
                     </a>
                 </li>
                 <li>
-                    <a href="home_property.html">Home</a>
+                    <a class="read__more_1" href="home_property.html">Home</a>
                 </li>
 
                 <li>
-                    <a href="interior.html">Interiors</a>
+                    <a class="read__more_1" href="interior.html">Interiors</a>
                 </li>
                 <li>
-                    <a href="technology.html">Technology</a>
+                    <a class="read__more_1" href="technology.html">Technology</a>
                 </li>
                 <li>
-                    <a href="amenities.html">Amenities</a>
+                    <a class="read__more_1" href="amenities.html">Amenities</a>
                 </li>
                 <li>
-                    <a href="plans.html">Plans</a>
-                </li>
-
-                <li>
-                    <a href="gallery.html">Gallery</a>
+                    <a class="read__more_1" href="plans.html">Plans</a>
                 </li>
 
                 <li>
-                    <a href="contact.html">Contact</a>
+                    <a class="read__more_1" href="gallery.html">Gallery</a>
+                </li>
+
+                <li>
+                    <a class="read__more_1" href="contact.html">Contact</a>
                 </li>
             </ul>
         </div>
@@ -530,7 +534,7 @@
         <div class="row middleTittle">
             <div class="text-center">
                 <h3 class="header_3 text-center plan-heading-text">Plans</h3>
-                <p>Panchshil apartments are widely admired for their superlative well-planned layouts and use of
+                <p>Avalon apartments are widely admired for their superlative well-planned layouts and use of
                     space. Thoughtful design of spaces with clean lines, minimal colour themes, and floor-to-ceiling
                     glass brings the interiors to life.</p>
             </div>
@@ -544,74 +548,92 @@
     </div>
 
 
-
+    <!-- Plan Features -->
     <section class="tabSection planstab padding_2_4">
 
         <div class="container">
             <div id="tabs-container">
-                <ul class="tabs-menu">
-                    <!-- <li class="current"><a href="#tab-1">Master plan</a></li>
-    <li ><a href="#tab-2">Club House</a></li> -->
-
-                    <li class='current'><a href="#tab-1">AERIAL VIEW</a></li>
-                    <li><a href="#tab-2">MASTER PLAN</a></li>
-                    <li><a href="#tab-3">CLUBHOUSE</a></li>
-                </ul>
-                <div class="row tab">
-
-                    <div id="tab-1" class="tab-content text-center">
-
-                        <div class="col-md-12">
-                            <!-- <button class="btn custom-btn about-panchshil-btn " onclick="showplan('https://www.panchshil.com/panchshiltowers/admin/images/uploads/Floorplans/59c8f59c20fc1.png')">View Full Plan</button>    -->
-                            <!-- <button class="btn custom-btn about-panchshil-btn " onclick="showplanfeed('https://www.panchshil.com/panchshiltowers/admin/images/uploads/Floorplans/5e56625095a7c.pdf')">View Full Plan</button>                   -->
-
-
-                        </div>
-
-                        <div class="col-xs-12 col-md-12 planimg">
-                            <img alt="floor plan" src="assets/images/5a1e9abcee306.jpg" />
-                        </div>
-                    </div>
-
-                    <div id="tab-2" class="tab-content text-center">
-
-                        <div class="col-md-12">
-                            <!-- <button class="btn custom-btn about-panchshil-btn " onclick="showplan('https://www.panchshil.com/panchshiltowers/admin/images/uploads/Floorplans/5a0043539c19d.jpg')">View Full Plan</button>    -->
-                            <!-- <button class="btn custom-btn about-panchshil-btn " onclick="showplanfeed('https://www.panchshil.com/panchshiltowers/admin/images/uploads/Floorplans/5e566264280e6.pdf')">View Full Plan</button>                   -->
-
-
-                        </div>
-
-                        <div class="col-xs-12 col-md-12 planimg">
-                            <img alt="floor plan" src="assets/images/5edde0c91f4a0.jpg" />
-                        </div>
-                    </div>
-
-                    <div id="tab-3" class="tab-content text-center">
-
-                        <div class="col-md-12">
-                            <!-- <button class="btn custom-btn about-panchshil-btn " onclick="showplan('https://www.panchshil.com/panchshiltowers/admin/images/uploads/Floorplans/5a00435d1bde5.jpg')">View Full Plan</button>    -->
-                            <!-- <button class="btn custom-btn about-panchshil-btn " onclick="showplanfeed('https://www.panchshil.com/panchshiltowers/admin/images/uploads/Floorplans/5e566281b0fc5.pdf')">View Full Plan</button>                   -->
-
-
-                        </div>
-
-                        <div class="col-xs-12 col-md-12 planimg">
-                            <img alt="floor plan" src="assets/images/5edde0c138188.jpg" />
-                        </div>
-                    </div>
-
-                    <div class="container">
-                        <p class="text-right" style="padding: 3px;margin-right: 5rem;float: right;margin-top: -4rem;">
-                            *Architectural
-                            Renditions.</p>
-                    </div>
-                </div>
+                <!-- Plan Features Content -->
+                <!-- Plan Features Content -->
             </div>
         </div>
     </section>
+    <!-- ./Plan Features -->
 
 
+    <script type="text/javascript">
+
+        let urlParams = getUrlVars();
+        // Api call to get tab data
+        $.get(planViewApiEndpoint + urlParams["id"], function (response, status) {
+
+            console.log("response:", response);
+
+            let data = response.data;
+            console.log("Data", data)
+
+            if (data.length > 0) {
+
+                console.log("data extracted = ", data);
+                console.log("Data", data);
+
+                let tabTitleHtml = '';
+                $.each(data, function (index, value) {
+                    console.log(index + ":" + value);
+                    let htmlToAppend = '';
+
+                    let tabId = index + 1;
+                    if (index == 0) {
+                        htmlToAppend = `<li class='current'><a href="#tab-${tabId}">${value.title}</a></li>`;
+                    } else {
+                        htmlToAppend = `<li><a href="#tab-${tabId}">${value.title}</a></li>`;
+                    }
+
+                    tabTitleHtml = tabTitleHtml + htmlToAppend;
+                });
+
+
+                let tabSectionContent = '';
+                $.each(data, function (index, value) {
+
+                    console.log(index + ":" + value);
+
+                    let tabId = index + 1;
+                    let imgPath = imageBaseUrl + value.folder + '/' + value.img;
+
+                    let htmlToAppend = `<div id="tab-${tabId}" class="tab-content text-center">
+                        <div class="col-xs-12 col-md-12 planimg">
+                            <img alt="${value.title}" src="${imgPath}" />
+                        </div>
+                    </div>`;
+
+                    tabSectionContent = tabSectionContent + htmlToAppend;
+                });
+
+                let finalHtml = `
+            				<ul class="tabs-menu">
+            					${tabTitleHtml}
+            				</ul>
+
+            				<div class="row tab">
+                                ${tabSectionContent}
+                                
+                                <div class="container">
+                                    <p class="text-right" style="padding: 3px;margin-right: 5rem;float: right;margin-top: -4rem;">
+                                        *Architectural Renditions.
+                                    </p>
+                                </div>
+                            
+                            </div>`;
+
+                console.log(`finalHtml = ${finalHtml}`);
+
+                $('#tabs-container').html(finalHtml);
+
+            }
+        });
+    </script>
+    <!-- ./Plan Features -->
 
     <div class="modal fade" id="floorplan" role="dialog">
         <div class="modal-dialog modal-lg">

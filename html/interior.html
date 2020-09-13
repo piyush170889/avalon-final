@@ -268,6 +268,8 @@
 
     <!-- Required JS -->
     <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/js/swiper.min.js"></script>
+    <script src="assets/js/common.js"></script>
 
     <!-- API Calls Script -->
     <script src="js/main.js" type="text/javascript"></script>
@@ -321,76 +323,85 @@
 
 
             // Api call to get tab data
-            // $.get(interiorsP2ApiEndpoint + urlParams["id"], function (response, status) {
+            $.get(interiorsP2ApiEndpoint + urlParams["id"], function (response, status) {
 
-            //     console.log("response:", response);
+                console.log("response:", response);
 
-            //     let data = response.data;
-            //     console.log("Data", data)
+                let data = response.data;
+                console.log("Data", data)
 
-            //     if (data.length > 0) {
+                if (data.length > 0) {
 
-            // 		console.log("data extracted = ", data);
-            //         console.log("Data", data);
+                    console.log("data extracted = ", data);
+                    console.log("Data", data);
 
-            //         let tabTitleHtml = '';
-            //         $.each(data, function (index, value) {
-            //             console.log(index + ":" + value);
-            //             let htmlToAppend = '';
+                    let tabTitleHtml = '';
+                    $.each(data, function (index, value) {
+                        console.log(index + ":" + value);
+                        let htmlToAppend = '';
 
-            // 			let tabId = index + 1;
-            // 			if (index == 0) {
-            // 				htmlToAppend = `<li class='current'><a href="#tab-${tabId}">${value.title}</a></li>`;
-            // 			} else {
-            // 				htmlToAppend = `<li><a href="#tab-${tabId}">${value.title}</a></li>`;
-            // 			}                   
+                        let tabId = index + 1;
+                        if (index == 0) {
+                            htmlToAppend = `<li class='current'><a href="#tab-${tabId}">${value.title}</a></li>`;
+                        } else {
+                            htmlToAppend = `<li><a href="#tab-${tabId}">${value.title}</a></li>`;
+                        }
 
-            //             tabTitleHtml = tabTitleHtml + htmlToAppend;
-            //         });
+                        tabTitleHtml = tabTitleHtml + htmlToAppend;
+                    });
 
 
-            //         let tabSectionContent = '';
-            //         $.each(data, function (index, value) {
+                    let tabSectionContent = '';
+                    $.each(data, function (index, value) {
 
-            // 			console.log(index + ":" + value);
+                        console.log(index + ":" + value);
 
-            //             let tabId = index + 1;
-            // 			let imgPath = imageBaseUrl + value.img;
+                        let tabId = index + 1;
+                        let imgPath = imageBaseUrl + value.folder + '/' + value.img;
 
-            // 			let htmlToAppend = `<div id="tab-${tabId}" class="tab-content">
-            // 				<div class="tabLeftContent">
-            // 					<div class="verticalBar left"></div>
-            // 						<div>
-            // 							<p>${value.title}</p>
-            // 							<p>${value.feature_name}</p>
-            // 							<P>${value.description}</P>
-            // 						</div>
-            // 				</div>
-            // 				<div class="tabRightContent">
-            // 					<img alt="Interior image" src="${imgPath}">
-            // 				</div>
-            // 			</div>`;
+                        let htmlToAppend = `<div id="tab-${tabId}" class="tab-content">
+                            <div class="tabLeftContent">
+                                <div class="verticalBar left"></div>
+                                    <div>
+                                        <p>${value.title}</p>
+                                        <p>${value.feature_name}</p>
+                                        <P>${value.description}</P>
+                                    </div>
+                            </div>
+                            <div class="tabRightContent">
+                                <p>
+                                    <img alt="Interior image" src="${imgPath}">
+                                </p>
+                            </div>
+                        </div>`;
 
-            //             tabSectionContent = tabSectionContent + htmlToAppend;
-            //         });
+                        tabSectionContent = tabSectionContent + htmlToAppend;
+                    });
 
-            // 		let finalHtml = `<div class="container">
-            // 			<div id="tabs-container">
+                    let finalHtml = `<section class="tabSection interiorsTabMenu" style="margin-top: 8rem;margin-bottom: 8rem;">
+                        <div class="container">
+                            <div id="tabs-container">
 
-            // 				<ul class="tabs-menu">
-            // 					${tabTitleHtml}
-            // 				</ul>
+                                <ul class="tabs-menu">
+                                    ${tabTitleHtml}
+                                </ul>
 
-            // 				<div class="row tab">
-            // 					${tabSectionContent}
-            // 				</div>
+                                <div class="row tab">
+                                    ${tabSectionContent}
+                                </div>
 
-            // 			</div>
-            // 		</div>`;
+                            </div>
+                        </div>
+                        </section>`;
 
-            // 		$('#tabsModuleSection').append(finalHtml);
-            //     }
-            // });
+                    console.log(`finalHtml = ${finalHtml}`);
+
+                    $('#tabsModuleSection').append(finalHtml);
+                    // setClickEventOnTabs();
+                }
+                setClickEventOnTabs();
+            });
+
         });
     </script>
 
@@ -434,7 +445,7 @@
                     </a>
                 </li>
                 <li>
-                    <a class="read__more_1" href="">Home</a>
+                    <a class="read__more_1" href="home_property.html">Home</a>
                 </li>
 
                 <li>
@@ -624,88 +635,6 @@
     </section> -->
 
     </div>
-
-    <script type="text/javascript">
-
-        let urlParams = getUrlVars();
-        // Api call to get tab data
-        $.get(interiorsP2ApiEndpoint + urlParams["id"], function (response, status) {
-
-            console.log("response:", response);
-
-            let data = response.data;
-            console.log("Data", data)
-
-            if (data.length > 0) {
-
-                console.log("data extracted = ", data);
-                console.log("Data", data);
-
-                let tabTitleHtml = '';
-                $.each(data, function (index, value) {
-                    console.log(index + ":" + value);
-                    let htmlToAppend = '';
-
-                    let tabId = index + 1;
-                    if (index == 0) {
-                        htmlToAppend = `<li class='current'><a href="#tab-${tabId}">${value.title}</a></li>`;
-                    } else {
-                        htmlToAppend = `<li><a href="#tab-${tabId}">${value.title}</a></li>`;
-                    }
-
-                    tabTitleHtml = tabTitleHtml + htmlToAppend;
-                });
-
-
-                let tabSectionContent = '';
-                $.each(data, function (index, value) {
-
-                    console.log(index + ":" + value);
-
-                    let tabId = index + 1;
-                    let imgPath = imageBaseUrl + value.folder + '/' + value.img;
-
-                    let htmlToAppend = `<div id="tab-${tabId}" class="tab-content">
-            				<div class="tabLeftContent">
-            					<div class="verticalBar left"></div>
-            						<div>
-            							<p>${value.title}</p>
-            							<p>${value.feature_name}</p>
-            							<P>${value.description}</P>
-            						</div>
-            				</div>
-            				<div class="tabRightContent">
-                                <p>
-                                    <img alt="Interior image" src="${imgPath}">
-                                </p>
-            				</div>
-            			</div>`;
-
-                    tabSectionContent = tabSectionContent + htmlToAppend;
-                });
-
-                let finalHtml = `<section class="tabSection interiorsTabMenu" style="margin-top: 8rem;margin-bottom: 8rem;">
-                    <div class="container">
-            			<div id="tabs-container">
-
-            				<ul class="tabs-menu">
-            					${tabTitleHtml}
-            				</ul>
-
-            				<div class="row tab">
-            					${tabSectionContent}
-            				</div>
-
-            			</div>
-                    </div>
-                    </section>`;
-
-                console.log(`finalHtml = ${finalHtml}`);
-
-                $('#tabsModuleSection').append(finalHtml);
-            }
-        });
-    </script>
 
 
     <section class="clientSection" style="margin-bottom:7rem;display:none;">
@@ -2425,14 +2354,11 @@
         }
     </style>
 
-    <script src="assets/js/jquery.min.js"></script>
-    <script src="assets/js/swiper.min.js" defer></script>
     <script src="assets/js/bootstrap.min.js" defer></script>
     <script src="assets/js/owl.carousel.min.js" defer></script>
     <script src="assets/js/jquery.lazy.min.js" defer></script>
     <script src="assets/js/jquery.lazy.plugins.min.js" defer></script>
     <script src="assets/js/lightbox.min.js" defer></script>
-    <script src="assets/js/common.js" defer></script>
     <script src="assets/js/custom.js" defer></script>
     <script src="assets/js/main.js" defer></script>
 

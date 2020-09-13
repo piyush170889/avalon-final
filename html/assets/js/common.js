@@ -1,10 +1,10 @@
 
-$("#modal_1").click(function(){
+$("#modal_1").click(function () {
     $('#myModal4').modal('show');
     console.log("hello");
 });
 
-$("#modal_2").click(function(){
+$("#modal_2").click(function () {
     $('#fake_modal').click();
     console.log("hii");
     return false;
@@ -22,24 +22,34 @@ var regExpnumbers = "/[0-9]/g;";
 var whitespaces_val = /^\s+$/;
 var alphaspace = /^[a-zA-Z ]*$/;
 
-$(document).ready(function($) {
-    $("#openNav").css('cursor', 'pointer').click(function() {
+$(document).ready(function ($) {
+    $("#openNav").css('cursor', 'pointer').click(function () {
         $("#navigatonBar").slideDown(500);
-        $("#openNav").fadeOut(1000, function() {
+        $("#openNav").fadeOut(1000, function () {
             $("#closeNav").show();
         });
     });
-    $("#closeNav").css('cursor', 'pointer').click(function() {
+    $("#closeNav").css('cursor', 'pointer').click(function () {
         $("#navigatonBar").slideUp(500);
-        $("#closeNav").fadeOut(1000, function() {
+        $("#closeNav").fadeOut(1000, function () {
             $("#openNav").show();
         });
     });
-    $(".navBar li").css('cursor', 'pointer').click(function(event) {
+    $(".navBar li").css('cursor', 'pointer').click(function (event) {
         $('.navBar li').removeClass('li_active');
         $(this).addClass('li_active');
     });
-    $(".tabs-menu a").click(function(event) {
+    setClickEventOnTabs();
+    $("#getintouchcccode option[value='+91']").prop('selected', true);
+    $("#planfeedcc option[value='+91']").prop('selected', true);
+
+    var hideParent = $(".planunderline .plan_span").html();
+
+    //    console.log(hideParent);
+});
+
+function setClickEventOnTabs() {
+    $(".tabs-menu a").click(function (event) {
         event.preventDefault();
         $(this).parent().addClass("current");
         $(this).parent().siblings().removeClass("current");
@@ -47,119 +57,117 @@ $(document).ready(function($) {
         $(".tab-content").not(tab).css("display", "none");
         $(tab).fadeIn();
     });
-    $("#getintouchcccode option[value='+91']").prop('selected', true);
-    $("#planfeedcc option[value='+91']").prop('selected', true);
+}
 
-   var hideParent = $(".planunderline .plan_span").html();
+function initializeAll() {
 
-//    console.log(hideParent);
-    
-//    This is for feature product {gallery}
+    //    This is for feature product {gallery}
     var interior_slider_1 = $("#interior-slider_1,#interior-slider_3,#interior-slider_4");
+
     interior_slider_1.owlCarousel({
         nav: true,
         items: 4,
-        margin: 25, 
+        margin: 25,
         loop: true,
-        mouseDrag:true,
-        autoplay: true, 
+        mouseDrag: true,
+        autoplay: true,
         autoplayTimeout: 10000,
         dots: false,
-        mouseDrag:false,
-        responsiveClass:true,
-        responsive:{
-            0:{
-                items:1,
-                 nav: true,
+        mouseDrag: false,
+        responsiveClass: true,
+        responsive: {
+            0: {
+                items: 1,
+                nav: true,
             },
-            554:{
-                items:2,
-                 nav: true,
+            554: {
+                items: 2,
+                nav: true,
             },
-            600:{
-                items:3,
-                 nav: true,
+            600: {
+                items: 3,
+                nav: true,
             },
-            991:{
-                items:4,
-                 nav: true,
+            991: {
+                items: 4,
+                nav: true,
             }
         }
     });
-    
+
     $("#interior-slider_1 .owl-prev,#interior-slider_3 .owl-prev,#interior-slider_4 .owl-prev").html('<img src="assets/images/gallery/left_arrow.png" class="arrows">');
     $("#interior-slider_1 .owl-next,#interior-slider_3 .owl-next,#interior-slider_4 .owl-next").html('<img src="assets/images/gallery/right_arrow.png" class="arrows">');
-    
+
     var interior_slider_2 = $("#interior-slider_2");
     interior_slider_2.owlCarousel({
         items: 4,
-        margin: 25, 
+        margin: 25,
         loop: true,
-        mouseDrag:true,
-        autoplay: true, 
+        mouseDrag: true,
+        autoplay: true,
         autoplayTimeout: 10000,
         dots: false,
-        mouseDrag:false,
+        mouseDrag: false,
         nav: true,
-        responsiveClass:true,
-        responsive:{
-            0:{
-                items:1,
+        responsiveClass: true,
+        responsive: {
+            0: {
+                items: 1,
                 dots: true
             },
-            554:{
-                items:2,
+            554: {
+                items: 2,
                 dots: true
             },
-            600:{
-                items:3,
+            600: {
+                items: 3,
                 dots: true
             },
-            991:{
-                items:4,
+            991: {
+                items: 4,
                 dots: true
             }
         }
     });
-    
+
     $("#interior-slider_2 .owl-prev").html('<img src="assets/images/gallery/left_arrow.png" class="arrows">');
     $("#interior-slider_2 .owl-next").html('<img src="assets/images/gallery/right_arrow.png" class="arrows">');
-    
-    
+
+
     var gallery_slider1_modal = $(".gallery-slider-modal");
     gallery_slider1_modal.owlCarousel({
-            items: 1, 
-            margin: 0, 
-            loop: true, 
-            autoplay: false, 
-            // animateOut: 'fadeOut', 
-            autoplayTimeout: 3000,
-            nav: true,
-            dots:false
-        });
+        items: 1,
+        margin: 0,
+        loop: true,
+        autoplay: false,
+        // animateOut: 'fadeOut', 
+        autoplayTimeout: 3000,
+        nav: true,
+        dots: false
+    });
 
     $(".gallery-slider-modal .owl-prev").html('<span><i class="fa fa-angle-left" aria-hidden="true"></i></span>');
     $(".gallery-slider-modal .owl-next").html('<span><i class="fa fa-angle-right" aria-hidden="true"></i></span>');
-    
-    $(".card-img-top").on("click", function(){
+
+    $(".card-img-top").on("click", function () {
         var slider_id = $(this).attr('data-id');
-        
-        if(!validateblanktext(slider_id)) {
+
+        if (!validateblanktext(slider_id)) {
             return false;
         }
-        
+
         $("." + slider_id).show();
     });
-    
-    $(".modalCloseBtn").click(function(){
+
+    $(".modalCloseBtn").click(function () {
         $(".gallery-slider1-modal").hide();
     });
-    
-    $(".gallery-slider1-modal").click(function(event){
+
+    $(".gallery-slider1-modal").click(function (event) {
         var target = $(event.target);
         var term_modalmodal = $(this);
-        
-       if(target.hasClass("gallery-slider1-modal")){
+
+        if (target.hasClass("gallery-slider1-modal")) {
             $(this).hide();
         }
     });
@@ -167,28 +175,27 @@ $(document).ready(function($) {
 
     var banner_slider = $("#top_slider");
     banner_slider.owlCarousel({
-        items:1,
-        loop:true,
-        margin:0,
-        autoplay:true,
+        items: 1,
+        loop: true,
+        margin: 0,
+        autoplay: true,
         animateIn: 'fadeIn',
-        animateOut: 'fadeOut', 
-        autoplayHoverPause:true,
-        smartSpeed:150,
-        dots:true,
-        nav:true,
-        mouseDrag:true
+        animateOut: 'fadeOut',
+        autoplayHoverPause: true,
+        smartSpeed: 150,
+        dots: true,
+        nav: true,
+        mouseDrag: true
     });
-    
+
     $("#top_slider .owl-prev").html('<span><i class="fa fa-angle-left" aria-hidden="true"></i></span>');
     $("#top_slider .owl-next").html('<span><i class="fa fa-angle-right" aria-hidden="true"></i></span>');
 
-    $(".desktop_nav").click(function(){
+    $(".desktop_nav").click(function () {
         $("#navigatonBar").slideToggle();
         $(this).toggleClass("open");
     });
-
-});
+}
 
 var webnavoperation = [closeWebNav, openWebNav];
 
@@ -199,7 +206,7 @@ function closeWebNav() {
 function openWebNav() {
     $("#navigatonBar").slideDown(200);
 }
-$('#nav-icon3').click(function(e) {
+$('#nav-icon3').click(function (e) {
     e.preventDefault();
     webnavoperation.reverse()[0]();
 });
@@ -208,8 +215,8 @@ function showvideo() {
     $("#youtube_video_popup iframe").css("width", "100%");
     $("#youtube_video_popup iframe").css("height", "450px");
 }
-$("#youtube_video_popup").on('hidden.bs.modal', function(e) {
-    $("iframe").each(function() {
+$("#youtube_video_popup").on('hidden.bs.modal', function (e) {
+    $("iframe").each(function () {
         var src = $(this).attr('src');
         $(this).attr('src', src);
     });
@@ -226,7 +233,7 @@ var swiper = new Swiper('.swiper-container', {
     pagination: '.swiper-pagination',
     paginationClickable: true
 });
-$(document).on('keyup', function(evt) {
+$(document).on('keyup', function (evt) {
     if (evt.keyCode == 27) {
         $('.modal').modal('hide');
     }
@@ -236,38 +243,38 @@ function submitfeedForm(name, email, cc, mobile, msg, pdf) {
     if (name == null || name == '' || email == null || email == '' || mobile == null || mobile == '' || msg == null || msg == '') {
         $("#failedemptyfeed").css("display", "block");
     } else {
-            if (!isValidEmailAddresscn(email)) {
-                $("#failedemailfeed").css("display", "block");
-            } else {
-                var form = $('#formfeed')[0];
-                var formData = new FormData(form);
-                formData.append('pdf', pdf);
-                
-                $('#formfeed')[0].reset();
-                $.ajax({
-                    type: 'post',
-                    dataType: 'json',
-                    url: '/panchshiltowers/admin/Controller/feedController.php',
-                    data: formData,
-                    contentType: false,
-                    processData: false,
-                    async: false,
-                    success: function(data) {
-                        $("#successfeed").css("display", "block");
-                        location.href = "/panchshiltowers/thank-you-download-brochure.html";
-                    },
-                    error: function(data) {
-                        $(".alert-danger").show();
-                        $("#error-msg").text('Error in updating Sustain Details !!!');
-                        setTimeout(function() {
-                            $(".alert-danger").hide();
-                        }, 10000);
-                        
-                    }
-                });
-            }
+        if (!isValidEmailAddresscn(email)) {
+            $("#failedemailfeed").css("display", "block");
+        } else {
+            var form = $('#formfeed')[0];
+            var formData = new FormData(form);
+            formData.append('pdf', pdf);
+
+            $('#formfeed')[0].reset();
+            $.ajax({
+                type: 'post',
+                dataType: 'json',
+                url: '/panchshiltowers/admin/Controller/feedController.php',
+                data: formData,
+                contentType: false,
+                processData: false,
+                async: false,
+                success: function (data) {
+                    $("#successfeed").css("display", "block");
+                    location.href = "/panchshiltowers/thank-you-download-brochure.html";
+                },
+                error: function (data) {
+                    $(".alert-danger").show();
+                    $("#error-msg").text('Error in updating Sustain Details !!!');
+                    setTimeout(function () {
+                        $(".alert-danger").hide();
+                    }, 10000);
+
+                }
+            });
         }
     }
+}
 
 function isValidEmailAddresscn(emailAddress) {
     var pattern = new RegExp(/^(("[\w-+\s]+")|([\w-+]+(?:\.[\w-+]+)*)|("[\w-+\s]+")([\w-+]+(?:\.[\w-+]+)*))(@((?:[\w-+]+\.)*\w[\w-+]{0,66})\.([a-z]{2,6}(?:\.[a-z]{2})?)$)|(@\[?((25[0-5]\.|2[0-4][\d]\.|1[\d]{2}\.|[\d]{1,2}\.))((25[0-5]|2[0-4][\d]|1[\d]{2}|[\d]{1,2})\.){2}(25[0-5]|2[0-4][\d]|1[\d]{2}|[\d]{1,2})\]?$)/i);
@@ -311,9 +318,9 @@ function submitfooterForm(name, email, mobile, msg) {
                         contentType: false,
                         processData: false,
                         async: false,
-                        beforeSend:function(){$("form")[0].reset();},
-                        success: function(data) {
-                           
+                        beforeSend: function () { $("form")[0].reset(); },
+                        success: function (data) {
+
                             if (data.errCode == 24) {
                                 $("#successmsg").css("display", "block");
                                 window.open('/panchshiltowers/images/uploads/".$getbrochureDetails[0]["file"]; ?>', '_blank');
@@ -321,14 +328,14 @@ function submitfooterForm(name, email, mobile, msg) {
                                 $("#failedmsg").css("display", "block");
                             }
                         },
-                        error: function(data) {
+                        error: function (data) {
                             $(".alert-danger").show();
                             $("#error-msg").text('Error in updating Sustain Details !!!');
-                            setTimeout(function() {
+                            setTimeout(function () {
                                 $(".alert-danger").hide();
                             }, 10000);
-                           
-                            
+
+
                         }
                     });
                 }
@@ -355,14 +362,14 @@ function hideerrft() {
     $("#mobileerrmsg").css("display", "none");
     $("#failednamemsg").css("display", "none");
 }
-$(function() {
+$(function () {
     $('.lazy').lazy({
         effect: "fadeIn",
         effectTime: 1000,
         threshold: 0
     });
 });
-$(".mapicons .map-block").click(function(event) {
+$(".mapicons .map-block").click(function (event) {
     event.preventDefault();
     $(this).addClass("mapcurrent");
     $(this).siblings().removeClass("mapcurrent");
@@ -374,7 +381,7 @@ function check_if_in_view() {
     var window_height = $window.height();
     var window_top_position = $window.scrollTop();
     var window_bottom_position = (window_top_position + window_height);
-    $.each($animation_elements, function() {
+    $.each($animation_elements, function () {
         var $element = $(this);
         var element_height = $element.outerHeight();
         var element_top_position = $element.offset().top;
@@ -388,8 +395,8 @@ function check_if_in_view() {
 }
 $window.on('scroll resize', check_if_in_view);
 $window.trigger('scroll');
-$(document).ready(function() {
-    $('#nav-icon3').click(function() {
+$(document).ready(function () {
+    $('#nav-icon3').click(function () {
         $(this).toggleClass('open');
     });
 });
@@ -397,7 +404,7 @@ $(document).ready(function() {
 function refreshmap(e) {
     $("#maploading").fadeIn();
     $("#map").html(e);
-    setTimeout(function() {
+    setTimeout(function () {
         $("#maploading").fadeOut();
     }, 1200);
 }
@@ -411,7 +418,7 @@ function onYouTubePlayerAPIReady() {
     player = new YT.Player('video', {
         events: {
             'onReady': onPlayerReady,
-            'onStateChange': function(event) {
+            'onStateChange': function (event) {
                 switch (event.data) {
                     case -1:
                         console.log('unstarted');
@@ -440,7 +447,7 @@ function onYouTubePlayerAPIReady() {
 }
 
 function validatestring(stringtext) {
-    if(stringtext == "" || whitespaces_val.test(stringtext) || numeric_val.test(stringtext) || alphanumeric_val.test(stringtext) || !alphaspace.test(stringtext)) {
+    if (stringtext == "" || whitespaces_val.test(stringtext) || numeric_val.test(stringtext) || alphanumeric_val.test(stringtext) || !alphaspace.test(stringtext)) {
         return false;
     } else {
         return true;
@@ -448,7 +455,7 @@ function validatestring(stringtext) {
 }
 
 function validateblanktext(stringtext) {
-    if(stringtext == "" || whitespaces_val.test(stringtext)) {
+    if (stringtext == "" || whitespaces_val.test(stringtext)) {
         return false;
     } else {
         return true;
@@ -456,7 +463,7 @@ function validateblanktext(stringtext) {
 }
 
 function onPlayerReady(event) {
-    $("#playvideo").click(function() {
+    $("#playvideo").click(function () {
         $(".homevideo .headSection").css("display", "none");
         $(".homevideo iframe").css("display", "block");
         player.playVideo();

@@ -17,6 +17,10 @@ var amenitiesApiEndpoint = baseUrl + 'allamefeat?prop_id=';
 
 //Plans Api Emdpoints
 var allPlanApiEndpoint = baseUrl + 'allplan?prop_id=';
+var planViewApiEndpoint = baseUrl + 'allplanview?prop_id=';
+
+//Gallery Api Endpoints
+var galleryApiEndpoints = baseUrl + 'allgallery?prop_id=';
 
 // Read a page's GET URL variables and return them as an associative array.
 function getUrlVars() {
@@ -31,13 +35,17 @@ function getUrlVars() {
 	}
 
 	$('.read__more').each(function () {
-		this.href = this.href + '?id=' + vars['id'];
-		console.log(`this.href = ${this.href}`);
+
+		console.log(`this.href before = ${this.href}`);
+
+		this.href = this.href.split('?')[0] + '?id=' + vars['id'];
+		console.log(`this.href after = ${this.href}`);
 	})
 
 	$('.read__more_1').each(function () {
-		this.href = this.href + '?id=' + vars['id'];
-		console.log(`this.href = ${this.href}`);
+		console.log(`this.href before = ${this.href}`);
+		this.href = this.href.split('?')[0] + '?id=' + vars['id'];
+		console.log(`this.href after = ${this.href}`);
 	})
 
 	return vars;

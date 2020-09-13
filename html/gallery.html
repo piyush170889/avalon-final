@@ -266,18 +266,74 @@
     } */
     </style>
 
+    <!-- Required JS -->
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/js/common.js" defer></script>
+
+    <!-- API Calls Script -->
+    <script src="js/main.js" type="text/javascript"></script>
+
 </head>
 
 <body>
 
+    <!-- Gallery -->
+    <script type="text/javascript">
+        // $(document).ready(function () {
+
+        let urlParams = getUrlVars();
+
+        let galleryApiEndpointsCalc = galleryApiEndpoints + urlParams["id"];
+        console.log(`galleryApiEndpointsCalc = ${galleryApiEndpointsCalc}`);
+
+        $.get(galleryApiEndpointsCalc, function (res, status) {
+
+            console.log("Data: ", res);
+
+            let data = res.data;
+
+            if (data.length > 0) {
+
+                $('#galTitle').html(data[0].heading);
+
+                let elem = $('#interior-slider_1');
+
+                $.each(data, function (index, value) {
+
+                    console.log(index + ":" + value);
+                    let imgPath = imageBaseUrl + value.folder + '/' + value.img;
+                    console.log(`imgPath = ` + imgPath);
+
+                    let htmlToAppend = `<div class="item" style="border:1px solid #ccc;">
+                            <div class="card">
+                                <a href="javascript:void(0)"
+                                    data-title="${value.heading}" data-lightbox="interior-slider_1">
+                                    <img class="card-img-top" alt="${value.heading}" src="${imgPath}">
+                                </a>
+                                <div class="card-body">
+                                    <h4 class="card-title">${value.heading}</h4>
+                                </div>
+                            </div>
+                        </div>`;
+
+                    elem.append(htmlToAppend);
+                });
+
+                initializeAll();
+            }
+        });
+        // });
+    </script>
+    <!-- ./Gallery -->
+
     <header class="container-fluid header">
         <div class="row header__inner">
             <div class="col-xs-3 col-sm-3 col-md-3 header__inner__hamburger">
-                                        <div class="header__inner__hamburger__menu">
-                            <span></span>
-                            <span></span>
-                            <span></span>
-                        </div>
+                <div class="header__inner__hamburger__menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
             </div>
             <div class="col-xs-6 col-sm-6 col-md-6 header__inner__logo text-center">
                 <a href="home_property.html" class="header__inner__logo__link">
@@ -302,38 +358,42 @@
         <div class="nav__inner">
             <ul>
                 <li>
-                        <a href="">
-                            <span><img src="assets/images/logo1.jpg" style="height: 60px;width: 60px;" alt="Avalon" class="img-repsonsive"></span><span style="padding-left: 15px; font-size: 20px;">Avalon</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="home_property.html">Home</a>
-                    </li>
-                    
-                    <li>
-                        <a href="interior.html">Interiors</a>
-                    </li>
-                    <li>
-                        <a href="technology.html">Technology</a>
-                    </li>
-                    <li>
-                        <a href="amenities.html">Amenities</a>
-                    </li>
-                    <li>
-                        <a href="plans.html">Plans</a>
-                    </li>
-                   
-                    <li>
-                        <a href="gallery.html">Gallery</a>
-                    </li>
-                    
-                    <li>
-                        <a href="contact.html">Contact</a>
-                    </li>
+                    <a href="">
+                        <span><img src="assets/images/logo1.jpg" style="height: 60px;width: 60px;" alt="Avalon"
+                                class="img-repsonsive"></span><span
+                            style="padding-left: 15px; font-size: 20px;">Avalon</span>
+                    </a>
+                </li>
+                <li>
+                    <a class="read__more_1" href="home_property.html">Home</a>
+                </li>
+
+                <li>
+                    <a class="read__more_1" href="interior.html">Interiors</a>
+                </li>
+                <li>
+                    <a class="read__more_1" href="technology.html">Technology</a>
+                </li>
+                <li>
+                    <a class="read__more_1" href="amenities.html">Amenities</a>
+                </li>
+                <li>
+                    <a class="read__more_1" href="plans.html">Plans</a>
+                </li>
+
+                <li>
+                    <a class="read__more_1" href="gallery.html">Gallery</a>
+                </li>
+
+                <li>
+                    <a class="read__more_1" href="contact.html">Contact</a>
+                </li>
             </ul>
         </div>
     </nav>
+
     <div class="backdrop"></div><!-- BANNER SECTION -->
+
     <div class="publicinfraBg parallax" style="background-image:url('assets/images/Esteban_banner - Ongoing.jpg')">
         <!-- <div class="text-center headSection">
         <div>
@@ -353,409 +413,76 @@
     </div>
 
     <div class="container-fluid" id="g_gallery">
+
         <!--  Gallery 1 slider  start  -->
         <div class="container slider_1">
+
             <div class="row">
                 <div class="col-xs-12 text-center">
-                    <h2>Construction Update Tower&#039;s G, H, I &amp; Clubhouse</h2>
+                    <h2 id="galTitle"></h2>
                 </div>
             </div>
+
             <div class="col-md-11 col-xs-12" style="float: none;margin: auto;">
                 <div class="owl-carousel owl-theme slider" id="interior-slider_1">
 
-                    
+
+                    <!-- <div class="item" style="border:1px solid #ccc;">
+                        <div class="card">
+                            <a href="javascript:void(0)" data-title="Test Title" data-lightbox="interior-slider_1">
+                                <img class="card-img-top" alt="Test Title"
+                                    src="http://ptdevenv.co.in/avalon_realty_dev_env/public/property/gallery/1599927618.jpg">
+                            </a>
+                            <div class="card-body">
+                                <h4 class="card-title">Test Title 1</h4>
+                            </div>
+                        </div>
+                    </div>
 
                     <div class="item" style="border:1px solid #ccc;">
                         <div class="card">
-                            <a href="assets/images/gallery/Clubhouse-&amp;-Tower-GHI.jpg"
-                                data-title="Clubhouse &amp; Tower GHI" data-lightbox="interior-slider_1"><img
-                                    class="card-img-top" alt="Clubhouse &amp; Tower GHI"
-                                    src="assets/images/gallery/zKxdLxuGuQsfbibry9DTIQMe8w5RtJ.jpg"></a>
-                            <!--                       <img class="card-img-top" alt="Clubhouse &amp; Tower GHI" data-id="call_modal_1" src="assets/images/gallery/zKxdLxuGuQsfbibry9DTIQMe8w5RtJ.jpg">-->
+                            <a href="javascript:void(0)" data-title="Test Title" data-lightbox="interior-slider_1">
+                                <img class="card-img-top" alt="Test Title"
+                                    src="http://ptdevenv.co.in/avalon_realty_dev_env/public/property/gallery/1599927666.jpg">
+                            </a>
                             <div class="card-body">
-                                <h4 class="card-title">Clubhouse &amp; Tower GHI</h4>
+                                <h4 class="card-title">Test Title 2</h4>
                             </div>
                         </div>
                     </div>
+
                     <div class="item" style="border:1px solid #ccc;">
                         <div class="card">
-                            <a href="assets/images/gallery/rcxO8aFguNPH66n2ZDr3bYOVJxwTZf.jpg"
-                                data-title="Night Elevation Back" data-lightbox="interior-slider_1"><img
-                                    class="card-img-top" alt="Night Elevation Back"
-                                    src="assets/images/gallery/udfgLKWfAouLGFcfPQ8xHUMPrSGUBm.jpg"></a>
-                            <!--                       <img class="card-img-top" alt="Night Elevation Back" data-id="call_modal_1" src="assets/images/gallery/udfgLKWfAouLGFcfPQ8xHUMPrSGUBm.jpg">-->
+                            <a href="javascript:void(0)" data-title="Test Title" data-lightbox="interior-slider_1">
+                                <img class="card-img-top" alt="Test Title"
+                                    src="http://ptdevenv.co.in/avalon_realty_dev_env/public/property/gallery/1599927666.jpg">
+                            </a>
                             <div class="card-body">
-                                <h4 class="card-title">Night Elevation Back</h4>
+                                <h4 class="card-title">Test Title 3</h4>
                             </div>
                         </div>
                     </div>
+
                     <div class="item" style="border:1px solid #ccc;">
                         <div class="card">
-                            <a href="assets/images/gallery/cb5MZZBljvdzhEVd5VaqhcW3xg8tRk.jpg"
-                                data-title="Night Elevation Front" data-lightbox="interior-slider_1"><img
-                                    class="card-img-top" alt="Night Elevation Front"
-                                    src="assets/images/gallery/pzT6wWwLXtmWZRjbWhJUrYgsZbIeTz.jpg"></a>
-                            <!--                       <img class="card-img-top" alt="Night Elevation Front" data-id="call_modal_1" src="assets/images/gallery/pzT6wWwLXtmWZRjbWhJUrYgsZbIeTz.jpg">-->
+                            <a href="javascript:void(0)" data-title="Test Title" data-lightbox="interior-slider_1">
+                                <img class="card-img-top" alt="Test Title"
+                                    src="http://ptdevenv.co.in/avalon_realty_dev_env/public/property/gallery/1599927618.jpg">
+                            </a>
                             <div class="card-body">
-                                <h4 class="card-title">Night Elevation Front</h4>
+                                <h4 class="card-title">Test Title 4</h4>
                             </div>
                         </div>
-                    </div>
-                    <div class="item" style="border:1px solid #ccc;">
-                        <div class="card">
-                            <a href="assets/images/gallery/EtZfTnEzu0DyVDRpXy6NAW4zmiZAzL.jpg"
-                                data-title="Parking Entry" data-lightbox="interior-slider_1"><img class="card-img-top"
-                                    alt="Parking Entry"
-                                    src="assets/images/gallery/d3LIxheWHE7QblGcxBm4p0qhvbq9j0.jpg"></a>
-                            <!--                       <img class="card-img-top" alt="Parking Entry" data-id="call_modal_1" src="assets/images/gallery/d3LIxheWHE7QblGcxBm4p0qhvbq9j0.jpg">-->
-                            <div class="card-body">
-                                <h4 class="card-title">Parking Entry</h4>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="item" style="border:1px solid #ccc;">
-                        <div class="card">
-                            <a href="assets/images/gallery/gAWoi5ctSsZQpNUcPLpKahGQafQOZI.jpg"
-                                data-title="Parking Tower E" data-lightbox="interior-slider_1"><img class="card-img-top"
-                                    alt="Parking Tower E"
-                                    src="assets/images/gallery/j9QqICTzB73MPDtwk5sfOcv40LyXlu.jpg"></a>
-                            <!--                       <img class="card-img-top" alt="Parking Tower E" data-id="call_modal_1" src="assets/images/gallery/j9QqICTzB73MPDtwk5sfOcv40LyXlu.jpg">-->
-                            <div class="card-body">
-                                <h4 class="card-title">Parking Tower E</h4>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="item" style="border:1px solid #ccc;">
-                        <div class="card">
-                            <a href="assets/images/gallery/ab1yf0U6gNFlEv2ZPPJrA7yTMFOfeI.jpg"
-                                data-title="Podium" data-lightbox="interior-slider_1"><img class="card-img-top"
-                                    alt="Podium"
-                                    src="assets/images/gallery/qFlWrjqOgpFzBCQlxhkNJjYsyS13cb.jpg"></a>
-                            <!--                       <img class="card-img-top" alt="Podium" data-id="call_modal_1" src="assets/images/gallery/qFlWrjqOgpFzBCQlxhkNJjYsyS13cb.jpg">-->
-                            <div class="card-body">
-                                <h4 class="card-title">Podium</h4>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="item" style="border:1px solid #ccc;">
-                        <div class="card">
-                            <a href="assets/images/gallery/K5pze3Ys81GnU2jUFo5P0jCBTZO0Ny.jpg"
-                                data-title="Podium Entry" data-lightbox="interior-slider_1"><img class="card-img-top"
-                                    alt="Podium Entry"
-                                    src="assets/images/gallery/7ZDA2zaDmNuAcchXj1n0BCOpuuSKKe.jpg"></a>
-                            <!--                       <img class="card-img-top" alt="Podium Entry" data-id="call_modal_1" src="assets/images/gallery/7ZDA2zaDmNuAcchXj1n0BCOpuuSKKe.jpg">-->
-                            <div class="card-body">
-                                <h4 class="card-title">Podium Entry</h4>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="item" style="border:1px solid #ccc;">
-                        <div class="card">
-                            <a href="assets/images/gallery/YRW3xlcJu4y4MBbr87f8dznISY2us2.jpg"
-                                data-title="Tower-A Lobby" data-lightbox="interior-slider_1"><img class="card-img-top"
-                                    alt="Tower-A Lobby"
-                                    src="assets/images/gallery/6joMwDBmM93HVT8Oz3qW0wxeSSbbuJ.jpg"></a>
-                            <!--                       <img class="card-img-top" alt="Tower-A Lobby" data-id="call_modal_1" src="assets/images/gallery/6joMwDBmM93HVT8Oz3qW0wxeSSbbuJ.jpg">-->
-                            <div class="card-body">
-                                <h4 class="card-title">Tower-A Lobby</h4>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="item" style="border:1px solid #ccc;">
-                        <div class="card">
-                            <a href="assets/images/gallery/5f7AWeHmaTWta8WtQaRPqmYHu5a7TF.jpg"
-                                data-title="Tower-A Lobby" data-lightbox="interior-slider_1"><img class="card-img-top"
-                                    alt="Tower-A Lobby"
-                                    src="assets/images/gallery/e78v6eNDsQa1KamPdqeO6KghmfD0vF.jpg"></a>
-                            <!--                       <img class="card-img-top" alt="Tower-A Lobby" data-id="call_modal_1" src="assets/images/gallery/e78v6eNDsQa1KamPdqeO6KghmfD0vF.jpg">-->
-                            <div class="card-body">
-                                <h4 class="card-title">Tower-A Lobby</h4>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="item" style="border:1px solid #ccc;">
-                        <div class="card">
-                            <a href="assets/images/gallery/y7amqmBggsRzMDUh6lSHBrs4IPffJB.jpg"
-                                data-title="Tower-A Parking Lobby" data-lightbox="interior-slider_1"><img
-                                    class="card-img-top" alt="Tower-A Parking Lobby"
-                                    src="assets/images/gallery/CRNzj707nqNW2pNnX5IKO2JhABiDNu.jpg"></a>
-                            <!--                       <img class="card-img-top" alt="Tower-A Parking Lobby" data-id="call_modal_1" src="assets/images/gallery/CRNzj707nqNW2pNnX5IKO2JhABiDNu.jpg">-->
-                            <div class="card-body">
-                                <h4 class="card-title">Tower-A Parking Lobby</h4>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="item" style="border:1px solid #ccc;">
-                        <div class="card">
-                            <a href="assets/images/gallery/PzFN9mGKdzEqC7mHFGi62oMfcmAhRe.jpg"
-                                data-title="Waterbody" data-lightbox="interior-slider_1"><img class="card-img-top"
-                                    alt="Waterbody"
-                                    src="assets/images/gallery/Kwy0YBTEXZDwUMDiiRpwEj8uO1EZqF.jpg"></a>
-                            <!--                       <img class="card-img-top" alt="Waterbody" data-id="call_modal_1" src="assets/images/gallery/Kwy0YBTEXZDwUMDiiRpwEj8uO1EZqF.jpg">-->
-                            <div class="card-body">
-                                <h4 class="card-title">Waterbody</h4>
-                            </div>
-                        </div>
-                    </div>
+                    </div> -->
+
                 </div>
-                <!-- <div class="owl-nav">
-            <div class="owl-prev">
-                <img src="assets/images/gallery/left_arrow.png" class="arrows">
-            </div>
-             <div class="owl-next">
-                <img src="assets/images/gallery/right_arrow.png" class="arrows">
             </div>
 
-        </div> -->
-            </div>
         </div>
-
-        
         <!--  Gallery 1 slider  End  -->
 
-
-
-        <!--  Gallery 2 slider  start  -->
-        <div class="container slider_1">
-            <div class="row">
-                <div class="col-xs-12 text-center">
-                    <h2>3.5 BHK Family</h2>
-                </div>
-            </div>
-            <div class="col-md-11 col-xs-12" style="float: none;margin: auto;">
-                <div class="owl-carousel owl-theme slider" id="interior-slider_2">
-                    <div class="item" style="border:1px solid #ccc;">
-                        <div class="card">
-                            <a href="assets/images/gallery/vlkDZBzJ3Z0LYB4ca9sWASgphDkWVL.jpg"
-                                data-title="Living Room" data-lightbox="interior-slider_2"><img class="card-img-top"
-                                    alt="Living Room"
-                                    src="assets/images/gallery/lr7F47hDQkDR6CsbOCkhzU9PjrtEnp.jpg"></a>
-                            <!--                       <img class="card-img-top" alt="Living Room" data-id="call_modal_2" src="assets/images/gallery/lr7F47hDQkDR6CsbOCkhzU9PjrtEnp.jpg">-->
-                            <div class="card-body">
-                                <h4 class="card-title">Living Room</h4>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="item" style="border:1px solid #ccc;">
-                        <div class="card">
-                            <a href="assets/images/gallery/XQ6OoOJPKtemQz4JvA3aciL1N7VNca.jpg"
-                                data-title="Master Bedroom" data-lightbox="interior-slider_2"><img class="card-img-top"
-                                    alt="Master Bedroom"
-                                    src="assets/images/gallery/va0BZppIfabtx23BLybPIo8tpVBlJO.jpg"></a>
-                            <!--                       <img class="card-img-top" alt="Master Bedroom" data-id="call_modal_2" src="assets/images/gallery/va0BZppIfabtx23BLybPIo8tpVBlJO.jpg">-->
-                            <div class="card-body">
-                                <h4 class="card-title">Master Bedroom</h4>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="item" style="border:1px solid #ccc;">
-                        <div class="card">
-                            <a href="assets/images/gallery/xbg9puOY8NXK7ZDy6Xs6Ne8D1MJD2R.jpg"
-                                data-title="Dining Area" data-lightbox="interior-slider_2"><img class="card-img-top"
-                                    alt="Dining Area"
-                                    src="assets/images/gallery/vz3MJsgxqpko9snM1tKuzxIIaJuUnx.jpg"></a>
-                            <!--                       <img class="card-img-top" alt="Dining Area" data-id="call_modal_2" src="assets/images/gallery/vz3MJsgxqpko9snM1tKuzxIIaJuUnx.jpg">-->
-                            <div class="card-body">
-                                <h4 class="card-title">Dining Area</h4>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="item" style="border:1px solid #ccc;">
-                        <div class="card">
-                            <a href="assets/images/gallery/c50Bauv6LgKzNZStm50KSgWjYCIWTS.jpg"
-                                data-title="Bedroom" data-lightbox="interior-slider_2"><img class="card-img-top"
-                                    alt="Bedroom"
-                                    src="assets/images/gallery/x5YyG82cfOt0ngZfJmlK6d02xYFfUy.jpg"></a>
-                            <!--                       <img class="card-img-top" alt="Bedroom" data-id="call_modal_2" src="assets/images/gallery/x5YyG82cfOt0ngZfJmlK6d02xYFfUy.jpg">-->
-                            <div class="card-body">
-                                <h4 class="card-title">Bedroom</h4>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="item" style="border:1px solid #ccc;">
-                        <div class="card">
-                            <a href="assets/images/gallery/LAgMIVwCE1iXsrHvjdJ8wIofsHWeSB.jpg"
-                                data-title="Bathroom" data-lightbox="interior-slider_2"><img class="card-img-top"
-                                    alt="Bathroom"
-                                    src="assets/images/gallery/8EcoqVkXxZYQXrhFXBSGJpo8ERPB6I.jpg"></a>
-                            <!--                       <img class="card-img-top" alt="Bathroom" data-id="call_modal_2" src="assets/images/gallery/8EcoqVkXxZYQXrhFXBSGJpo8ERPB6I.jpg">-->
-                            <div class="card-body">
-                                <h4 class="card-title">Bathroom</h4>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!--  Gallery 2 slider  End  -->
-
-
-
-        <!--  Gallery 3 slider  start  -->
-        <div class="container slider_1">
-            <div class="row">
-                <div class="col-xs-12 text-center">
-                    <h2>3.5 BHK Trendy</h2>
-                </div>
-            </div>
-            <div class="col-md-11 col-xs-12" style="float: none;margin: auto;">
-                <div class="owl-carousel owl-theme slider" id="interior-slider_3">
-                    <div class="item" style="border:1px solid #ccc;">
-                        <div class="card">
-                            <a href="assets/images/gallery/8R38cicKM4Lgk3KP5BGRxKDwlobc3o.jpg"
-                                data-title="Living Room" data-lightbox="interior-slider_3"><img class="card-img-top"
-                                    alt="Living Room"
-                                    src="assets/images/gallery/abfekrwxcjCYzW1kM7VtYtdB0zZbL3.jpg"></a>
-                            <!--                       <img class="card-img-top" alt="Living Room" data-id="call_modal_3" src="assets/images/gallery/abfekrwxcjCYzW1kM7VtYtdB0zZbL3.jpg">-->
-                            <div class="card-body">
-                                <h4 class="card-title">Living Room</h4>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="item" style="border:1px solid #ccc;">
-                        <div class="card">
-                            <a href="assets/images/gallery/Iqwb8t0oV1iVTrxAmKxeZIrC7zV7TF.jpg"
-                                data-title="Kitchen Area" data-lightbox="interior-slider_3"><img class="card-img-top"
-                                    alt="Kitchen Area"
-                                    src="assets/images/gallery/mC5TNenNCiOUdIlLjIwRXwzo8GY3NS.jpg"></a>
-                            <!--                       <img class="card-img-top" alt="Kitchen Area" data-id="call_modal_3" src="assets/images/gallery/mC5TNenNCiOUdIlLjIwRXwzo8GY3NS.jpg">-->
-                            <div class="card-body">
-                                <h4 class="card-title">Kitchen Area</h4>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="item" style="border:1px solid #ccc;">
-                        <div class="card">
-                            <a href="assets/images/gallery/QBaYxN9BuuWng6JDDjoXHsMgl8l6rZ.jpg"
-                                data-title="Family Room" data-lightbox="interior-slider_3"><img class="card-img-top"
-                                    alt="Family Room"
-                                    src="assets/images/gallery/3hBdf80pJvUGTbNDOqXcnEE9U0ig6J.jpg"></a>
-                            <!--                       <img class="card-img-top" alt="Family Room" data-id="call_modal_3" src="assets/images/gallery/3hBdf80pJvUGTbNDOqXcnEE9U0ig6J.jpg">-->
-                            <div class="card-body">
-                                <h4 class="card-title">Family Room</h4>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="item" style="border:1px solid #ccc;">
-                        <div class="card">
-                            <a href="assets/images/gallery/x8XN7x5u5T79zJXgDvJOB4qa1hEpT7.jpg"
-                                data-title="Master Bedroom" data-lightbox="interior-slider_3"><img class="card-img-top"
-                                    alt="Master Bedroom"
-                                    src="assets/images/gallery/4qg1dozjTFc0PLJM1niLbTPC4QTJgM.jpg"></a>
-                            <!--                       <img class="card-img-top" alt="Master Bedroom" data-id="call_modal_3" src="assets/images/gallery/4qg1dozjTFc0PLJM1niLbTPC4QTJgM.jpg">-->
-                            <div class="card-body">
-                                <h4 class="card-title">Master Bedroom</h4>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="item" style="border:1px solid #ccc;">
-                        <div class="card">
-                            <a href="assets/images/gallery/dzcT2gNX63AXSkNvM6egfN8d8dmo6H.jpg"
-                                data-title="Lounge area" data-lightbox="interior-slider_3"><img class="card-img-top"
-                                    alt="Lounge area"
-                                    src="assets/images/gallery/LjhXcje0hk3SiWc5rYcFfstnFBB2ZH.jpg"></a>
-                            <!--                       <img class="card-img-top" alt="Lounge area" data-id="call_modal_3" src="assets/images/gallery/LjhXcje0hk3SiWc5rYcFfstnFBB2ZH.jpg">-->
-                            <div class="card-body">
-                                <h4 class="card-title">Lounge area</h4>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!--  Gallery 3 slider  End  -->
-
-
-
-        <!--  Gallery 4 slider  start  -->
-        <div class="container slider_1">
-            <div class="row">
-                <div class="col-xs-12 text-center">
-                    <h2>4.5 BHK</h2>
-                </div>
-            </div>
-            <div class="col-md-11 col-xs-12" style="float: none;margin: auto;">
-                <div class="owl-carousel owl-theme slider" id="interior-slider_4">
-                    <div class="item" style="border:1px solid #ccc;">
-                        <div class="card">
-                            <a href="assets/images/gallery/gI8t1KrAHtVuAQXyjaajJ9uvd4ssSD.jpg"
-                                data-title="Master Bedroom" data-lightbox="interior-slider_4"><img class="card-img-top"
-                                    alt="Master Bedroom"
-                                    src="assets/images/gallery/39lbCmW3XDxS77J4F3fPnZZSvcWXFP.jpg"></a>
-                            <!--                       <img class="card-img-top" alt="Master Bedroom" data-id="call_modal_4" src="assets/images/gallery/39lbCmW3XDxS77J4F3fPnZZSvcWXFP.jpg">-->
-                            <div class="card-body">
-                                <h4 class="card-title">Master Bedroom</h4>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="item" style="border:1px solid #ccc;">
-                        <div class="card">
-                            <a href="assets/images/gallery/u4AzRKkvmKRhKPOVVlIfcSZ9YQbWXd.jpg"
-                                data-title="Bathroom" data-lightbox="interior-slider_4"><img class="card-img-top"
-                                    alt="Bathroom"
-                                    src="assets/images/gallery/yrh809TlEg5vyQlmLhHtwUmw3kmfhk.jpg"></a>
-                            <!--                       <img class="card-img-top" alt="Bathroom" data-id="call_modal_4" src="assets/images/gallery/yrh809TlEg5vyQlmLhHtwUmw3kmfhk.jpg">-->
-                            <div class="card-body">
-                                <h4 class="card-title">Bathroom</h4>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="item" style="border:1px solid #ccc;">
-                        <div class="card">
-                            <a href="assets/images/gallery/mqvVJoBVoqH8cJvuuHokjtbccrZ3Mc.jpg"
-                                data-title="Dining Area" data-lightbox="interior-slider_4"><img class="card-img-top"
-                                    alt="Dining Area"
-                                    src="assets/images/gallery/b8CG4m5Fhu6YCiI7NcOcx8FIlSakVW.jpg"></a>
-                            <!--                       <img class="card-img-top" alt="Dining Area" data-id="call_modal_4" src="assets/images/gallery/b8CG4m5Fhu6YCiI7NcOcx8FIlSakVW.jpg">-->
-                            <div class="card-body">
-                                <h4 class="card-title">Dining Area</h4>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="item" style="border:1px solid #ccc;">
-                        <div class="card">
-                            <a href="assets/images/gallery/dY3v7qDAdw64VrRVXhbwKfLxnssjNH.jpg"
-                                data-title="Study Room" data-lightbox="interior-slider_4"><img class="card-img-top"
-                                    alt="Study Room"
-                                    src="assets/images/gallery/s0FvvNW9n9GteBV5xTnIq7XcFlF7Fs.jpg"></a>
-                            <!--                       <img class="card-img-top" alt="Study Room" data-id="call_modal_4" src="assets/images/gallery/s0FvvNW9n9GteBV5xTnIq7XcFlF7Fs.jpg">-->
-                            <div class="card-body">
-                                <h4 class="card-title">Study Room</h4>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="item" style="border:1px solid #ccc;">
-                        <div class="card">
-                            <a href="assets/images/gallery/lPDl8LEfecDRWfFp57CwmqtNY7Dgg2.jpg"
-                                data-title="Living Room" data-lightbox="interior-slider_4"><img class="card-img-top"
-                                    alt="Living Room"
-                                    src="assets/images/gallery/DCRgYZ2DehPS8L8NbeVNLiee5clJsC.jpg"></a>
-                            <!--                       <img class="card-img-top" alt="Living Room" data-id="call_modal_4" src="assets/images/gallery/DCRgYZ2DehPS8L8NbeVNLiee5clJsC.jpg">-->
-                            <div class="card-body">
-                                <h4 class="card-title">Living Room</h4>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="item" style="border:1px solid #ccc;">
-                        <div class="card">
-                            <a href="assets/images/gallery/i3q6FJVAXDWIXEfOCLn0T4ZXSRG2mv.jpg"
-                                data-title="Bedroom" data-lightbox="interior-slider_4"><img class="card-img-top"
-                                    alt="Bedroom"
-                                    src="assets/images/gallery/6EyxLegGPejMWhrc53Xt3Rx3OqUvth.jpg"></a>
-                            <!--                       <img class="card-img-top" alt="Bedroom" data-id="call_modal_4" src="assets/images/gallery/6EyxLegGPejMWhrc53Xt3Rx3OqUvth.jpg">-->
-                            <div class="card-body">
-                                <h4 class="card-title">Bedroom</h4>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!--  Gallery 4 slider  End  -->
-
-
-
     </div>
+
     <style>
         .gallery-slider-modal .owl-next .fa {
             color: #777;
@@ -1242,24 +969,20 @@
                         POLICY</a>
                 </div>
                 <div class="col-sm-6 col-md-6 col-lg-6 footer_social_links__wrap text-center">
-                    <a class="col-sm-3 col-md-3 col-lg-3 footer_social_links" target="_blank"
-                        href="#"><i class="fa fa-facebook"
-                            aria-hidden="true"></i></a>
+                    <a class="col-sm-3 col-md-3 col-lg-3 footer_social_links" target="_blank" href="#"><i
+                            class="fa fa-facebook" aria-hidden="true"></i></a>
 
 
-                    <a class="col-sm-3 col-md-3 col-lg-3 footer_social_links" target="_blank"
-                        href="#"><i class="fa fa-instagram"
-                            aria-hidden="true"></i></a>
+                    <a class="col-sm-3 col-md-3 col-lg-3 footer_social_links" target="_blank" href="#"><i
+                            class="fa fa-instagram" aria-hidden="true"></i></a>
 
 
-                    <a class="col-sm-3 col-md-3 col-lg-3 footer_social_links" target="_blank"
-                        href="#"
-                            aria-hidden="true"></i></a>
+                    <a class="col-sm-3 col-md-3 col-lg-3 footer_social_links" target="_blank" href="#"
+                        aria-hidden="true"></i></a>
 
 
-                    <a class="col-sm-3 col-md-3 col-lg-3 footer_social_links" target="_blank"
-                        href="#"
-                            aria-hidden="true"></i></a>
+                    <a class="col-sm-3 col-md-3 col-lg-3 footer_social_links" target="_blank" href="#"
+                        aria-hidden="true"></i></a>
 
 
 
@@ -1281,7 +1004,7 @@
                         <p>ALL RIGHTS RESERVED</p>
                     </div>
                     <div class="col-sm-6 text-right">
-                      <p>SEEDED BY<a href="http://puretechnology.in/" target="_blank">  PURE TECH CODEX</a></p>
+                        <p>SEEDED BY<a href="http://puretechnology.in/" target="_blank"> PURE TECH CODEX</a></p>
                     </div>
                 </div>
             </div>
@@ -1308,7 +1031,7 @@
 
 
 
-   <!--  <div class="enquiry_floating_btn" data-toggle="modal" data-target="#cutsom_modal">
+    <!--  <div class="enquiry_floating_btn" data-toggle="modal" data-target="#cutsom_modal">
         <span>Enquire</span>
     </div>
  -->
@@ -1328,8 +1051,7 @@
     <div class="modal fade" id="enquirymodal" role="dialog">
         <div class="modal-dialog">
             <!-- Modal content-->
-            <div class="modal-content"
-                style="background-image: url(images/homeaboutbg.png);background-size:cover;">
+            <div class="modal-content" style="background-image: url(images/homeaboutbg.png);background-size:cover;">
                 <form id="footerForm" method="POST">
                     <div class="modal-header">
                         <button type="button" class="close" data-dismiss="modal">&times;</button>
@@ -2434,14 +2156,12 @@
     </style>
 
 
-    <script src="assets/js/jquery.min.js"></script>
     <script src="assets/js/swiper.min.js" defer></script>
     <script src="assets/js/bootstrap.min.js" defer></script>
     <script src="assets/js/owl.carousel.min.js" defer></script>
     <script src="assets/js/jquery.lazy.min.js" defer></script>
     <script src="assets/js/jquery.lazy.plugins.min.js" defer></script>
     <script src="assets/js/lightbox.min.js" defer></script>
-    <script src="assets/js/common.js" defer></script>
     <script src="assets/js/custom.js" defer></script>
     <script src="assets/js/main.js" defer></script>
 

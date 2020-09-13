@@ -10,6 +10,7 @@ import { BaseComponent } from '../../core/base/base.component';
 export class PropertiesComponent extends BaseComponent implements OnInit {
 
   allProjectsList: any[] = [];
+  cities: any[] = [];
 
   constructor(
     private route: ActivatedRoute
@@ -21,6 +22,8 @@ export class PropertiesComponent extends BaseComponent implements OnInit {
 
       let res = this.route.snapshot.data.properties;
       this.allProjectsList = res.data;
+
+      this.cities = this.allProjectsList.map(a => a.city);
     }
   }
 
