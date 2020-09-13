@@ -31,8 +31,8 @@ import { HealthandsafetyComponent } from './pages/healthandsafety/healthandsafet
 import { DataService } from './core/services/dataservices/data.service';
 import { HttpClientModule } from '@angular/common/http';
 import { HomePropertyComponent } from './pages/home-property/home-property.component';
-// import { ViewportScroller } from '@angular/common';
-// import { filter } from 'rxjs/operators';
+import { FormsModule } from '@angular/forms';
+
 
 @NgModule({
   declarations: [
@@ -65,7 +65,8 @@ import { HomePropertyComponent } from './pages/home-property/home-property.compo
     SharedModule,
     RouterModule,
     HttpClientModule,
-    NgxSpinnerModule
+    NgxSpinnerModule,
+    FormsModule,
     // MatToolbarModule,
     // MatSidenavModule,
     // MatListModule,
@@ -77,8 +78,8 @@ import { HomePropertyComponent } from './pages/home-property/home-property.compo
   providers: [DataService],
   bootstrap: [AppComponent]
 })
- export class AppModule {
-  
+export class AppModule {
+
 
 
 }

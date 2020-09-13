@@ -268,7 +268,8 @@
 
     <!-- Required JS -->
     <script src="assets/js/jquery.min.js"></script>
-    <script src="assets/js/common.js" defer></script>
+    <script src="assets/js/swiper.min.js"></script>
+    <script src="assets/js/common.js"></script>
 
     <!-- API Calls Script -->
     <script src="js/main.js" type="text/javascript"></script>
@@ -281,30 +282,31 @@
     <script type="text/javascript">
         // $(document).ready(function () {
 
-        let urlParams = getUrlVars();
+        $(document).ready(function () {
+            let urlParams = getUrlVars();
 
-        let galleryApiEndpointsCalc = galleryApiEndpoints + urlParams["id"];
-        console.log(`galleryApiEndpointsCalc = ${galleryApiEndpointsCalc}`);
+            let galleryApiEndpointsCalc = galleryApiEndpoints + urlParams["id"];
+            console.log(`galleryApiEndpointsCalc = ${galleryApiEndpointsCalc}`);
 
-        $.get(galleryApiEndpointsCalc, function (res, status) {
+            $.get(galleryApiEndpointsCalc, function (res, status) {
 
-            console.log("Data: ", res);
+                console.log("Data: ", res);
 
-            let data = res.data;
+                let data = res.data;
 
-            if (data.length > 0) {
+                if (data.length > 0) {
 
-                $('#galTitle').html(data[0].heading);
+                    $('#galTitle').html(data[0].heading);
 
-                let elem = $('#interior-slider_1');
+                    let elem = $('#interior-slider_1');
 
-                $.each(data, function (index, value) {
+                    $.each(data, function (index, value) {
 
-                    console.log(index + ":" + value);
-                    let imgPath = imageBaseUrl + value.folder + '/' + value.img;
-                    console.log(`imgPath = ` + imgPath);
+                        console.log(index + ":" + value);
+                        let imgPath = imageBaseUrl + value.folder + '/' + value.img;
+                        console.log(`imgPath = ` + imgPath);
 
-                    let htmlToAppend = `<div class="item" style="border:1px solid #ccc;">
+                        let htmlToAppend = `<div class="item" style="border:1px solid #ccc;">
                             <div class="card">
                                 <a href="javascript:void(0)"
                                     data-title="${value.heading}" data-lightbox="interior-slider_1">
@@ -316,13 +318,13 @@
                             </div>
                         </div>`;
 
-                    elem.append(htmlToAppend);
-                });
+                        elem.append(htmlToAppend);
+                    });
 
-                initializeAll();
-            }
+                    initializeAll();
+                }
+            });
         });
-        // });
     </script>
     <!-- ./Gallery -->
 
@@ -394,7 +396,7 @@
 
     <div class="backdrop"></div><!-- BANNER SECTION -->
 
-    <div class="publicinfraBg parallax" style="background-image:url('assets/images/Esteban_banner - Ongoing.jpg')">
+    <div class="publicinfraBg parallax" id="propImgCust">
         <!-- <div class="text-center headSection">
         <div>
             <div id="nav-icon3" class="navicon3 deskbar" >
@@ -2156,7 +2158,6 @@
     </style>
 
 
-    <script src="assets/js/swiper.min.js" defer></script>
     <script src="assets/js/bootstrap.min.js" defer></script>
     <script src="assets/js/owl.carousel.min.js" defer></script>
     <script src="assets/js/jquery.lazy.min.js" defer></script>

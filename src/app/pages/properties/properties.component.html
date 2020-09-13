@@ -23,36 +23,23 @@
           style="margin: 0px auto;">
 
           <input type="hidden" name="catid" id="catid" value="1">
-          <select class="form-control" id="locations">
-            <option value="" selected="">Location All</option>
-            <option value="Boat Club Road, Pune">
-              Boat Club Road, Pune </option>
-            <option value="Chandkhed, Pune">
-              Chandkhed, Pune </option>
-            <option value="Hadapsar, Pune">
-              Hadapsar, Pune </option>
-            <option value="Kalyani Nagar, Pune">
-              Kalyani Nagar, Pune </option>
-            <option value="Kharadi, Pune">
-              Kharadi, Pune </option>
-            <option value="Mundhwa, Pune">
-              Mundhwa, Pune </option>
-            <option value="South Delhi">
-              South Delhi </option>
-            <option value="Wagholi, Pune">
-              Wagholi, Pune </option>
+
+          <select class="form-control" id="locations" [(ngModel)]="location" [ngModelOptions]="{standalone: true}">
+            <option value="">Location All</option>
+            <option [value]="city.prop_id" *ngFor="let city of cities">{{city.displayText}}</option>
           </select>
+
         </div>
       </form>
       <div class="clearfix"></div>
 
 
 
-      <div class="col-md-12 text-center topmargin2"> <a href="#" class="btn btn-default btn-apply-filter"
-          onclick="Filteresult(sort_type.value, sort_status.value, locations.value, filterprice.value, filterbhk.value, filtercarpet.value, catid.value, &#39;N&#39;)">APPLY
+      <div class="col-md-12 text-center topmargin2">
+        <a href="javascript:void(0)" class="btn btn-default btn-apply-filter" (click)="filterProperties()">APPLY
           FILTER</a>
         <br>
-        <a href="javascript:void(0)" class="btn-reset-selection" onclick="Resetfilter()"><i class="fas fa-redo-alt"
+        <a href="javascript:void(0)" class="btn-reset-selection" (click)="resetfilter()"><i class="fas fa-redo-alt"
             style="color: #F58634;"></i> RESET SELECTION</a>
       </div>
 
@@ -66,31 +53,28 @@
     <div class="row">
 
       <div class="col-md-3" id="col1">
-        <p><span class="header-residency-count didot-font" id="property_found">{{allProjectsList.length}}</span> <span
-            class="header-residency-title">PROPERTIES FOUND</span></p>
+        <p><span class="header-residency-count didot-font" id="property_found">{{filteredProperties.length}}</span>
+          <span class="header-residency-title">PROPERTIES FOUND</span></p>
       </div>
 
       <div class="col-md-3 input_type_box" style="padding:20px 10px;" id="type1"> <span
           class="header-residency-title">PROPERTY TYPE</span>
-        <select class="residency-property-type" id="sort_type"
-          style="float: initial;margin-left: 10%;width: 20%;margin-right: 0%;"
-          onchange="sort_items(this.value,sort_status.value,&#39;N&#39;)">
-          <option value="" selected="">ALL</option>
-          <option value="Platinum">Residential</option>
-          <option value="Gold">Commercial</option>
+        <select class="residency-property-type" id="sort_type" [(ngModel)]="propertyType"
+          [ngModelOptions]="{standalone: true}" style="float: initial;margin-left: 10%;width: 20%;margin-right: 0%;"
+          (change)="sortItems()">
+          <option value="">ALL</option>
+          <option [value]="propertyType" *ngFor="let propertyType of propertyTypesList">{{propertyType}}</option>
         </select>
       </div>
-      <div class="col-md-4 input_type_box" style="padding:20px 10px;"> <span class="header-residency-title">PROPERTY
-          STATUS</span>
-        <select class="residency-property-type" id="sort_status"
-          style="float: initial;margin-left: 10%;width:20%;margin-right: 0%;"
-          onchange="sort_items(sort_type.value,this.value,&#39;N&#39;)">
+      <div class="col-md-4 input_type_box" style="padding:20px 10px;">
+
+        <span class="header-residency-title">PROPERTY STATUS</span>
+
+        <select class="residency-property-type" id="sort_status" [(ngModel)]="status"
+          [ngModelOptions]="{standalone: true}" style="float: initial;margin-left: 10%;width:20%;margin-right: 0%;"
+          (change)="sortItems()">
           <option selected="" value="">ALL</option>
-          <option value="Under Construction">Under Construction</option>
-          <option value="Ready To Move In A, B, D &amp; E Towers">Ready To Move In &amp; </option>
-          <option value="Phase: I Completed">Phase: I Completed</option>
-          <option value="Ready to Move In">Completed</option>
-          <option value="Completed">Coming Soon</option>
+          <option [value]="status" *ngFor="let status of statusList">{{status}}</option>
         </select>
       </div>
       <!-- <div class="col-md-2 input_type_box" style="padding:20px 10px;"> <span class="header-residency-title">VIEW TYPE</span> <span class="view-type-icon">
@@ -108,7 +92,7 @@
 
     <div class="row ">
 
-      <div class="col-md-4 p-5" *ngFor="let propertyDetails of allProjectsList">
+      <div class="col-md-4 p-5" *ngFor="let propertyDetails of filteredProperties">
         <div class="card">
           <ul class="list-group list-group-flush">
             <li class="list-group-item">

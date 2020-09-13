@@ -46,7 +46,9 @@ function getUrlVars() {
 		console.log(`this.href before = ${this.href}`);
 		this.href = this.href.split('?')[0] + '?id=' + vars['id'];
 		console.log(`this.href after = ${this.href}`);
-	})
+	});
+
+	applyBackgroundImageToSection(vars['id']);
 
 	return vars;
 }
@@ -61,4 +63,27 @@ function getSortedList(prop) {
 		}
 		return 0;
 	}
+}
+
+function applyBackgroundImageToSection(id) {
+
+	console.log(`id = ${id}`);
+
+	let singlePropertyApiEndpointCalc = singlePropertyApiEndpoint + id;
+	console.log(`singlePropertyApiEndpointCalc = ${singlePropertyApiEndpointCalc}`);
+
+	$.get(singlePropertyApiEndpointCalc, function (data, status) {
+
+		console.log("Data: ", data);
+		let res = data.data;
+
+		let imgPath = imageBaseUrl + res[0].master_folder + '/' + res[0].master_image;
+		console.log(`imgPath = ${imgPath}`);
+
+		let urlImg = "url('" + imgPath + "')";
+		console.log(`urlImg = ${urlImg}`);
+
+		$('#propImgCust').css("background-image", urlImg);
+	});
+
 }

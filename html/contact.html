@@ -266,19 +266,31 @@
     overflow: hidden;
 } */
     </style>
+    <!-- Required JS -->
+    <script src="assets/js/jquery.min.js"></script>
 
+    <!-- API Calls Script -->
+    <script src="js/main.js" type="text/javascript"></script>
 </head>
 
 <body>
 
+    <script type="text/javascript">
+
+        $(document).ready(function () {
+
+            let urlParams = getUrlVars();
+        });
+    </script>
+
     <header class="container-fluid header">
         <div class="row header__inner">
             <div class="col-xs-3 col-sm-3 col-md-3 header__inner__hamburger">
-                                        <div class="header__inner__hamburger__menu">
-                            <span></span>
-                            <span></span>
-                            <span></span>
-                        </div>
+                <div class="header__inner__hamburger__menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
             </div>
             <div class="col-xs-6 col-sm-6 col-md-6">
                 <!-- <a href="" class="header__inner__logo__link">
@@ -303,42 +315,44 @@
         </div>
         <div class="nav__inner">
             <ul>
-               <li>
-                        <a href="">
-                            <span><img src="assets/images/logo1.jpg" style="height: 60px;width: 60px;" alt="Avalon" class="img-repsonsive"></span><span style="padding-left: 15px; font-size: 20px;">Avalon</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="home_property.html">Home</a>
-                    </li>
-                    
-                    <li>
-                        <a href="interior.html">Interiors</a>
-                    </li>
-                    <li>
-                        <a href="technology.html">Technology</a>
-                    </li>
-                    <li>
-                        <a href="amenities.html">Amenities</a>
-                    </li>
-                    <li>
-                        <a href="plans.html">Plans</a>
-                    </li>
-                   
-                    <li>
-                        <a href="gallery.html">Gallery</a>
-                    </li>
-                    
-                    <li>
-                        <a href="contact.html">Contact</a>
-                    </li>
+                <li>
+                    <a href="">
+                        <span><img src="assets/images/logo1.jpg" style="height: 60px;width: 60px;" alt="Avalon"
+                                class="img-repsonsive"></span><span
+                            style="padding-left: 15px; font-size: 20px;">Avalon</span>
+                    </a>
+                </li>
+                <li>
+                    <a class="read__more_1" href="home_property.html">Home</a>
+                </li>
+
+                <li>
+                    <a class="read__more_1" href="interior.html">Interiors</a>
+                </li>
+                <li>
+                    <a class="read__more_1" href="technology.html">Technology</a>
+                </li>
+                <li>
+                    <a class="read__more_1" href="amenities.html">Amenities</a>
+                </li>
+                <li>
+                    <a class="read__more_1" href="plans.html">Plans</a>
+                </li>
+
+                <li>
+                    <a class="read__more_1" href="gallery.html">Gallery</a>
+                </li>
+
+                <li>
+                    <a class="read__more_1" href="contact.html">Contact</a>
+                </li>
             </ul>
         </div>
     </nav>
     <div class="backdrop"></div>
     <!-- BANNER SECTION -->
 
-    <div class="publicinfraBg parallax" style="background-image:url('assets/images/Esteban_banner - Ongoing.jpg')">
+    <div class="publicinfraBg parallax" id="propImgCust">
         <!-- <div class="text-center headSection">
             <div>
                 <div id="nav-icon3" class="navicon3 deskbar" >
@@ -821,7 +835,7 @@
                         <p>ALL RIGHTS RESERVED</p>
                     </div>
                     <div class="col-sm-6 text-right">
-                      <p>SEEDED BY<a href="http://puretechnology.in/" target="_blank">  PURE TECH CODEX</a></p>
+                        <p>SEEDED BY<a href="http://puretechnology.in/" target="_blank"> PURE TECH CODEX</a></p>
                     </div>
                 </div>
             </div>
@@ -1965,7 +1979,6 @@
         }
     </style>
 
-    <script src="assets/js/jquery.min.js"></script>
     <script src="assets/js/swiper.min.js" defer></script>
     <script src="assets/js/bootstrap.min.js" defer></script>
     <script src="assets/js/owl.carousel.min.js" defer></script>
