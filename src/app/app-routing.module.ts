@@ -116,7 +116,7 @@ const routes: Routes = [];
         component: HealthandsafetyComponent
       },
       {
-        path: 'blogdetail/:id',
+        path: 'blogdetail/:blogdetailsid',
         component: BlogdetailComponent
       }
 

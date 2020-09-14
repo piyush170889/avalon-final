@@ -13,7 +13,7 @@
         <div class="col-12 text-center">
                 <h4 style="font-family: 'didot';">Enquiry Form</h4>
 
-                <form id="contactForm"  method="POST" class="mt-5"  style="margin-bottom: 0px;" >
+                <form [formGroup]="contactform" id="contactForm"  method="POST" class="mt-5"  style="margin-bottom: 0px;" (submit)="onSubmit(contactform)">
                     <div class="row">
                        <div class="col-md-6 offset-3 col-sm-12 col-xs-12 text-center">
                           <div class=" form-group ">
@@ -30,33 +30,33 @@
                     <div class="row">
                        <div class="col-md-6">
                           <div class="form-group" style="margin-bottom: 0px;">
-                             <input type="text" class="form-control" placeholder="First Name" required="" name="firstName" id="firstName"><br>
-                             <input type="text" class="form-control mt-2" placeholder="Last Name" required="" name="lastName" id="lastNAme"><br>
-                             <input type="text" class="form-control" placeholder="Phone" name="phone" id="phone" required="" data-parsley-type="number" data-parsley-maxlength="12" data-parsley-minlength="10"><br>
-                             <input type="email" class="form-control" placeholder="Email" required="" name="email" id="email"><br><br>
-                             <select class="form-control" name="profession-name" id="profession-name" required="">
+                             <input type="text" class="form-control" placeholder="First Name" required="" name="firstName" id="firstName" formControlName="firstName"><br>
+                             <input type="text" class="form-control mt-2" placeholder="Last Name" required="" name="lastName" id="lastNAme" formControlName="lastName"><br>
+                             <input type="text" class="form-control" placeholder="Phone" name="phone" id="phone" required="" data-parsley-type="number" data-parsley-maxlength="12" data-parsley-minlength="10" formControlName="phone"><br>
+                             <input type="email" class="form-control" placeholder="Email" required="" name="email" id="email" formControlName="email"><br><br>
+                             <select class="form-control" name="profession-name" id="profession-name" required="" formControlName="profession_name">
                                 <option value="" selected="" disabled=""> Profession</option>
                                
                              </select>
                              <br>
-                             <input type="text" class="form-control" placeholder="Company / Organzation" name="company_name" id="company_name" required=""><br>
-                             <input type="text" class="form-control" placeholder="Designation" name="designation" id="designation" required=""><br>
+                             <input type="text" class="form-control" placeholder="Company / Organzation" name="company_name" id="company_name" required="" formControlName="company_name"><br>
+                             <input type="text" class="form-control" placeholder="Designation" name="designation" id="designation" required="" formControlName="designation"><br>
                           </div>
                        </div>
                        <div class="col-md-6">
-                          <div class="form-group" style="margin-bottom: 0px;">
-                             <textarea class="form-control textarea-address" rows="4" placeholder="Address" name="address" id="address"></textarea>
+                          <div class="form-group" style="margin-bottom: 0px;" formGroupName="address">
+                             <textarea class="form-control textarea-address" rows="4" placeholder="Address" name="address" id="address" ></textarea>
                              <br>
-                             <select class="form-control" name="country" id="country" required="">
+                             <select class="form-control" name="country" id="country" required="" formControlName="country">
                                 <option value="">Select country</option>
                                 
                              </select>
                              <br>
-                             <select class="form-control" name="state" id="state" required="">
+                             <select class="form-control" name="state" id="state" required="" formControlName="state">
                                 <option value="">Select city</option>
                              </select>
                              <br><br>
-                             <textarea class="form-control textarea-comment" rows="5" placeholder="Comments" name="comment" id="comment"></textarea>
+                             <textarea class="form-control textarea-comment" rows="5" placeholder="Comments" name="comment" id="comment" formControlName="comment"></textarea>
                           </div>
                        </div>
                     </div>

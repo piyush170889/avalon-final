@@ -49,7 +49,6 @@ export class HomeComponent extends BaseComponent implements OnInit {
       let res = this.route.snapshot.data.blogs;
       this.blogsList = res.data;
       console.log('blogList = ', this.blogsList);
-
     }
 
 
