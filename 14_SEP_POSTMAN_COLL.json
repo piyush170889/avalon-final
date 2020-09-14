@@ -1,0 +1,403 @@
+{
+	"variables": [],
+	"info": {
+		"name": "Avalon",
+		"_postman_id": "7998e4a2-c25d-5a38-d49c-b004f1411f7f",
+		"description": "",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Single Property details",
+			"request": {
+				"url": {
+					"raw": "{{avalon}}singleProp?id=8",
+					"host": [
+						"{{avalon}}singleProp"
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "8",
+							"equals": true,
+							"description": ""
+						}
+					],
+					"variable": []
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "All properties",
+			"request": {
+				"url": "{{avalon}}allProp",
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Single Blog",
+			"request": {
+				"url": {
+					"raw": "{{avalon}}singleBlog?id=4",
+					"host": [
+						"{{avalon}}singleBlog"
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "4",
+							"equals": true,
+							"description": ""
+						}
+					],
+					"variable": []
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Featured Property",
+			"request": {
+				"url": "{{avalon}}featuredProp",
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "All Blogs",
+			"request": {
+				"url": "{{avalon}}allBlogs",
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Property Interiors",
+			"request": {
+				"url": {
+					"raw": "{{avalon}}allinte?prop_id=8",
+					"host": [
+						"{{avalon}}allinte"
+					],
+					"query": [
+						{
+							"key": "prop_id",
+							"value": "8",
+							"equals": true,
+							"description": ""
+						}
+					],
+					"variable": []
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Interior Feature",
+			"request": {
+				"url": {
+					"raw": "{{avalon}}allintefeat?prop_id=8",
+					"host": [
+						"{{avalon}}allintefeat"
+					],
+					"query": [
+						{
+							"key": "prop_id",
+							"value": "8"
+						}
+					],
+					"variable": []
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Technology Features",
+			"request": {
+				"url": {
+					"raw": "{{avalon}}alltechfeat?prop_id=8",
+					"host": [
+						"{{avalon}}alltechfeat"
+					],
+					"query": [
+						{
+							"key": "prop_id",
+							"value": "8"
+						}
+					],
+					"variable": []
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Amenity Features",
+			"request": {
+				"url": {
+					"raw": "{{avalon}}allamefeat?prop_id=8",
+					"host": [
+						"{{avalon}}allamefeat"
+					],
+					"query": [
+						{
+							"key": "prop_id",
+							"value": "8"
+						}
+					],
+					"variable": []
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "All property plan",
+			"request": {
+				"url": {
+					"raw": "{{avalon}}allplan?prop_id=8",
+					"host": [
+						"{{avalon}}allplan"
+					],
+					"query": [
+						{
+							"key": "prop_id",
+							"value": "8"
+						}
+					],
+					"variable": []
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Plan Features",
+			"request": {
+				"url": {
+					"raw": "{{avalon}}allplanfeature?prop_id=8",
+					"host": [
+						"{{avalon}}allplanfeature"
+					],
+					"query": [
+						{
+							"key": "prop_id",
+							"value": "8"
+						}
+					],
+					"variable": []
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Plan View",
+			"request": {
+				"url": {
+					"raw": "{{avalon}}allplanview?prop_id=8",
+					"host": [
+						"{{avalon}}allplanview"
+					],
+					"query": [
+						{
+							"key": "prop_id",
+							"value": "8",
+							"equals": true,
+							"description": ""
+						}
+					],
+					"variable": []
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Gallery",
+			"request": {
+				"url": {
+					"raw": "{{avalon}}allgallery?prop_id=8",
+					"host": [
+						"{{avalon}}allgallery"
+					],
+					"query": [
+						{
+							"key": "prop_id",
+							"value": "8",
+							"equals": true,
+							"description": ""
+						}
+					],
+					"variable": []
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Contact Us",
+			"request": {
+				"url": "http://ptdevenv.co.in/avalon_realty_dev_env/contact",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"prop_id\": 8,\n\t\"feature_name\":\"home\",\n\t\"name\":\"Aakash Kothule\",\n\t\"email\":\"aakash@puretechnology.in\",\n\t\"mobile\":\"8830705472\",\n\t\"query\":\"Need more properties in low range.\"\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		}
+	]
+}
