@@ -20,8 +20,8 @@ export class NavbarComponent implements OnInit {
   openAvalonPage(){
     this.router.navigate(["/avalon-beauty"]);
   }
-  openLaedershipPage(){
-    this.router.navigate(["/leadershp"]);
+  openLaedershipPage(id){
+    this.router.navigate([`/leadershp/${id}`]);
   }
 
   openJobPage(){

@@ -32,7 +32,6 @@ import { HealthandsafetyComponent } from './pages/healthandsafety/healthandsafet
 import { DataService } from './core/services/dataservices/data.service';
 import { HttpClientModule } from '@angular/common/http';
 import { HomePropertyComponent } from './pages/home-property/home-property.component';
-import { FormsModule } from '@angular/forms';
 
 
 @NgModule({

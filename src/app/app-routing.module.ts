@@ -28,12 +28,17 @@ import { HomePropertyComponent } from './pages/home-property/home-property.compo
 //   scrollPositionRestoration: 'enabled'
 // }),
 
-const routes: Routes = [];
+const routes: Routes = [
+ {
+  path: 'leadershp/id',
+  component: LeadershpComponent
+ }
+];
 
 @NgModule({
   imports: [RouterModule.forRoot(
     [
-
+  
       {
 
 
@@ -45,6 +50,7 @@ const routes: Routes = [];
           blogs: BlogsResolver
         }
       },
+
       {
         path: 'properties',
         component: PropertiesComponent,
@@ -55,6 +61,10 @@ const routes: Routes = [];
       {
         path: 'property-home',
         component: HomePropertyComponent
+      },
+      {
+        path: 'leadershp/:id',
+        component: LeadershpComponent
       },
       {
         path: 'leadershp',
@@ -119,7 +129,7 @@ const routes: Routes = [];
         path: 'blogdetail/:blogdetailsid',
         component: BlogdetailComponent
       }
-
+     
 
 
       // {
@@ -136,6 +146,7 @@ const routes: Routes = [];
       scrollPositionRestoration: 'enabled',
       onSameUrlNavigation: 'reload',
     },
+  
 
   )],
   exports: [RouterModule],
