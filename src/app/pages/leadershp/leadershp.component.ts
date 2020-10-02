@@ -11,20 +11,33 @@ import { switchMap } from 'rxjs/operators';
 export class LeadershpComponent implements OnInit {
   getid: any;
   currentId: number;
-
+  selected:any;
+  selectedMember: any = 1;
+  showDivIf = false;
   constructor( 
     private route: ActivatedRoute,
     private router: Router) { 
       this.router.events.subscribe(val => console.log(val));
 
-      this. getid =this.route.paramMap.subscribe(param => {this.currentId= Number(param.get('id'))});
-      console.log(this.currentId)
-      console.log(typeof(this.currentId))
+ 
+   /*    console.log(this.currentId)
+      console.log(typeof(this.currentId)) */
      /*  this.route.paramMap.subscribe(params => { console})
       this.currentId =this.route.snapshot.params['id']; */
 
     }
-
-  ngOnInit(): any {}
+    getCurrentElementId(id) {
+      this.selectedMember = id;
+      this.router.navigate([`/leadershp/${id}`])
+      console.log(id)
+    }
+    getImage(ev) {
+      alert('called');
+      console.log("fun called----", ev.target.currentId);
+   }
+  ngOnInit(): any {
+    this.route.paramMap.subscribe(param => {this.selectedMember= Number(param.get('id'))});
+    console.log(this.selectedMember)
+  }
 
 }

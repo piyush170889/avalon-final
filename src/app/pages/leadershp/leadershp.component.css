@@ -9,9 +9,22 @@
 small{
     font-family:  Verdana!important;
 }
+.card-horizontal {
+  display: flex;
+  flex: 1 1 auto;
+}
+img {
+  cursor: pointer;
+}
+.col-md-3 {
+  cursor: pointer;
+}
 
 .card-title{
     font-family: Bold  Didot LT Std;
+}
+.members {
+  box-shadow: 0 4px 5px 0 rgba(0, 0, 0, 0.14), 0 1px 10px 0 rgba(0, 0, 0, 0.12), 0 2px 4px -1px rgba(0, 0, 0, 0.3);
 }
 
 @media(max-width:768px){
@@ -26,5 +39,5 @@ small{
 #leader{
   padding-top: 60px;
     padding-bottom: 60px;
-    box-shadow: 0 4px 5px 0 rgba(0, 0, 0, 0.14), 0 1px 10px 0 rgba(0, 0, 0, 0.12), 0 2px 4px -1px rgba(0, 0, 0, 0.3);
+   /*box-shadow: 0 4px 5px 0 rgba(0, 0, 0, 0.14), 0 1px 10px 0 rgba(0, 0, 0, 0.12), 0 2px 4px -1px rgba(0, 0, 0, 0.3);*/
 }
