@@ -5,7 +5,7 @@ function popup_modal() {
     });
 }
 
-function submitgetintouchForm(name, email, mobile, msg) {
+function submitgetintouchForm(name, email, mobile, msg, featureName = '') {
     if (name == null || name == '' || email == null || email == '' || mobile == null || mobile == '' || msg == null || msg == '') {
         $("#failedempty").css("display", "block");
     }
@@ -14,15 +14,21 @@ function submitgetintouchForm(name, email, mobile, msg) {
             $("#failedemail").css("display", "block");
         }
         else {
-            var form = $('#getintouchForm')[0];
-            var formData = new FormData(form);
+            var formData = {
+                feature_name: featureName,
+                name: name,
+                email: email,
+                mobile: mobile,
+                query: msg
+            };
             $('#getintouchForm')[0].reset();
+            let contactApi = baseUrl + 'contact';
             $.ajax({
                 type: 'post'
                 , dataType: 'json'
-                , url: '/panchshiltowers/admin/Controller/contactUsFormControllernew.php'
-                , data: formData
-                , contentType: false
+                , url: contactApi
+                , data: JSON.stringify(formData)
+                , contentType: 'application/json'
                 , processData: false
                 , async: false
                 , beforeSend: function () {
@@ -30,7 +36,6 @@ function submitgetintouchForm(name, email, mobile, msg) {
                 }
                 , success: function (data) {
                     $("#success").css("display", "block");
-                    location.href = "/panchshiltowers/thank-you-download-brochure.html";
                 }
                 , error: function (data) {
                     $(".alert-danger").show();
@@ -175,7 +180,7 @@ var today = new Date();
 var expire = new Date();
 expire.setTime(today.getTime() + 3600000 * 24 * -1);
 var user_visit = getCookie("visited_status");
-if (user_visit == "") {}
+if (user_visit == "") { }
 $(".accept-container").click(function () {
     setTimeout(function () {
         $(".disclaimer-modal").hide();
@@ -317,7 +322,7 @@ $(".banner-jump-cursor img").click(function () {
     }, 1000);
 });
 
-function submitContactForm(name, email, mobile, msg) {
+function submitContactForm(name, email, mobile, msg, featureName = '') {
     if (name == null || name == '' || email == null || email == '' || mobile == null || mobile == '' || msg == null || msg == '') {
         $("#failedemptycn").css("display", "block");
     }
@@ -326,15 +331,22 @@ function submitContactForm(name, email, mobile, msg) {
             $("#failedemailcn").css("display", "block");
         }
         else {
-            var form = $('#contactForm')[0];
-            var formData = new FormData(form);
+            var formData = {
+                feature_name: featureName,
+                name: name,
+                email: email,
+                mobile: mobile,
+                query: msg
+            };
             $('#contactForm')[0].reset();
+
+            let contactApi = baseUrl + 'contact';
             $.ajax({
                 type: 'post'
                 , dataType: 'json'
-                , url: '/panchshiltowers/admin/Controller/contactUsFormControllernew.php'
-                , data: formData
-                , contentType: false
+                , url: contactApi
+                , data: JSON.stringify(formData)
+                , contentType: 'application/json'
                 , processData: false
                 , async: false
                 , beforeSend: function () {
@@ -342,7 +354,6 @@ function submitContactForm(name, email, mobile, msg) {
                 }
                 , success: function (data) {
                     $("#successcn").css("display", "block");
-                    location.href = "/panchshiltowers/thank-you-contact-submission.html";
                 }
                 , error: function (data) {
                     $(".alert-danger").show();

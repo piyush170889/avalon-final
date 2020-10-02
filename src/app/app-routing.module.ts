@@ -143,7 +143,7 @@ const routes: Routes = [
     ],
     {
       useHash: true,
-      scrollPositionRestoration: 'enabled',
+      scrollPositionRestoration: 'top',
       onSameUrlNavigation: 'reload',
     },
   

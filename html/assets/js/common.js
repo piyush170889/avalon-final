@@ -239,33 +239,38 @@ $(document).on('keyup', function (evt) {
     }
 });
 
-function submitfeedForm(name, email, cc, mobile, msg, pdf) {
+function submitfeedForm(name, email, cc, mobile, msg, pdf, featureName = '') {
     if (name == null || name == '' || email == null || email == '' || mobile == null || mobile == '' || msg == null || msg == '') {
         $("#failedemptyfeed").css("display", "block");
     } else {
         if (!isValidEmailAddresscn(email)) {
             $("#failedemailfeed").css("display", "block");
         } else {
-            var form = $('#formfeed')[0];
-            var formData = new FormData(form);
-            formData.append('pdf', pdf);
+            var formData = {
+                feature_name: featureName,
+                name: name,
+                email: email,
+                mobile: mobile,
+                query: msg
+            };
 
             $('#formfeed')[0].reset();
+
+            let contactApi = baseUrl + 'contact';
             $.ajax({
                 type: 'post',
                 dataType: 'json',
-                url: '/panchshiltowers/admin/Controller/feedController.php',
-                data: formData,
-                contentType: false,
+                url: contactApi,
+                data: JSON.stringify(formData),
+                contentType: 'application/json',
                 processData: false,
                 async: false,
                 success: function (data) {
                     $("#successfeed").css("display", "block");
-                    location.href = "/panchshiltowers/thank-you-download-brochure.html";
                 },
                 error: function (data) {
                     $(".alert-danger").show();
-                    $("#error-msg").text('Error in updating Sustain Details !!!');
+                    $("#error-msg").text('Error in updating Details !!!');
                     setTimeout(function () {
                         $(".alert-danger").hide();
                     }, 10000);
