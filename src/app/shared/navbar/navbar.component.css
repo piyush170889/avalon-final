@@ -230,6 +230,7 @@ li{
   min-width: 1300px;
   left: -185%;
   margin-left: 90%;
+  height: 220px !important;
 }
 
 #dd2{
@@ -253,4 +254,8 @@ li{
 
 .active a {
   color: #0e0e0e !important;
+}
+/* Added new custo css */
+li a.l1 {
+  padding: 6px 0px;
 }

@@ -15,6 +15,10 @@
     color: #fff;
 }
 
+.static-margin {
+    margin-top: -22px;
+
+}
 @media (min-width: 992px){
 #buttons .col-md-6 {
     width: 50%;

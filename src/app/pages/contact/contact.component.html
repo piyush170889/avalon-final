@@ -34,7 +34,7 @@
                              <input type="text" class="form-control mt-2" placeholder="Last Name" required="" name="lastName" id="lastNAme" formControlName="lastName"><br>
                              <input type="text" class="form-control" placeholder="Phone" name="phone" id="phone" required="" data-parsley-type="number" data-parsley-maxlength="12" data-parsley-minlength="10" formControlName="phone"><br>
                              <input type="email" class="form-control" placeholder="Email" required="" name="email" id="email" formControlName="email"><br><br>
-                             <select class="form-control" name="profession-name" id="profession-name" required="" formControlName="profession_name">
+                             <select class="form-control static-margin" name="profession-name" id="profession-name" required="" formControlName="profession_name">
                                 <option value="" selected="" disabled=""> Profession</option>
                                
                              </select>
@@ -45,7 +45,7 @@
                        </div>
                        <div class="col-md-6">
                           <div class="form-group" style="margin-bottom: 0px;" formGroupName="address">
-                             <textarea class="form-control textarea-address" rows="4" placeholder="Address" name="address" id="address" ></textarea>
+                             <textarea class="form-control textarea-address " rows="4" placeholder="Address" name="address" id="address" ></textarea>
                              <br>
                              <select class="form-control" name="country" id="country" required="" formControlName="country">
                                 <option value="">Select country</option>
@@ -56,7 +56,7 @@
                                 <option value="">Select city</option>
                              </select>
                              <br><br>
-                             <textarea class="form-control textarea-comment" rows="5" placeholder="Comments" name="comment" id="comment" formControlName="comment"></textarea>
+                             <textarea class="form-control textarea-comment static-margin pb-0" rows="5" placeholder="Comments" name="comment" id="comment" formControlName="comment"></textarea>
                           </div>
                        </div>
                     </div>

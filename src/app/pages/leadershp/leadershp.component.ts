@@ -12,7 +12,7 @@ export class LeadershpComponent implements OnInit {
   getid: any;
   currentId: number;
   selected:any;
-  selectedMember: any = 1;
+  selectedMember: number = 1;
   showDivIf = false;
   constructor( 
     private route: ActivatedRoute,
@@ -36,8 +36,14 @@ export class LeadershpComponent implements OnInit {
       console.log("fun called----", ev.target.currentId);
    }
   ngOnInit(): any {
-    this.route.paramMap.subscribe(param => {this.selectedMember= Number(param.get('id'))});
-    console.log(this.selectedMember)
+    this.route.paramMap.subscribe(param => {
+      if(param.get('id')) {
+        this.selectedMember= Number(param.get('id'))
+      }else {
+        this.selectedMember = 1;
+      }
+    })
+  
   }
 
 }

@@ -222,7 +222,17 @@ img
     font-family: verdana;
     margin-bottom:1.5rem;
     }
+/* added here new css */
+p .lifeavalon {
+    font-size: 15px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+h4 {
 
+    color: #F19F22;
+    font-family: Bold Didot LT Std;
+    font-size: 26px;
+}
 
 
 
