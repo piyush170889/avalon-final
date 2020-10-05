@@ -45,5 +45,4 @@ export class LeadershpComponent implements OnInit {
     })
   
   }
-
 }

@@ -1,5 +1,6 @@
 .bg{
-    background-image: url("/assets/img/esteban.jpg");
+   /*  background-image: url("/assets/img/esteban.jpg"); */
+   background-image: url("/assets/img/Our Road Map.png");
     background-position: center;
     height: 50vh;
     background-repeat: no-repeat;

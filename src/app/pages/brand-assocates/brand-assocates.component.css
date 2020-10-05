@@ -1,12 +1,12 @@
 .bg{
-    background-image: url("/assets/img/contact/BlackMountainWaterParkHuaHin.png");
+    /* background-image: url("/assets/img/contact/BlackMountainWaterParkHuaHin.png");  */ 
+     background-image: url("/assets/img/Brand Associates.png"); 
+    /* background-image: url("assets/img/BrandAssociates.png"); */
     background-position: center;
     height: 50vh;
     background-repeat: no-repeat;
     background-size:cover;
 }
-
-
 h4{
     clear: both;
     margin-top: 20px;
