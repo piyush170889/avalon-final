@@ -1,2 +1,8 @@
-Build Command:
+1. Build Command:
 ng build --prod --base-href \avalon\
+
+2. FTP Details:
+FTP Username: avalon@ptcare.in
+FTP server: ftp.ptcare.in
+FTP & explicit FTPS port:  21
+Password - Avalon@123
