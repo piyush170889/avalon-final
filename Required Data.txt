@@ -1,0 +1,2 @@
+Build Command:
+ng build --prod --base-href \avalon\
