@@ -16,7 +16,7 @@
 }
 
 .static-margin {
-    margin-top: -22px;
+  /*   margin-top: -22px; */
 
 }
 @media (min-width: 992px){
@@ -86,8 +86,21 @@
     padding-top: 60px;
     box-shadow: 0 4px 5px 0 rgba(0, 0, 0, 0.14), 0 1px 10px 0 rgba(0, 0, 0, 0.12), 0 2px 4px -1px rgba(0, 0, 0, 0.3);
 }
+#contact1 .form-control{
+    border-radius: 0px;
+}
+#contact1 #country{
 
+}
+#contact1 #comment{
+    padding-bottom: 13px!important;
 
+}
+#contact1 input{
+  /*  margin-bottom: 17px;
+ */
+
+}
 #add1 .row {
     margin-right: -15px;
     margin-left: -15px;
@@ -159,3 +172,11 @@
     
     letter-spacing: 0.5px;
 }
+/* .ng-valid,
+.ng-valid.required {
+  background-color: lightgreen;
+}
+
+.ng-invalid:not(form) {
+  background-color: lightcoral;
+} */

@@ -2,98 +2,162 @@
 
 <!-- <div style="height:40px; width: 100%;"></div> -->
 <div class="container-fluid mt-5 pt-4 m-0 p-0 bg">
-    <div style="background: rgba(0,0,0,0.5);height: 100%;">
-        <p class="text-white pt-3 pb-3 pl-5" style="background: rgba(0,0,0,0.5);">Home / Contact</p>
-        <h2 class="text-white" style="text-align: center;vertical-align: middle;line-height: 30vh; font: Bold 35px/186px Didot LT Std;">Contact</h2>
-    </div>
+  <div style="background: rgba(0,0,0,0.5);height: 100%;">
+    <p class="text-white pt-3 pb-3 pl-5" style="background: rgba(0,0,0,0.5);">Home / Contact</p>
+    <h2 class="text-white"
+      style="text-align: center;vertical-align: middle;line-height: 30vh; font: Bold 35px/186px Didot LT Std;">Contact
+    </h2>
+  </div>
 </div>
 
 <section id="contact1">
-<div class="container  ">
-        <div class="col-12 text-center">
-                <h4 style="font-family: 'didot';">Enquiry Form</h4>
+  <div class="container">
+    <div class="col-12 text-center">
+      <h4 style="font-family: 'didot';">Enquiry Form</h4>
 
-                <form [formGroup]="contactform" id="contactForm"  method="POST" class="mt-5"  style="margin-bottom: 0px;" (submit)="onSubmit(contactform)">
-                    <div class="row">
-                       <div class="col-md-6 offset-3 col-sm-12 col-xs-12 text-center">
-                          <div class=" form-group ">
-                             <select class="form-control" name="reason" id="reason" required="">
+      <form [formGroup]="contactForm" id="contactForm" method="POST" class="mt-5" style="margin-bottom: 0px;"
+        (submit)="onSubmit(contactForm)">
+
+        <!-- <div class="row">
+          <div class="col-md-6 offset-3 col-sm-12 col-xs-12 text-center">
+            <div class=" form-group ">
+              <select class="form-control" name="reason" id="reason" required="">
                                 <option value="" >Job Application</option>
-                                <!-- <option value="Job Application">Job Application</option>
+                              <option value="Job Application">Job Application</option>
                                 <option value="Business Purpose">Business Purpose</option>
-                                <option value="Other Reason">Other Reason</option> -->
-                             </select>
-                             <br>
-                          </div>
-                       </div>
-                    </div>
-                    <div class="row">
-                       <div class="col-md-6">
-                          <div class="form-group" style="margin-bottom: 0px;">
-                             <input type="text" class="form-control" placeholder="First Name" required="" name="firstName" id="firstName" formControlName="firstName"><br>
-                             <input type="text" class="form-control mt-2" placeholder="Last Name" required="" name="lastName" id="lastNAme" formControlName="lastName"><br>
-                             <input type="text" class="form-control" placeholder="Phone" name="phone" id="phone" required="" data-parsley-type="number" data-parsley-maxlength="12" data-parsley-minlength="10" formControlName="phone"><br>
-                             <input type="email" class="form-control" placeholder="Email" required="" name="email" id="email" formControlName="email"><br><br>
-                             <select class="form-control static-margin" name="profession-name" id="profession-name" required="" formControlName="profession_name">
+                                <option value="Other Reason">Other Reason</option> 
+                             </select> 
+            </div>
+          </div>
+        </div> -->
+
+        <div class="row">
+          <div class="col-md-6 ">
+            <div class="form-group">
+              <input type="text" class="form-control" placeholder="First Name" required="" name="firstName" id="firstName" formControlName="firstName">
+              <div *ngIf="contactForm.controls['firstName'].touched && contactForm.controls['firstName'].invalid" class="text-danger text-left">
+                <div *ngIf="contactForm.controls['firstName'].errors && contactForm.controls['firstName'].errors.required" class="text-left">First name is required.</div>
+              </div>
+            </div>
+            <div class="form-group">
+            <input type="text" class="form-control mt-0" placeholder="Last Name" required="" name="lastName"id="lastNAme" formControlName="lastName">
+            <div *ngIf="contactForm.controls['lastName'].touched && contactForm.controls['lastName'].invalid" class="text-danger">
+            <div *ngIf="contactForm.controls['lastName'].errors && contactForm.controls['lastName'].errors.required" class="text-left">Last name is required.</div>
+            </div>
+            </div>
+            <div class="form-group">
+            <input type="tel" class="form-control" placeholder="Phone" name="phone" id="phone" required="" data-parsley-type="number" data-parsley-maxlength="12" data-parsley-minlength="10" formControlName="phone" pattern="^\d{4}-\d{3}-\d{4}$" >
+            <div *ngIf="contactForm.controls['phone'].touched && contactForm.controls['phone'].invalid" class="text-danger text-left">
+              <span *ngIf="contactForm.controls['phone'].errors && contactForm.controls['phone'].errors.required" class="text-left">Phone Number is required</span>
+              <p class="text-left" *ngIf="contactForm.controls['phone'].hasError('maxlength')">
+                Your phone cannot exceed 10 characters.
+             </p>
+            </div>
+            </div>
+            <div class="form-group">
+            <input type="email" class="form-control" placeholder="Email" required="" name="email" id="email" formControlName="email">
+            <div  *ngIf="contactForm.controls['email'].touched && contactForm.controls['email'].invalid" class="text-danger text-left">
+              <span *ngIf="contactForm.controls['email'].errors && contactForm.controls['email'].errors.required" class="text-left">Email is required</span>
+            </div>
+            </div>
+            <div class="form-group">
+            <input type="text" class="form-control" placeholder="Profession" name="profession-name" formControlName="profession_name" id="profession-name">
+            <div  *ngIf="contactForm.controls['profession_name'].touched && contactForm.controls['profession_name'].invalid" class="text-danger text-left">
+              <span *ngIf="contactForm.controls['profession_name'].errors && contactForm.controls['profession_name'].errors.required" class="text-left">Please Enter Your Profession</span>
+            </div>
+            </div>
+            <!-- <select class="form-control static-margin" name="profession-name" id="profession-name" required="" formControlName="profession_name" placeholder="profession-name">
                                 <option value="" selected="" disabled=""> Profession</option>
-                               
-                             </select>
-                             <br>
-                             <input type="text" class="form-control" placeholder="Company / Organzation" name="company_name" id="company_name" required="" formControlName="company_name"><br>
-                             <input type="text" class="form-control" placeholder="Designation" name="designation" id="designation" required="" formControlName="designation"><br>
-                          </div>
-                       </div>
-                       <div class="col-md-6">
-                          <div class="form-group" style="margin-bottom: 0px;" formGroupName="address">
-                             <textarea class="form-control textarea-address " rows="4" placeholder="Address" name="address" id="address" ></textarea>
-                             <br>
-                             <select class="form-control" name="country" id="country" required="" formControlName="country">
+                             </select> -->
+             <div class="form-group">                 
+            <input type="text" class="form-control" placeholder="Company / Organzation" name="company_name" id="company_name" required="" formControlName="company_name">
+            <div  *ngIf="contactForm.controls['company_name'].touched && contactForm.controls['company_name'].invalid" class="text-danger text-left">
+              <span *ngIf="contactForm.controls['company_name'].errors && contactForm.controls['company_name'].errors.required" class="text-left">Enter Company Name</span>
+            </div>
+             </div>
+
+             <div class="form-group">
+            <input type="text" class="form-control" placeholder="Designation" name="designation" id="designation" required="" formControlName="designation">
+            <div  *ngIf="contactForm.controls['designation'].touched && contactForm.controls['designation'].invalid" class="text-danger text-left">
+              <span *ngIf="contactForm.controls['designation'].errors && contactForm.controls['designation'].errors.required" class="text-left">Please Enter Your Designation </span>
+            </div>
+            </div>
+      
+          </div>
+        
+        <div class="col-md-6">
+          <div class="form-group">
+            <input type="text" class="form-control textarea-address pb-0 pt-0" rows="4" placeholder="Address" name="address" id="address" formControlName="address">
+            <div  *ngIf="contactForm.controls['address'].touched && contactForm.controls['address'].invalid" class="text-danger text-left">
+              <span *ngIf="contactForm.controls['address'].errors && contactForm.controls['address'].errors.required" class="text-left">Address is required</span>
+            </div>
+          
+        </div>
+          
+          <div class="form-group">
+            <input type="text" class="form-control" placeholder="Country name" name="country" id="country" required="" formControlName="country">
+            <div  *ngIf="contactForm.controls['country'].touched && contactForm.controls['country'].invalid" class="text-danger text-left">
+              <span *ngIf="contactForm.controls['country'].errors && contactForm.controls['country'].errors.required" class="text-left">Country name is required</span>
+            </div>
+            </div>
+            <!-- <select class="form-control" name="country" id="country" required="" formControlName="country">
                                 <option value="">Select country</option>
                                 
-                             </select>
-                             <br>
-                             <select class="form-control" name="state" id="state" required="" formControlName="state">
+                             </select> -->
+            <div class="form-group">
+            <input type="text" class="form-control" name="city" id="city" required="" formControlName="city" placeholder="City name">
+            <div  *ngIf="contactForm.controls['city'].touched && contactForm.controls['city'].invalid" class="text-danger text-left">
+              <span *ngIf="contactForm.controls['city'].errors && contactForm.controls['city'].errors.required" class="text-left">City name is required</span>
+            </div>
+            </div>
+            <!-- <select class="form-control" name="city" id="state" required="" formControlName="city">
                                 <option value="">Select city</option>
-                             </select>
-                             <br><br>
-                             <textarea class="form-control textarea-comment static-margin pb-0" rows="5" placeholder="Comments" name="comment" id="comment" formControlName="comment"></textarea>
-                          </div>
-                       </div>
-                    </div>
-                    <div class="row" style="margin-top: 50px;" id="buttons">
-                       <div class="col-md-6 col-sm-6 col-xs-6 text-right" id="button1">
-                          <button type="button" id="clearbtn" class="btn btn-default btn-clear pl-3 pr-3">CLEAR</button>
-                       </div>
-                       <div class="col-md-6 col-sm-6 col-xs-6 text-left" id="button2">
-                          <button type="submit" class="btn btn-default btn-clear pl-3 pr-3">SUBMIT</button>
-                       </div>
-                    </div>
-                 </form>
-        </div>
-</div>
+                             </select> -->
+             <div class="form-group">
+            <textarea class="form-control textarea-comment static-margin pb-0" rows="6" placeholder="Comments"name="comment" id="comment" formControlName="comment"></textarea>
+            <div  *ngIf="contactForm.controls['comment'].touched && contactForm.controls['comment'].invalid" class="text-danger text-left">
+              <span *ngIf="contactForm.controls['comment'].errors && contactForm.controls['comment'].errors.required" class="text-left">please Enter your Comment</span>
+            </div> 
+          </div>
+          </div>
+        
+    </div>
 
-
- <div class="row mt-5" id="add1" style="margin-bottom: 5px;">
-      
-      <div class="col-md-6  text-center" id="office1" >
-        <div  class="contact-box">
-       <img src="assets/img/contact-icon01.png" alt="contact icon">
-          <h2>Corporate Office</h2>
-          <p class="contact-grey-text">+91 772 000 6622/33</p>
-          <p class="contact-grey-text">Water Park Road, Pune City, Maharashtra, INDIA </p>
-        </div>
-      </div> 
-      <div class="col-md-6  text-center" id="office2" >
-        <div  class="contact-box">
-       <img src="assets/img/project-management-icon.png" alt="contact icon">
-          <h2>E-mail Us</h2>
-          <p class="contact-grey-text">Business Enquiry: info@indulkar.com </p>
-          <p class="contact-grey-text">Job Opportunities: careers@indulkar.com </p>
-        </div>
+    <div class="row mt-2" id="buttons">
+      <div class="col-md-6 col-sm-6 col-xs-6 text-right" id="button1">
+        <button type="button" id="clearbtn" class="btn btn-default btn-clear pl-3 pr-3"
+          (click)="clearFormdata()">CLEAR</button>
       </div>
+      <div class="col-md-6 col-sm-6 col-xs-6 text-left" id="button2">
+        <button type="submit" class="btn btn-default btn-clear pl-3 pr-3">SUBMIT</button>
+      </div>
+    </div>
 
-      
-    </div><!-- row close -->
+    </form>
+  </div>
+  </div>
+
+
+  <div class="row mt-5" id="add1" style="margin-bottom: 5px;">
+    <div class="col-md-6  text-center" id="office1">
+      <div class="contact-box">
+        <img src="assets/img/contact-icon01.png" alt="contact icon">
+        <h2>Corporate Office</h2>
+        <p class="contact-grey-text">+91 772 000 6622/33</p>
+        <p class="contact-grey-text">Water Park Road, Pune City, Maharashtra, INDIA </p>
+      </div>
+    </div>
+    <div class="col-md-6  text-center" id="office2">
+      <div class="contact-box">
+        <img src="assets/img/project-management-icon.png" alt="contact icon">
+        <h2>E-mail Us</h2>
+        <p class="contact-grey-text">Business Enquiry: info@indulkar.com </p>
+        <p class="contact-grey-text">Job Opportunities: careers@indulkar.com </p>
+      </div>
+    </div>
+
+
+  </div><!-- row close -->
 </section>
 
 <app-footer></app-footer>
