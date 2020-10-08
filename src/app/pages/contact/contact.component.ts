@@ -27,11 +27,11 @@ export class ContactComponent implements OnInit {
     }) */
   constructor(private fb: FormBuilder, private dataservice: DataService, private route: ActivatedRoute) {
     this.contactForm = this.fb.group({
-      firstName: ['', Validators.required],
-      lastName: ['', Validators.required],
-      email: ['', Validators.required],
-      phone: ['', Validators.required],
-      profession_name: ['', Validators.required],
+      firstName: ['', [Validators.required]],
+      lastName: ['', [Validators.required]],
+      email: ['', [Validators.required, Validators.email]],
+      phone: ['', [Validators.required, Validators.minLength(10), Validators.maxLength(12)/* Validators.pattern("[0-9 ]{12}") */]],
+      profession_name: ['', [Validators.required]],
       company_name: ['', Validators.required],
       designation: ['', Validators.required],
       address: ['', Validators.required],
@@ -67,27 +67,34 @@ export class ContactComponent implements OnInit {
     }
     return contact;
   }
-  public onSubmit(contactForm): any {
-    console.log(this.contactForm.value);
+
+  submitted: boolean = false;
+  get f() { return this.contactForm.controls }
+
+  public onSubmit(): any {
+
+    this.submitted = true;
+
     if (!this.contactForm.valid) {
-
-      alert('Please fill all details');
-
+      alert('Please fill all values');
       return;
     }
-    let contactData = this.contactPostModel(contactForm.value);
+
+    let contactData = this.contactPostModel(this.contactForm.value);
     console.log(contactData);
-    this.dataservice.post(ServerUrl.API_ENDPOINT_BLOB_CONTACT, contactData, true).subscribe((res) => {
-      console.log(res)
-    }, (err) => console.error(err));
+
+    this.dataservice.post(ServerUrl.API_ENDPOINT_BLOB_CONTACT, contactData, true)
+      .subscribe((res) => {
+        console.log(res);
+        this.submitted = false;
+      }, (err) => console.error(err));
 
     this.contactForm.reset();
-
-
   }
+
   public clearFormdata() {
     this.contactForm.reset();
-    alert("function called to clear data");
+    this.submitted = false;
   }
 
 
