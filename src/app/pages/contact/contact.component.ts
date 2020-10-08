@@ -94,7 +94,7 @@ export class ContactComponent implements OnInit {
 
   public clearFormdata() {
     this.contactForm.reset();
-    this.submitted = false;
+    //this.submitted = false;
   }
 
 

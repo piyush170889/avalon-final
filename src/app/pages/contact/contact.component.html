@@ -21,26 +21,35 @@
           <div class="col-md-6 ">
             <div class="form-group">
               <input type="text" class="form-control" placeholder="First Name" required="" name="firstName"
-                id="firstName" formControlName="firstName">
+                id="firstName" formControlName="firstName"  [ngClass]="{'is-invalid': submitted && f.firstName?.errors }">
+<!-- 
               <div *ngIf="contactForm.controls['firstName'].touched && contactForm.controls['firstName'].invalid"
                 class="text-danger text-left">
                 <div
                   *ngIf="contactForm.controls['firstName'].errors && contactForm.controls['firstName'].errors.required"
                   class="text-left">First name is required.</div>
+              </div> -->
+              <div *ngIf="submitted && f.firstName?.errors" class="text-danger text-left" class="invalid-feedback">
+                Your firstname required
               </div>
             </div>
             <div class="form-group">
               <input type="text" class="form-control mt-0" placeholder="Last Name" required="" name="lastName"
-                id="lastNAme" formControlName="lastName">
-              <div *ngIf="contactForm.controls['lastName'].touched && contactForm.controls['lastName'].invalid"
+                id="lastNAme" formControlName="lastName"  [ngClass]="{'is-invalid': submitted && f.lastName?.errors }">
+
+              <!-- <div *ngIf="contactForm.controls['lastName'].touched && contactForm.controls['lastName'].invalid"
                 class="text-danger">
                 <div *ngIf="contactForm.controls['lastName'].errors && contactForm.controls['lastName'].errors.required"
                   class="text-left">Last name is required.</div>
+              </div> -->
+              <div *ngIf="submitted && f.lastName?.errors" class="text-danger text-left" class="invalid-feedback">
+                Your lastname required
               </div>
             </div>
             <div class="form-group">
               <input type="tel" class="form-control" placeholder="Phone" name="phone" id="phone" required=""
-                formControlName="phone">
+                formControlName="phone"  [ngClass]="{'is-invalid': submitted && f.phone?.errors }">
+<!-- 
               <div *ngIf="contactForm.controls['phone'].touched && contactForm.controls['phone'].invalid"
                 class="text-danger text-left">
                 <span *ngIf="contactForm.controls['phone'].errors && contactForm.controls['phone'].errors.required"
@@ -48,26 +57,38 @@
                 <p class="text-left" *ngIf="contactForm.controls['phone'].hasError('maxlength')">
                   Your phone cannot exceed 10 characters.
                 </p>
+              </div> -->
+              <div *ngIf="submitted && f.phone?.errors" class="text-danger text-left" class="invalid-feedback">
+                Your phone number
               </div>
             </div>
             <div class="form-group">
               <input type="email" class="form-control" placeholder="Email" required="" name="email" id="email"
-                formControlName="email">
-              <div *ngIf="contactForm.controls['email'].touched && contactForm.controls['email'].invalid"
+                formControlName="email"  [ngClass]="{'is-invalid': submitted && f.email?.errors }">
+
+              <!-- <div *ngIf="contactForm.controls['email'].touched && contactForm.controls['email'].invalid"
                 class="text-danger text-left">
                 <span *ngIf="contactForm.controls['email'].errors && contactForm.controls['email'].errors.required"
                   class="text-left">Email is required</span>
+              </div> -->
+              <div *ngIf="submitted && f.email?.errors" class="text-danger text-left" class="invalid-feedback">
+                your email
               </div>
             </div>
             <div class="form-group">
+
               <input type="text" class="form-control" placeholder="Profession" name="profession-name"
-                formControlName="profession_name" id="profession-name">
+                formControlName="profession_name" id="profession-name"  [ngClass]="{'is-invalid': submitted && f.profession_name?.errors }">
+              <!--   
               <div
                 *ngIf="contactForm.controls['profession_name'].touched && contactForm.controls['profession_name'].invalid"
                 class="text-danger text-left">
                 <span
                   *ngIf="contactForm.controls['profession_name'].errors && contactForm.controls['profession_name'].errors.required"
                   class="text-left">Please Enter Your Profession</span>
+              </div> -->
+              <div *ngIf="submitted && f.profession_name?.errors" class="text-danger text-left" class="invalid-feedback">
+                Please enter your profession name
               </div>
             </div>
             <!-- <select class="form-control static-margin" name="profession-name" id="profession-name" required="" formControlName="profession_name" placeholder="profession-name">
@@ -75,23 +96,31 @@
                              </select> -->
             <div class="form-group">
               <input type="text" class="form-control" placeholder="Company / Organzation" name="company_name"
-                id="company_name" required="" formControlName="company_name">
+                id="company_name" required="" formControlName="company_name"  [ngClass]="{'is-invalid': submitted && f.company_name?.errors }">
+<!-- 
               <div *ngIf="contactForm.controls['company_name'].touched && contactForm.controls['company_name'].invalid"
                 class="text-danger text-left">
                 <span
                   *ngIf="contactForm.controls['company_name'].errors && contactForm.controls['company_name'].errors.required"
                   class="text-left">Enter Company Name</span>
+              </div> -->
+              <div *ngIf="submitted && f.company_name?.errors" class="text-danger text-left" class="invalid-feedback">
+                Please enter your Organzation name
               </div>
             </div>
 
             <div class="form-group">
               <input type="text" class="form-control" placeholder="Designation" name="designation" id="designation"
-                required="" formControlName="designation">
+                required="" formControlName="designation"  [ngClass]="{'is-invalid': submitted && f.designation?.errors }">
+<!-- 
               <div *ngIf="contactForm.controls['designation'].touched && contactForm.controls['designation'].invalid"
                 class="text-danger text-left">
                 <span
                   *ngIf="contactForm.controls['designation'].errors && contactForm.controls['designation'].errors.required"
                   class="text-left">Please Enter Your Designation </span>
+              </div> -->
+              <div *ngIf="submitted && f.designation?.errors" class="text-danger text-left" class="invalid-feedback">
+                Please enter your designation name
               </div>
             </div>
 
@@ -100,22 +129,30 @@
           <div class="col-md-6">
             <div class="form-group">
               <input type="text" class="form-control textarea-address pb-0 pt-0" rows="4" placeholder="Address"
-                name="address" id="address" formControlName="address">
-              <div *ngIf="contactForm.controls['address'].touched && contactForm.controls['address'].invalid"
+                name="address" id="address" formControlName="address" [ngClass]="{'is-invalid': submitted && f.address?.errors }">
+
+              <!-- <div *ngIf="contactForm.controls['address'].touched && contactForm.controls['address'].invalid"
                 class="text-danger text-left">
                 <span *ngIf="contactForm.controls['address'].errors && contactForm.controls['address'].errors.required"
                   class="text-left">Address is required</span>
+              </div> -->
+              <div *ngIf="submitted && f.address?.errors" class="text-danger text-left" class="invalid-feedback">
+                Please enter your address name
               </div>
-
             </div>
 
             <div class="form-group">
               <input type="text" class="form-control" placeholder="Country name" name="country" id="country" required=""
-                formControlName="country">
-              <div *ngIf="contactForm.controls['country'].touched && contactForm.controls['country'].invalid"
+                formControlName="country"  [ngClass]="{'is-invalid': submitted && f.country?.errors }">
+
+
+             <!--  <div *ngIf="contactForm.controls['country'].touched && contactForm.controls['country'].invalid"
                 class="text-danger text-left">
                 <span *ngIf="contactForm.controls['country'].errors && contactForm.controls['country'].errors.required"
                   class="text-left">Country name is required</span>
+              </div> -->
+              <div *ngIf="submitted && f.country?.errors" class="text-danger text-left" class="invalid-feedback">
+                Please enter your country name
               </div>
             </div>
             <!-- <select class="form-control" name="country" id="country" required="" formControlName="country">
@@ -124,16 +161,18 @@
                              </select> -->
             <div class="form-group">
               <input type="text" class="form-control" name="city" id="city" required="" formControlName="city"
-                placeholder="City name">
-              <div *ngIf="contactForm.controls['city'].touched && contactForm.controls['city'].invalid"
+                placeholder="City name" [ngClass]="{'is-invalid': submitted && f.city?.errors }">
+
+              <!-- <div *ngIf="contactForm.controls['city'].touched && contactForm.controls['city'].invalid"
                 class="text-danger text-left">
                 <span *ngIf="contactForm.controls['city'].errors && contactForm.controls['city'].errors.required"
                   class="text-left">City name is required</span>
+              </div> -->
+              <div *ngIf="submitted && f.city?.errors" class="text-danger text-left" class="invalid-feedback">
+                Please enter your city name
               </div>
             </div>
-            <!-- <select class="form-control" name="city" id="state" required="" formControlName="city">
-                                <option value="">Select city</option>
-                             </select> -->
+           
             <div class="form-group">
               <textarea class="form-control textarea-comment static-margin pb-0" rows="6" placeholder="Comments"
                 [ngClass]="{'is-invalid': submitted && f.comment?.errors }" name="comment" id="comment"
