@@ -1,5 +1,5 @@
 .bg{
-    background-image: url("/assets/img/slider/01 Victoria.jpg");
+    background-image: url("~src/assets/img/slider/01 Victoria.jpg");
     background-position: center;
     height: 70vh;
     background-repeat: no-repeat;

@@ -1,5 +1,6 @@
 .bg{
-    background-image: url("/assets/img/Esteban_banner - Ongoing.jpg");
+    background-image: url("~src/assets/img/Esteban_banner - Ongoing.jpg");
+    
     background-position: center;
     height: 50vh;
     background-repeat: no-repeat;

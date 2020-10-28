@@ -1,5 +1,5 @@
 .banner-luxury{
-    background-image: url("/assets/img/property.png");
+    background-image: url("~src/assets/img/property.png");
     background-position: center;
     /*height: 50vh;*/
     background-repeat: no-repeat;

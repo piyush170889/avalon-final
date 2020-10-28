@@ -1,6 +1,6 @@
 .bg{
    /*  background-image: url("/assets/img/contact/BlackMountainWaterParkHuaHin.png"); */
-   background-image: url("/assets/img/Partners.png");
+   background-image: url("~src/assets/img/Partners.png");
     background-position: center;
     height: 50vh;
     background-repeat: no-repeat;

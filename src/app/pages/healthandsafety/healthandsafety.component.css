@@ -1,6 +1,6 @@
 .bg{
    /*  background-image: url("/assets/img/blogs.png"); */
-    background-image: url("/assets/img/Health & Seafty.png");
+    background-image: url("~src/assets/img/Health & Seafty.png");
     background-position: center;
     height: 50vh;
     background-repeat: no-repeat;

@@ -13,6 +13,7 @@ export class BlogdetailComponent extends BaseComponent implements OnInit {
 
   blogDetails: any = {};
   allBlogs: any[] = [];
+  length:any
 
   blogSubscription: any;
 
@@ -30,12 +31,15 @@ export class BlogdetailComponent extends BaseComponent implements OnInit {
 
     this.blogSubscription = this.route.params.subscribe(
       (params: Params) => {
-        this.dataService.get(ServerUrl.API_ENDPOINT_BLOG_DETAILS + params['id'])
+        this.dataService.get(ServerUrl.API_ENDPOINT_BLOG_DETAILS + params['blogdetailsid'])
           .subscribe(
             (res: any) => {
-              console.log('res = ', res);
-              this.blogDetails = res.data.length > 0 ? res.data[0] : undefined;
-              console.log('this.blogDetails = ', this.blogDetails);
+              if('data' in res) {
+                console.log('res = ', res);
+                this.blogDetails = res.data.length> 0 ? res.data[0] : undefined;
+                console.log('this.blogDetails = ', this.blogDetails);
+              }
+             
             }
           );
       });
@@ -47,6 +51,5 @@ export class BlogdetailComponent extends BaseComponent implements OnInit {
         }
       )
   }
-
 
 }

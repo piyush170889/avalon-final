@@ -15,6 +15,7 @@ export class HomeComponent extends BaseComponent implements OnInit {
   allProjectsList: any[] = [];
   allProjectsListToDisplay: any[] = [];
   blogsList: any[] = [];
+  slidersList: any[] = [];
 
   constructor(
     private dataService: DataService,
@@ -23,6 +24,38 @@ export class HomeComponent extends BaseComponent implements OnInit {
 
     super();
 
+   /*  this.slidersList.push({
+      img: 'assets/img/slider/01 Victoria.jpg',
+      title: 'Nyati Evara - I',
+      description: `Let the luxury do the magic. Explicitly majestic, nyati victoria is your gateway to a refined living in one of the most desired neighbourhoods of pune, nyati county.Inspired from
+      european architecture.`
+    });
+
+    this.slidersList.push({
+      img: 'assets/img/slider/02 Estaben.jpg',
+      title: 'Luxurious Living',
+      description: `A signature offering by the nyati group, nyati esteban I is the epitome of a
+      luxurious living. An ultra-luxurious project of 2, 3 & 3.5 rhk homes in undri, it is an emblem of how a
+      modern kingdom should be. Beauty and elegance are the two sides of royal living.`
+    })
+ */
+/* 
+    this.dataService.get(ServerUrl.API_ENDPOINT_SLIDER,true)
+    .subscribe((response) => {
+     let descriptions = [`This is sample data.`, `test test.` ]
+     let i = 0; 
+     for(let res of response['data']) {
+        this.slidersList.push({
+          image: `${ServerUrl.MAIN}public/slider/${res.image}`,
+          title: res.title,
+          description: descriptions[i]
+        })
+        i++;
+      }
+     
+      console.log("+++",response);
+    },(err) => console.log(err));
+ */
     //All Features
     if (this.route.snapshot.data.featuredProps) {
       let res = this.route.snapshot.data.featuredProps;
@@ -99,7 +132,22 @@ export class HomeComponent extends BaseComponent implements OnInit {
     //   );
   }
 
-  ngOnInit(): void {
+  ngOnInit(): void { 
+    this.dataService.get(ServerUrl.API_ENDPOINT_SLIDER,true)
+    .subscribe((response) => {
+     let descriptions = [`This is sample data.`, `test test.` ]
+     let i = 0; 
+     for(let res of response['data']) {
+        this.slidersList.push({
+          image: `${ServerUrl.MAIN}public/slider/${res.image}`,
+          title: res.title,
+          description: descriptions[i]
+        })
+        i++;
+      }
+     
+      console.log("+++",response);
+    },(err) => console.log(err));
   }
 
 }

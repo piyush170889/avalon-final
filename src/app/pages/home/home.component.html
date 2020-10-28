@@ -8,17 +8,15 @@
       <li data-target="#demo" data-slide-to="1"></li>
     </ul>
     <div class="carousel-inner">
-      <div class="carousel-item active">
-        <img src="assets/img/slider/01 Victoria.jpg" alt="Los Angeles" width="100%" height="650">
+      <div [ngClass]="{'carousel-item': true, 'active': i==0}" *ngFor="let sliderObj of slidersList; let i=index">
+        <img [src]="sliderObj.image" alt="Los Angeles" width="100%" height="650">
         <div class="carousel-caption text-dark">
-          <h1 class="pt-4 card-title">Victoria Majestic Bungalows</h1>
-          <p class="pl-5 pr-5 card-desc">Let the luxury do the magic. Explicitly majestic, nyati victoria is your
-            gateway to a refined living in one of the most desired neighbourhoods of pune, nyati county.Inspired from
-            european architecture. </p>
+          <h1 class="pt-4 card-title">{{sliderObj.title}}</h1>
+          <p class="pl-5 pr-5 card-desc">{{sliderObj.description}} </p>
           <button class="btn-more text-uppercase text-dark border border-dark mb-4">know more</button>
         </div>
       </div>
-      <div class="carousel-item">
+  <!--     <div class="carousel-item">
         <img src="assets/img/slider/02 Estaben.jpg" alt="Los Angeles" width="100%" height="650">
         <div class="carousel-caption text-dark">
           <h1 class="pt-4 card-title">Luxurious Living</h1>
@@ -27,7 +25,7 @@
             modern kingdom should be. Beauty and elegance are the two sides of royal living.</p>
           <button class="btn-more text-uppercase text-dark border border-dark mb-4">know more</button>
         </div>
-      </div>
+      </div>  -->
 
     </div>
     <a class="carousel-control-prev" href="#demo" data-slide="prev">

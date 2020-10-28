@@ -1,10 +1,10 @@
-/*.bg{
-    background-image: url("/assets/img/blogs.png");
+.bg{
+    background-image: url("~src/assets/img/blogs.png");
     background-position: center;
     height: 50vh;
     background-repeat: no-repeat;
     background-size:cover;
-}*/
+}
 
 #detail1 {
     display: block;

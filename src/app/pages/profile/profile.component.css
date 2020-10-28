@@ -1,5 +1,5 @@
 .bg{
-    background-image: url("/assets/img/profile.png");
+    background-image: url("~src/assets/img/profile.png");
     background-position: center;
     height: 50vh;
     background-repeat: no-repeat;

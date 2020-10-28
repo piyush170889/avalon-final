@@ -1,5 +1,5 @@
 .bg{
-     background-image: url("/assets/img/BlackMountainWaterParkHuaHin.jpg"); 
+     background-image: url("~src/assets/img/BlackMountainWaterParkHuaHin.jpg"); 
     background-position: center;
     height: 70vh;
     background-repeat: no-repeat;
@@ -7,7 +7,7 @@
 }
 
 .bg1{
-    background-image: url("/assets/img/diamond.jpg");
+    background-image: url("~src/assets/img/diamond.jpg");
     background-position: center;
     height: 70vh;
     background-repeat: no-repeat;
