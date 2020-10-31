@@ -10,6 +10,9 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class ContactComponent implements OnInit {
   contactForm: FormGroup;
+  shommodel:any;
+  //submitted: boolean = false;
+  submitted = false;
   /* 
     contactform = new FormGroup({
       firstName: new FormControl(''),
@@ -68,34 +71,70 @@ export class ContactComponent implements OnInit {
     return contact;
   }
 
-  submitted: boolean = false;
+ 
   get f() { return this.contactForm.controls }
 
   public onSubmit(): any {
 
     this.submitted = true;
+   // this.contactForm.reset();
 
     if (!this.contactForm.valid) {
       alert('Please fill all values');
       return;
     }
+    /* if(this.contactForm.valid) {
+      this.shommodel = true;
 
+    } */
     let contactData = this.contactPostModel(this.contactForm.value);
     console.log(contactData);
 
     this.dataservice.post(ServerUrl.API_ENDPOINT_BLOB_CONTACT, contactData, true)
       .subscribe((res) => {
-        console.log(res);
-        this.submitted = false;
+        //console.log(res);
+       // this.submitted = false;
+      
       }, (err) => console.error(err));
+      /* this.contactForm.patchValue({
+        firstName: '',
+        lastName: '',
+        email: '',
+        phone: '',
+        profession_name: '',
+        designation: '',
+        address: '',
+        country: '',
+        city: '',
+        comment: ''
 
-    this.contactForm.reset();
+      }) */
+
+     /*  this.contactForm = this.fb.group({
+        firstName: [''],
+        lastName: [''],
+        email: ['', [Validators.required, Validators.email]],
+        phone: ['', [Validators.required, Validators.minLength(10), Validators.maxLength(12)]],
+        profession_name: ['', [Validators.required]],
+        company_name: ['', Validators.required],
+        designation: ['', Validators.required],
+        address: ['', Validators.required],
+        country: ['', Validators.required],
+        city: ['', Validators.required],
+        comment: ['', Validators.required]
+      }) */
   }
 
-  public clearFormdata() {
+  /* public clearFormdata() {
+    this.submitted = false;
     this.contactForm.reset();
-    //this.submitted = false;
+   
   }
+ */
+onReset() {
+  this.submitted = false;
+  this.contactForm.reset();
+}
 
 
 }

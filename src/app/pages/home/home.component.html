@@ -210,24 +210,25 @@
 
     <div class="row pl-5 pr-5 mt-5">
 
-      <div class="col-md-6 pr-0">
+  <div class="col-md-6 pr-0">
+ <div class="row">
+  <div *ngIf="blogsList.length >= 1" class="col-md-12 mb-4">
 
-        <div *ngIf="blogsList.length >= 1" class="col-md-12 mb-4">
-
-          <div class="card img-fluid">
-            <div class="card-body p-0">
-              <!-- <img class="" src="assets/img/blog/05.png" alt="Card image" -->
-              <img class="" [src]="getImageUrl(blogsList[0].featured_image, blogsList[0].folder)" alt="Card image"
-                style="width:100%;height:40vh;border-radius: 20px;">
-              <div class="card-img-overlay text-white" style="margin-top: 0% !important;">
-                <small class="img-title pl-4">{{blogsList[0].name}}</small>
-                <h5 class="pl-4">{{blogsList[0].title}}</h5>
-                <h5 class="date didot-font pl-4">{{blogsList[0].created_at | date: 'dd MMM'}}</h5>
-                <a class="btn btn-primary btn-sm ml-4" [routerLink]="['/blogdetail',blogsList[0].id]">MORE</a>
-              </div>
-            </div>
-          </div>
+    <div class="card img-fluid">
+      <div class="card-body p-0">
+        <!-- <img class="" src="assets/img/blog/05.png" alt="Card image" -->
+        <img class="" [src]="getImageUrl(blogsList[0].featured_image, blogsList[0].folder)" alt="Card image"
+          style="width:100%;height:40vh;border-radius: 20px;">
+        <div class="card-img-overlay text-white" style="margin-top: 0% !important;">
+          <small class="img-title pl-4">{{blogsList[0].name}}</small>
+          <h5 class="pl-4">{{blogsList[0].title}}</h5>
+          <h5 class="date didot-font pl-4">{{blogsList[0].created_at | date: 'dd MMM'}}</h5>
+          <a class="btn btn-primary btn-sm ml-4" [routerLink]="['/blogdetail',blogsList[0].id]">MORE</a>
         </div>
+      </div>
+    </div>
+  </div>
+ </div>
 
         <div *ngIf="blogsList.length>=4 || blogsList.length>=5" class="row ml-0 mr-0">
 
@@ -235,7 +236,7 @@
             <div class="card img-fluid" id="blimg">
               <div class="card-body p-0">
                 <!-- <img class="card-img-top" src="assets/img/blog/05.png" alt="Card image"> -->
-                <img class="card-img-top" [src]="getImageUrl(blogsList[3].featured_image, blogsList[3].folder)"
+                <img class="card-img-top" style="height:500px;" [src]="getImageUrl(blogsList[3].featured_image, blogsList[3].folder)"
                   alt="Card image">
                 <div class="card-img-overlay text-white" style="margin-top: 0% !important;">
                   <small class="img-title pl-4">{{blogsList[3].name }}</small>
@@ -251,7 +252,7 @@
             <div class="card img-fluid" id="blimg">
               <div class="card-body p-0">
                 <!-- <img class="card-img-top" src="assets/img/blog/05.png" alt="Card image"> -->
-                <img class="card-img-top" [src]="getImageUrl(blogsList[4].featured_image, blogsList[4].folder)"
+                <img class="card-img-top"  style="height:500px;" [src]="getImageUrl(blogsList[4].featured_image, blogsList[4].folder)"
                   alt="Card image">
                 <div class="card-img-overlay text-white" style="margin-top: 0% !important;">
                   <small class="img-title pl-4">{{blogsList[4].name }}</small>
@@ -275,7 +276,7 @@
             <div class="card img-fluid" id="blimg">
               <div class="card-body p-0">
                 <!-- <img class="card-img-top" src="assets/img/blog/05.png" alt="Card image"> -->
-                <img class="card-img-top" [src]="getImageUrl(blogsList[1].featured_image, blogsList[1].folder)"
+                <img class="card-img-top"  style="height:500px;" [src]="getImageUrl(blogsList[1].featured_image, blogsList[1].folder)"
                   alt="Card image">
                 <div class="card-img-overlay text-white" style="margin-top: 0% !important;">
                   <small class="img-title pl-4">{{blogsList[1].name }}</small>
@@ -291,7 +292,7 @@
             <div class="card img-fluid" id="blimg">
               <div class="card-body p-0">
                 <!-- <img class="card-img-top" src="assets/img/blog/06.png" alt="Card image"> -->
-                <img class="card-img-top" [src]="getImageUrl(blogsList[2].featured_image, blogsList[2].folder)"
+                <img class="card-img-top"  style="height:500px;" [src]="getImageUrl(blogsList[2].featured_image, blogsList[2].folder)"
                   alt="Card image">
                 <div class="card-img-overlay text-white" style="margin-top: 0% !important;">
                   <small class="img-title pl-4">{{blogsList[2].name }}</small>
@@ -306,24 +307,23 @@
 
         </div>
 
-        <div *ngIf="blogsList.length>=6" class="col-md-12 ">
-          <div class="card img-fluid">
-            <div class="card-body p-0">
-              <!-- <img class="card-img-top" src="assets/img/blog/02.png" alt="Card image" style="width:100%;height:40vh;"> -->
-              <img class="card-img-top" [src]="getImageUrl(blogsList[5].featured_image, blogsList[5].folder)"
-                alt="Card image" style="width:100%;height:40vh;">
-              <div class="card-img-overlay text-white" style="margin-top: 0% !important;">
-                <small class="img-title pl-4">{{blogsList[5].name }}</small>
-                <h5 class="pl-4">{{blogsList[5].title }}</h5>
-                <h5 class="date didot-font pl-4">{{blogsList[5].created_at | date: 'dd MMM' }}</h5>
-                <a class="btn btn-primary btn-sm ml-4" [routerLink]="['/blogdetail',blogsList[5].id]">MORE</a>
-              </div>
-            </div>
-          </div>
+  <div *ngIf="blogsList.length>=6" class="col-md-12 ">
+    <div class="card img-fluid">
+      <div class="card-body p-0">
+        <!-- <img class="card-img-top" src="assets/img/blog/02.png" alt="Card image" style="width:100%;height:40vh;"> -->
+        <img class="card-img-top" [src]="getImageUrl(blogsList[5].featured_image, blogsList[5].folder)"
+          alt="Card image" style="width:100%;height:40vh; padding-bottom: 20px;">
+        <div class="card-img-overlay text-white" style="margin-top: 0% !important;">
+          <small class="img-title pl-4">{{blogsList[5].name }}</small>
+          <h5 class="pl-4">{{blogsList[5].title }}</h5>
+          <h5 class="date didot-font pl-4">{{blogsList[5].created_at | date: 'dd MMM' }}</h5>
+          <a class="btn btn-primary btn-sm ml-4" [routerLink]="['/blogdetail',blogsList[5].id]">MORE</a>
         </div>
+      </div>
+    </div>
+  </div>
 
       </div>
-
     </div>
     <div *ngIf="blogsList.length>6" class="loadbut" style="text-align: center;">
       <button class="btn btn-default" [routerLink]="['/blogs']">LOAD MORE BLOGS</button>

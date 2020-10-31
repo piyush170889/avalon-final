@@ -1,11 +1,11 @@
-.bg{
+ /* .bg{
     background-image: url("~src/assets/img/blogs.png");
     background-position: center;
     height: 50vh;
     background-repeat: no-repeat;
     background-size:cover;
-}
-
+} 
+ */
 #detail1 {
     display: block;
     padding-top: 60px;
@@ -333,4 +333,8 @@ a {
     background-position: center !important;
     background-size: cover !important;
     background-repeat: no-repeat !important;
+}
+/*  added new css here  */
+.img-one {
+    height: 244px;
 }

@@ -8,11 +8,11 @@
 }
 
 #navbardrop{
-    top: 20px;
+    /* top: 20px;
     left: 326px;
-    width: 113px;
+    width: 113px; 
     height: 80px;
-    font-size: 15px;
+    font-size: 15px; */
 
 }
 .navbar .btn-success{
@@ -89,7 +89,7 @@
   }
   
   /* Dropdown Content (Hidden by Default) */
-  .dropdown-menu {
+  /* .dropdown-menu {
     display: none;
     position: absolute;
     background: rgba(255, 255, 255, 0.8);
@@ -100,7 +100,7 @@
      margin-left: 90px; 
     height: 100px;
      left: -100px; 
-  }
+  } */
   
  .dropdown-menu div{
   /*display: inline;*/
@@ -109,7 +109,7 @@
     padding-inline-start: 40px;*/
  } 
  
-  .dropdown:hover .dropdown-menu {display: block;}  
+  /* .dropdown:hover .dropdown-menu {display: block;}   */
 
   .enquiry-btn-background {
     background: none;
@@ -258,4 +258,42 @@ li{
 /* Added new custo css */
 li a.l1 {
   padding: 6px 0px;
+}
+/*  Added new css for navbar mobile view navbar*/
+
+#mobileviewlogo {
+  vertical-align: middle;
+  border-style: none;
+  height: 80px;
+  border-color: orangered;
+  border: none;
+  width: 80px;
+}
+.datatarget-mobile {
+  background-color: #7eb444;
+  margin-left: auto;
+  margin-right: 30px;
+  width: 47px;
+  height: 34px;
+  border: none;
+}
+.mobile-list {
+  margin: 0px auto;
+}
+.home_1 {
+  color: rgba(255,255,255,.5)!important;
+}
+ul.mobile-ul li a {
+  padding-top: 15px;
+  padding-bottom: 15px;
+}
+
+
+/*  media query  for mobile devices  */
+
+@media(max-width : 768px) and (min-width : 360px) {
+  li {
+    padding-top: 15px;
+    padding-bottom: 15px;
+  }
 }

@@ -215,9 +215,13 @@
     padding: 20px;
     width: 100%;
 }
+#blimg {
+    margin-bottom: 20px !important;
+}
   #blimg img{
     height: 40vh;
     display: block;
+    
 } 
 
 
@@ -558,4 +562,13 @@ h1,h2{
 #hovereffect {}
 .residency-content .mg-top {
     margin-top: 30px;
+}
+@media (max-width: 767.98px) { 
+    #demo {
+        padding-left: 15px !important;
+        padding-right: 15px !important;
+    }
+    #blimg {
+        margin-bottom: 20px !important;
+    }
 }

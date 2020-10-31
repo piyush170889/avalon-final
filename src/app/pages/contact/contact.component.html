@@ -20,7 +20,7 @@
         <div class="row">
           <div class="col-md-6 ">
             <div class="form-group">
-              <input type="text" class="form-control" placeholder="First Name" required="" name="firstName"
+              <input type="text" class="form-control" placeholder="First Name"  name="firstName"
                 id="firstName" formControlName="firstName"  [ngClass]="{'is-invalid': submitted && f.firstName?.errors }">
 <!-- 
               <div *ngIf="contactForm.controls['firstName'].touched && contactForm.controls['firstName'].invalid"
@@ -34,7 +34,7 @@
               </div>
             </div>
             <div class="form-group">
-              <input type="text" class="form-control mt-0" placeholder="Last Name" required="" name="lastName"
+              <input type="text" class="form-control mt-0" placeholder="Last Name" name="lastName"
                 id="lastNAme" formControlName="lastName"  [ngClass]="{'is-invalid': submitted && f.lastName?.errors }">
 
               <!-- <div *ngIf="contactForm.controls['lastName'].touched && contactForm.controls['lastName'].invalid"
@@ -47,7 +47,7 @@
               </div>
             </div>
             <div class="form-group">
-              <input type="tel" class="form-control" placeholder="Phone" name="phone" id="phone" required=""
+              <input type="tel" class="form-control" placeholder="Phone" name="phone" id="phone" 
                 formControlName="phone"  [ngClass]="{'is-invalid': submitted && f.phone?.errors }">
 <!-- 
               <div *ngIf="contactForm.controls['phone'].touched && contactForm.controls['phone'].invalid"
@@ -63,7 +63,7 @@
               </div>
             </div>
             <div class="form-group">
-              <input type="email" class="form-control" placeholder="Email" required="" name="email" id="email"
+              <input type="email" class="form-control" placeholder="Email"  name="email" id="email"
                 formControlName="email"  [ngClass]="{'is-invalid': submitted && f.email?.errors }">
 
               <!-- <div *ngIf="contactForm.controls['email'].touched && contactForm.controls['email'].invalid"
@@ -96,7 +96,7 @@
                              </select> -->
             <div class="form-group">
               <input type="text" class="form-control" placeholder="Company / Organzation" name="company_name"
-                id="company_name" required="" formControlName="company_name"  [ngClass]="{'is-invalid': submitted && f.company_name?.errors }">
+                id="company_name"  formControlName="company_name"  [ngClass]="{'is-invalid': submitted && f.company_name?.errors }">
 <!-- 
               <div *ngIf="contactForm.controls['company_name'].touched && contactForm.controls['company_name'].invalid"
                 class="text-danger text-left">
@@ -111,7 +111,7 @@
 
             <div class="form-group">
               <input type="text" class="form-control" placeholder="Designation" name="designation" id="designation"
-                required="" formControlName="designation"  [ngClass]="{'is-invalid': submitted && f.designation?.errors }">
+                 formControlName="designation"  [ngClass]="{'is-invalid': submitted && f.designation?.errors }">
 <!-- 
               <div *ngIf="contactForm.controls['designation'].touched && contactForm.controls['designation'].invalid"
                 class="text-danger text-left">
@@ -140,9 +140,8 @@
                 Please enter your address name
               </div>
             </div>
-
             <div class="form-group">
-              <input type="text" class="form-control" placeholder="Country name" name="country" id="country" required=""
+              <input type="text" class="form-control" placeholder="Country name" name="country" id="country"
                 formControlName="country"  [ngClass]="{'is-invalid': submitted && f.country?.errors }">
 
 
@@ -188,17 +187,37 @@
         <div class="row mt-2" id="buttons">
           <div class="col-md-6 col-sm-6 col-xs-6 text-right" id="button1">
             <button type="button" id="clearbtn" class="btn btn-default btn-clear pl-3 pr-3"
-              (click)="clearFormdata()">CLEAR</button>
+            (click)="onReset()" >CLEAR</button>
           </div>
           <div class="col-md-6 col-sm-6 col-xs-6 text-left" id="button2">
-            <button type="submit" class="btn btn-default btn-clear pl-3 pr-3">SUBMIT</button>
+            <button type="submit" class="btn btn-default btn-clear pl-3 pr-3" data-toggle="modal" data-target="#exampleModal">SUBMIT</button>
           </div>
         </div>
 
       </form>
     </div>
   </div>
-
+  <!---- modal popp up-->
+  <div class="modal fade"  *ngIf="contactForm.valid"  #someModal id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="!submitted">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+         <div class="modal-body">
+          <h5 class="modal-title" id="exampleModalLabel">Successfully Submitted.</h5>
+          
+        </div> 
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Ok</button>
+        </div>
+      </div>
+    </div>
+  </div>
+<!-- modal pop up end -->
 
   <div class="row mt-5" id="add1" style="margin-bottom: 5px;">
     <div class="col-md-6  text-center" id="office1">

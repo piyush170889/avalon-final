@@ -206,7 +206,7 @@
 
       <div class="col-md-4" id="imr" *ngFor="let blogDetails of allBlogs | slice:0:3">
         <div class="card border-0">
-          <img class="card-img-top" src="{{getImageUrl(blogDetails.featured_image, blogDetails.folder)}}"
+          <img class="card-img-top img-one" src="{{getImageUrl(blogDetails.featured_image, blogDetails.folder)}}"
             alt="Card image">
           <div class="card-body" [routerLink]="['/blogdetail',blogDetails.id]">
             <span class="card-text" id="date">{{blogDetails.created_at | date: 'dd'}} <p>

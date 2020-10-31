@@ -12,4 +12,5 @@ export class ServerUrl {
   static IMAGE_BASE_PATH: string = ServerUrl.MAIN + 'public';
   public static API_ENDPOINT_SLIDER: string = "getSlider";
   public static API_ENDPOINT_ALLMEDIA:string ="allmedia"
+  
 }

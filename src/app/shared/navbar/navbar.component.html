@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-sm bg-light fixed-top navbar-dark ">
+<nav class="navbar navbar-expand-sm bg-light fixed-top navbar-dark d-none d-lg-block d-xl-block">
 
   <button class="navbar-toggler navbar-dark bg-dark" type="button" data-toggle="collapse"
     data-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false"
@@ -21,7 +21,7 @@
         <div class="dropdown-menu dropdown-menu-left" id="dd1">
 
           <ul class="ho1" id="ul1">
-            <a class="dropdown-item" >CORPORATE PROFILE</a>
+            <a class="dropdown-item">CORPORATE PROFILE</a>
             <li><a class="secondary" routerLink="/foreward">Forward</a></li>
             <li><a class="secondary" routerLink="/roadmap">Our Roadmap</a></li>
             <li><a class="secondary" routerLink="/profile">Company Profile</a></li>
@@ -41,19 +41,15 @@
       </li>
 
       <li class="nav-item dropdown">
-
-
         <a class="nav-link dropdown-toggle secondary" href="#" id="navbardrop" data-toggle="dropdown">
           Alliances
         </a>
-
         <div class="dropdown-menu dropdown-menu-left" id="dd2">
           <ul class="ho2">
             <li class="d1"> <a class="dropdown-item" routerLink="/brand-assocate">BRAND ASSOCIATES</a></li>
             <li class="d2"> <a class="dropdown-item" routerLink="/partners">PARTNERS</a></li>
           </ul>
         </div>
-
       </li>
 
       <li class="nav-item">
@@ -86,3 +82,91 @@
     </ul>
   </div>
 </nav>
+
+
+
+<!--navbar for mobile device  -->
+<nav class="navbar navbar-expand-md bg-light navbar-dark d-lg-none d-xl-none d-md-block d-sm-block">
+  
+  <a class="navbar-brand ml-0 ml-sm-0 ml-md-0" href="#"><img src="assets/img/Logo - Avalon Relaty - 1920 X 1920.png" id="mobileviewlogo"></a>
+
+<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#mobileview" class="datatarget-mobile">
+  <span class="navbar-toggler-icon"></span>
+</button>
+<div class="collapse navbar-collapse" id="mobileview">
+  <ul class="navbar-nav text-center mx-auto mobile-ul">
+    <li class="nav-item">
+      <a class="nav-link home_1" style="color: red !important;" routerLink="/">Home</a>
+    </li>
+    <li class="nav-item dropdown text-center mx-auto">
+      <a class="nav-link dropdown-toggle secondary" href="#" data-toggle="dropdown">
+        About Us
+      </a>
+      <div class="dropdown-menu dropdown-menu text-center mx-auto">
+
+        <ul class=" navbar-nav text-center">
+          <a class="dropdown-item">CORPORATE PROFILE</a>
+          <li><a class="nav-link secondary" routerLink="/foreward">Forward</a></li>
+          <li><a class="nav-link secondary" routerLink="/roadmap">Our Roadmap</a></li>
+          <li><a class="nav-link secondary" routerLink="/profile">Company Profile</a></li>
+          <li><a class="nav-link secondary" routerLink="/philosophy">Group Philosphy</a></li>
+        </ul>
+
+        <ul class="navbar-nav text-center" id="">
+          <a class="dropdown-item" routerLink="/leadershp">LEADERSHIP</a>
+          <li class=" nav-item my-2"><a class="secondary" routerLink="/leadershp/1">Anil Indulkar</a></li>
+          <li class="nav-item my-2"><a class="secondary" routerLink="/leadershp/2">Gouri Indulkar</a></li>
+          <li class="nav-item my-2"><a class="secondary" routerLink="/leadershp/3">Arjun Indulkar</a></li>
+          <li class=" nav-item my-2"><a class="secondary" routerLink="/leadershp/4">Raveena Indulkar</a></li>
+          <li class="nav-item my-2"><a class="secondary" routerLink="/leadershp/5">Hitesh Patwa</a></li>
+        </ul>
+
+      </div>
+    </li>
+    
+    <li class="nav-item dropdown ">
+      <a class="nav-link dropdown-toggle secondary text-center" href="#" id="navbardrop" data-toggle="dropdown">
+        Alliances
+      </a>
+      <div class="dropdown-menu">
+        <ul class="navbar-nav text-center">
+          <li class="nav-link"> <a class="dropdown-item" routerLink="/brand-assocate">BRAND ASSOCIATES</a></li>
+          <li class="nav-link"> <a class="dropdown-item" routerLink="/partners">PARTNERS</a></li>
+        </ul>
+      </div>
+    </li>
+    
+    <!-- <li class="nav-item">
+      <a class="navbar-brand" href="#"><img src="assets/img/Logo - Avalon Relaty - 1920 X 1920.png"></a>
+    </li> -->
+      <li class="nav-item dropdown text-center mx-auto">
+        <a class="nav-link dropdown-toggle text-center" style="color: red !important;" href="#" id="" data-toggle="dropdown">
+          Career
+        </a>
+        <div class="dropdown-menu text-center">
+          <a class="dropdown-item" routerLink="/life">Life@Avalon</a>
+          <a class="dropdown-item" routerLink="/job-opportunity">Job Opportunity</a>
+        </div>
+        <!--<a class="nav-link dropdown-toggle secondary" href="#" id="navbardrop" data-toggle="dropdown">
+          Career
+        </a>
+        <div class="dropdown-menu" id="">
+          <ul class="ho2">
+            <li class="o1"> <a class="dropdown-item" routerLink="/life">LIFE @ AVALON</a></li>
+            <li class="o2"> <a class="dropdown-item" routerLink="/job-opportunity">JOB OPPORTUNITY</a></li>
+          </ul>
+        </div>-->
+      </li>
+      
+    <li class="nav-item">
+      <a class="nav-link secondary" routerLink="/media">Media</a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-link secondary" routerLink="/contact">Contact Us</a>
+    </li>
+  
+  </ul>
+</div>
+</nav>
+<!--End Mobile Device Navbar Here-->
